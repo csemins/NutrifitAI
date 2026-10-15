@@ -1,0 +1,5 @@
+// Top-level build file. Plugin versions are pinned here; library versions live in app/build.gradle.
+plugins {
+    id 'com.android.application' version '8.13.2' apply false
+    id 'com.google.gms.google-services' version '4.4.3' apply false
+}
