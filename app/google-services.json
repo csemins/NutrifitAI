@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "578612335172",
+    "firebase_url": "https://nutrifit-ai-6c41c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "nutrifit-ai-6c41c",
+    "storage_bucket": "nutrifit-ai-6c41c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578612335172:android:6e5e757f82d9f15d862211",
+        "android_client_info": {
+          "package_name": "com.transformsai.nutrifitai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578612335172-e4husqbrdtafto4f3hnkschtsr8m7fqk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.transformsai.nutrifitai",
+            "certificate_hash": "8d71527ad8c4487ca973f4dc4169312e1b8b0bdb"
+          }
+        },
+        {
+          "client_id": "578612335172-prsksf0rrqqpevd74iuvbnbq2p1f1bnc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.transformsai.nutrifitai",
+            "certificate_hash": "5aaeefd5bf689361efdf345704b9bd2e661b0fd3"
+          }
+        },
+        {
+          "client_id": "578612335172-6epj0bk08rngt78fe9ml387b5vk2249b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQoqG3bZgjUOoO2f4lcZN9P2YUr76VbwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578612335172-6epj0bk08rngt78fe9ml387b5vk2249b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
