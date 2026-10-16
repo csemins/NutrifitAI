@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Light palette. The dark palette is in values-night. -->
+<resources>
+    <color name="nl_bg">#FFF4F6F1</color>
+    <color name="nl_surface">#FFFFFFFF</color>
+    <color name="nl_surface_2">#FFF0F2EE</color>
+    <color name="nl_surface_3">#FFE4E8E1</color>
+    <color name="nl_stroke">#FFE0E4DC</color>
+    <color name="nl_stroke_strong">#FFC6CCC3</color>
+    <color name="nl_scrim">#99000000</color>
+    <color name="nl_text">#FF111611</color>
+    <color name="nl_text_2">#FF4D554E</color>
+    <color name="nl_text_3">#FF7A827B</color>
+    <color name="nl_text_disabled">#FFB2B8B1</color>
+    <color name="nl_lime">#FF4F9A1E</color>
+    <color name="nl_lime_bright">#FF6DBA3A</color>
+    <color name="nl_lime_deep">#FF3B7A16</color>
+    <color name="nl_lime_dim">#FFE2F2D6</color>
+    <color name="nl_lime_mid">#FF6E9E12</color>
+    <color name="nl_lime_glow">#334F9A1E</color>
+    <color name="nl_on_lime">#FFFFFFFF</color>
+    <color name="nl_protein">#FFD9453F</color>
+    <color name="nl_carbs">#FFC98A10</color>
+    <color name="nl_fat">#FF3A6FD8</color>
+    <color name="nl_fibre">#FF169C80</color>
+    <color name="nl_water">#FF1A86C9</color>
+    <color name="nl_water_light">#FF59AEE0</color>
+    <color name="nl_water_deep">#FF1D5E82</color>
+    <color name="nl_purple">#FF7458DC</color>
+    <color name="nl_error">#FFD33A3A</color>
+    <color name="nl_error_dim">#FFFBE2E2</color>
+    <color name="nl_warning">#FFC98A10</color>
+    <color name="nl_warning_dim">#FFFBEFD5</color>
+    <color name="nl_ripple">#1A000000</color>
+    <color name="nl_tint_green">#FFE4F2D9</color>
+    <color name="nl_tint_green_2">#FFCDE5BC</color>
+    <color name="nl_tint_green_soft">#1A4F9A1E</color>
+    <color name="nl_banner_error_stroke">#FFF0B8B8</color>
+    <color name="nl_banner_warning_stroke">#FFEED39C</color>
+    <color name="nl_info_bg">#FFE4F0F8</color>
+    <color name="nl_info_stroke">#FFBCD8EB</color>
+    <color name="nl_bar_bg">#F2FFFFFF</color>
+    <color name="nl_card_deep">#FFFFFFFF</color>
+    <color name="nl_card_planned">#FFFFFFFF</color>
+    <color name="nl_water_card">#E6FFFFFF</color>
+    <color name="nl_water_stroke">#FFC9E1EF</color>
+    <color name="nl_hydration_top">#FFEFF6FA</color>
+    <color name="nl_hydration_bottom">#FFD7EAF5</color>
+    <color name="nl_bg_a0">#00F4F6F1</color>
+    <color name="nl_bg_a60">#99F4F6F1</color>
+    <color name="nl_bg_a80">#CCF4F6F1</color>
+    <color name="nl_bg_a95">#F2F4F6F1</color>
+    <color name="nl_shadow_soft">#14000000</color>
+    <color name="nl_shadow">#1F000000</color>
+    <color name="nl_glass">#E6FFFFFF</color>
+    <color name="nl_glass_2">#CCFFFFFF</color>
+    <color name="nl_glass_stroke">#1F000000</color>
+    <!-- Share cards always use the dark brand look, whatever the app theme -->
+    <color name="share_bg">#FF0B0D0B</color>
+    <color name="share_card">#FF161A17</color>
+    <color name="share_stroke">#FF262C27</color>
+    <color name="share_lime">#FFB8F15A</color>
+    <color name="share_text">#FFFFFFFF</color>
+    <color name="share_text_2">#FF9AA39B</color>
+    <!-- snackbar action on the inverse bar -->
+    <color name="snack_action">#FFB4F58A</color>
+</resources>

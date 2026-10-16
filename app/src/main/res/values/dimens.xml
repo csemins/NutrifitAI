@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="card_radius">24dp</dimen>
+    <dimen name="card_radius_sm">18dp</dimen>
+    <dimen name="card_padding">18dp</dimen>
+    <dimen name="gap">12dp</dimen>
+    <dimen name="gap_sm">8dp</dimen>
+    <dimen name="stepper">36dp</dimen>
+    <dimen name="thumb">64dp</dimen>
+    <dimen name="nav_height">64dp</dimen>
+    <dimen name="nav_clearance">112dp</dimen>
+    <dimen name="nav_rail_width">88dp</dimen>
+    <dimen name="fab_above_nav">80dp</dimen>
+    <dimen name="ring_size">176dp</dimen>
+    <dimen name="max_content_width">640dp</dimen>
+    <dimen name="welcome_dot">8dp</dimen>
+</resources>

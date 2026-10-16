@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NutriFit AI</string>
+
+    <!-- Common -->
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="done">Done</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="retry">Retry</string>
+    <string name="undo">Undo</string>
+    <string name="share">Share</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="close">Close</string>
+    <string name="add">Add</string>
+    <string name="open_settings">Open settings</string>
+    <string name="unavailable">Unavailable</string>
+    <string name="kcal">kcal</string>
+    <string name="kcal_value">%1$d kcal</string>
+    <string name="cd_back">Go back</string>
+    <string name="cd_increase">Increase servings</string>
+    <string name="cd_decrease">Decrease servings</string>
+    <string name="cd_more">More options</string>
+    <string name="loading">Loading…</string>
+    <string name="saved">Saved</string>
+
+    <!-- Meals -->
+    <string name="meal_breakfast">Breakfast</string>
+    <string name="meal_lunch">Lunch</string>
+    <string name="meal_dinner">Dinner</string>
+    <string name="meal_snack">Snacks</string>
+    <string-array name="meal_types">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snacks</item>
+    </string-array>
+
+    <!-- Auth -->
+    <string name="auth_title_signin">Welcome back</string>
+    <string name="auth_title_signup">Start eating smarter</string>
+    <string name="auth_sub_signin">Your meals, water and progress — on any device.</string>
+    <string name="auth_sub_signup">Private, synced, and works offline.</string>
+    <string-array name="auth_modes">
+        <item>Sign in</item>
+        <item>Create account</item>
+    </string-array>
+    <string name="hint_name">Your name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_password_confirm">Confirm password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="action_signin">Sign in</string>
+    <string name="action_signup">Create account</string>
+    <string name="or_continue">or continue with</string>
+    <string name="google">Continue with Google</string>
+    <string name="reset_title">Reset your password</string>
+    <string name="reset_body">We\'ll email you a secure link to choose a new password.</string>
+    <string name="reset_send">Send reset link</string>
+    <string name="reset_sent">Check %1$s for a reset link.</string>
+    <string name="err_name">Enter your name (2–40 characters).</string>
+    <string name="err_email">Enter a valid email address.</string>
+    <string name="err_password_short">Use at least 8 characters with a letter and a number.</string>
+    <string name="err_password_match">Passwords don\'t match.</string>
+    <string name="err_weak_password">That password is too weak. Try a longer one.</string>
+    <string name="err_email_in_use">An account already exists for this email. Try signing in.</string>
+    <string name="err_no_account">No account matches this email.</string>
+    <string name="err_bad_credentials">Email or password is incorrect.</string>
+    <string name="err_recent_login">For your security, please sign in again and retry.</string>
+    <string name="err_too_many">Too many attempts. Please wait a moment and try again.</string>
+    <string name="err_network">You\'re offline. Check your connection and try again.</string>
+    <string name="err_timeout">The request timed out. Please try again.</string>
+    <string name="err_auth_not_configured">Sign-in isn\'t enabled for this Firebase project yet.</string>
+    <string name="err_firebase_unavailable">Firebase is unavailable right now. Please try again.</string>
+    <string name="err_google_unavailable">Google sign-in isn\'t available on this device.</string>
+    <string name="err_google_config">Google sign-in isn\'t configured. Add this app\'s SHA-1 fingerprint in the Firebase console.</string>
+    <string name="dev_emulators">Developer: use local Firebase emulators</string>
+    <string name="dev_emulators_body">Debug builds only. Connects Auth, Firestore, Storage and Realtime Database to 127.0.0.1 (use adb reverse). The app restarts.</string>
+    <string name="dev_ai_url">AI server URL</string>
+
+    <!-- Onboarding -->
+    <string name="ob_step">Step %1$d of %2$d</string>
+    <string name="ob_about_title">Let\'s get to know you</string>
+    <string name="ob_sex">Sex for the energy formula</string>
+    <string-array name="sex_options">
+        <item>Female</item>
+        <item>Male</item>
+        <item>Prefer not to say</item>
+    </string-array>
+    <string name="ob_body_title">Your body</string>
+    <string-array name="unit_options">
+        <item>Metric</item>
+        <item>Imperial</item>
+    </string-array>
+    <string name="ob_height_cm">Height (cm)</string>
+    <string name="ob_height_ft">Height (ft)</string>
+    <string name="ob_height_in">(in)</string>
+    <string name="ob_weight">Current weight (%1$s)</string>
+    <string name="ob_target">Target weight (%1$s)</string>
+    <string name="ob_goal_title">Activity and goal</string>
+    <string name="ob_activity">Activity level</string>
+    <string name="act_sedentary">Mostly sitting</string>
+    <string name="act_sedentary_d">Desk work, little walking</string>
+    <string name="act_light">Lightly active</string>
+    <string name="act_light_d">Walking or light activity 1–3 days</string>
+    <string name="act_moderate">Moderately active</string>
+    <string name="act_moderate_d">Active 3–5 days a week</string>
+    <string name="act_active">Very active</string>
+    <string name="act_active_d">Hard activity 6–7 days</string>
+    <string name="act_very">Extremely active</string>
+    <string name="act_very_d">Physical job plus training</string>
+    <string name="ob_goal">Goal</string>
+    <string-array name="goal_options">
+        <item>Lose</item>
+        <item>Maintain</item>
+        <item>Gain</item>
+    </string-array>
+    <string name="ob_diet_title">Food preferences</string>
+    <string name="ob_diet">Dietary preferences</string>
+    <string name="ob_allergies">Allergies and intolerances</string>
+    <string name="ob_allergy_other">Other (comma separated)</string>
+    <string name="ob_allergy_note">We can\'t guarantee any food is allergen-free.</string>
+    <string name="ob_targets_title">Your daily targets</string>
+    <string name="ob_explain">BMR ≈ %1$d kcal × activity factor = maintenance ≈ %2$d kcal. %3$s</string>
+    <string name="ob_explain_lose" formatted="false">A moderate deficit (max 20%, ≤500 kcal) is applied and never goes below your BMR.</string>
+    <string name="ob_explain_gain" formatted="false">A small surplus (max 10%, ≤300 kcal) is applied.</string>
+    <string name="ob_explain_maintain">Your target matches estimated maintenance.</string>
+    <string name="ob_disclaimer">Estimates only — not medical advice.</string>
+    <string name="t_calories">Calories (kcal)</string>
+    <string name="t_protein">Protein (g)</string>
+    <string name="t_carbs">Carbs (g)</string>
+    <string name="t_fat">Fat (g)</string>
+    <string name="t_fibre">Fibre (g)</string>
+    <string name="t_water">Water (ml)</string>
+    <string name="ob_finish">Start tracking</string>
+    <string name="ob_save">Save changes</string>
+    <string name="err_age">NutriFit AI is for ages 16 to 100.</string>
+    <string name="err_height">Enter a height between 120 and 230 cm.</string>
+    <string name="err_weight">Enter a weight between 30 and 300 kg.</string>
+    <string name="err_targets">Targets look out of range (1000–6000 kcal, water 500–6000 ml).</string>
+    <string name="recalculate">Recalculate</string>
+
+    <!-- Home -->
+    <string name="greet_morning">Morning, %1$s</string>
+    <string name="greet_afternoon">Afternoon, %1$s</string>
+    <string name="greet_evening">Evening, %1$s</string>
+    <string name="greet_fallback">there</string>
+    <string name="kcal_left">KCAL LEFT</string>
+    <string name="kcal_over">KCAL OVER</string>
+    <string name="eaten">Eaten</string>
+    <string name="daily_target">Daily target</string>
+    <string name="fibre">Fibre</string>
+    <string name="protein">Protein</string>
+    <string name="carbs">Carbs</string>
+    <string name="fat">Fat</string>
+    <string name="sugar">Sugar</string>
+    <string name="sodium">Sodium</string>
+    <string name="scan_food">Scan food</string>
+    <string name="search">Search</string>
+    <string name="voice_log">Voice log</string>
+    <string name="macro_split">Macro split</string>
+    <string name="view_details">View details</string>
+    <string name="water">Water</string>
+    <string name="add_glass">+ 200 ml</string>
+    <string name="todays_meals_short">Today\'s meals</string>
+    <string name="see_all">See all</string>
+    <string name="ask_coach_sub">Ideas that fit what\'s left today</string>
+    <string name="home_empty_meals">No meals yet today.</string>
+    <string name="cd_ring">%1$d of %2$d kcal eaten, %3$s</string>
+    <string name="cd_avatar">Open profile</string>
+    <string name="no_goal">Set your targets to see progress</string>
+    <string name="macro_split_cd">Energy split: protein %1$d percent, carbs %2$d percent, fat %3$d percent</string>
+    <string name="water_added">Added %1$s</string>
+
+    <!-- Meals diary -->
+    <string name="todays_meals">Today\'s meals</string>
+    <string name="yesterdays_meals">Yesterday\'s meals</string>
+    <string name="tomorrows_plan">Tomorrow\'s plan</string>
+    <string-array name="day_segments">
+        <item>Yesterday</item>
+        <item>Today</item>
+        <item>Tomorrow</item>
+    </string-array>
+    <string name="pick_date">Pick a date</string>
+    <string name="nothing_logged">Nothing logged yet</string>
+    <string name="nothing_planned">Nothing planned yet</string>
+    <string name="ask_coach_idea">Ask the coach for an idea.</string>
+    <string name="planned">Planned</string>
+    <string name="mark_eaten">Mark eaten</string>
+    <string name="eaten_planned">%1$d kcal eaten · %2$d planned</string>
+    <string name="item_deleted">\"%1$s\" removed</string>
+    <string name="duplicate">Duplicate</string>
+    <string name="move_to">Move to…</string>
+    <string name="copy_to">Copy to…</string>
+    <string name="copy_meal">Copy this meal to another day</string>
+    <string name="edit_portion">Edit portion</string>
+    <string name="copied_n">Copied %1$d item(s)</string>
+    <string name="moved">Moved</string>
+    <string name="cant_eat_future">Planned meals for a future date can be marked eaten on that day.</string>
+    <string name="choose_meal">Choose meal</string>
+    <string name="servings">Servings</string>
+    <string name="unit">Unit</string>
+    <string name="grams">grams</string>
+    <string name="confidence_chip">AI %1$s</string>
+
+    <!-- Search -->
+    <string name="search_hint">Search foods (English or বাংলা)</string>
+    <string name="recent_favourites">Recent &amp; favourites</string>
+    <string name="results">Results</string>
+    <string name="frequent">Your frequent foods</string>
+    <string name="search_empty">No foods match \"%1$s\".</string>
+    <string name="create_custom">Create custom food</string>
+    <string name="filter_all">All</string>
+    <string name="filter_fav">Favourites</string>
+    <string name="filter_recent">Recent</string>
+    <string name="filter_bd">Bangladeshi</string>
+    <string name="filter_custom">My foods</string>
+    <string name="cat_grains">Rice &amp; breads</string>
+    <string name="cat_curries">Curries</string>
+    <string name="cat_lentils">Dal &amp; lentils</string>
+    <string name="cat_protein">Eggs &amp; meat</string>
+    <string name="cat_vegetables">Vegetables</string>
+    <string name="cat_fruits">Fruits</string>
+    <string name="cat_dairy">Dairy</string>
+    <string name="cat_drinks">Drinks</string>
+    <string name="cat_snacks">Snacks</string>
+    <string name="cat_sweets">Sweets</string>
+    <string name="food_row_sub">%1$d kcal · %2$s</string>
+    <string name="cd_quick_add">Add %1$s</string>
+    <string name="added_to">Added to %1$s</string>
+    <string name="no_favourites">No favourites yet. Tap the heart on any food.</string>
+    <string name="no_recent">Foods you log will appear here.</string>
+
+    <!-- Food detail -->
+    <string name="total_calories">Total calories</string>
+    <string name="p_per_100kcal">P / 100 kcal</string>
+    <string name="p_density_help">Protein density: grams of protein per 100 kcal. A factual ratio, not a health score.</string>
+    <string name="energy_density">Per 100 g</string>
+    <string name="vitamins_minerals">Vitamins &amp; minerals</string>
+    <string name="dv_note" formatted="false">% Daily Value based on FDA reference amounts, for this portion.</string>
+    <string name="source">Source</string>
+    <string name="prov_curated">NutriFit AI starter catalog · approximate reference values</string>
+    <string name="prov_user">Created by you</string>
+    <string name="prov_ai">AI estimate · please verify</string>
+    <string name="prov_recipe">Calculated from your recipe ingredients</string>
+    <string name="prov_imported">Imported from a NutriFit AI export</string>
+    <string name="add_to_meal">Add to %1$s</string>
+    <string name="add_to_plan">Plan for %1$s</string>
+    <string name="save_changes">Save changes</string>
+    <string name="favourite">Favourite</string>
+    <string name="unfavourite">Remove favourite</string>
+    <string name="no_micros">Vitamins and minerals aren\'t available for this food.</string>
+    <string name="edit_custom">Edit food</string>
+
+    <!-- Custom food -->
+    <string name="custom_title">Custom food</string>
+    <string name="cf_name">Food name</string>
+    <string name="cf_name_bn">Bangla name (optional)</string>
+    <string name="cf_serving_label">Serving name, e.g. 1 cup</string>
+    <string name="cf_serving_g">Serving size (g)</string>
+    <string name="cf_kcal">Calories / 100 g</string>
+    <string name="cf_protein">Protein / 100 g</string>
+    <string name="cf_carbs">Carbs / 100 g</string>
+    <string name="cf_fat">Fat / 100 g</string>
+    <string name="cf_fibre">Fibre / 100 g (optional)</string>
+    <string name="cf_sugar">Sugar / 100 g (optional)</string>
+    <string name="cf_sodium">Sodium mg / 100 g (optional)</string>
+    <string name="cf_err_required">Required</string>
+    <string name="cf_err_range">Out of range</string>
+    <string name="cf_err_macros">Protein + carbs + fat can\'t exceed 100 g per 100 g.</string>
+    <string name="cf_warn_energy">Calories differ a lot from 4·P + 4·C + 9·F (%1$d kcal). Double-check the label.</string>
+    <string name="cf_delete_q">Delete this food? Past diary entries keep their values.</string>
+
+    <!-- Camera / AI -->
+    <string name="cam_hint">Fit the whole plate in the frame</string>
+    <string name="cam_capture">Take photo</string>
+    <string name="cam_gallery">Choose from gallery</string>
+    <string name="cam_flip">Switch camera</string>
+    <string name="cam_flash">Toggle flash</string>
+    <string name="cam_perm_title">Camera access needed</string>
+    <string name="cam_perm_body">Used only when you take a meal photo.</string>
+    <string name="cam_perm_denied">Camera permission is turned off. Enable it in Settings, or pick a photo from your gallery instead.</string>
+    <string name="cam_allow">Allow camera</string>
+    <string name="cam_unavailable">No camera is available on this device. You can still pick a photo.</string>
+    <string name="cam_error">Couldn\'t take the photo. Please try again.</string>
+    <string name="retake">Retake</string>
+    <string name="remove_photo">Remove</string>
+    <string name="note_hint">Add details: portion, oil, hidden ingredients (optional)</string>
+    <string name="analyse">Analyse meal</string>
+    <string name="analysing">Analysing your meal…</string>
+    <string name="analysing_sub">Just a moment…</string>
+    <string name="waiting_network">Waiting for a network connection…</string>
+    <string name="review_title">Review &amp; confirm</string>
+    <string name="ai_low_conf">Some items have low confidence. Please check names and portions.</string>
+    <string name="ai_non_food_title">No food detected</string>
+    <string name="ai_non_food_body">We couldn\'t find food in this photo. Try again with the meal centred and well lit.</string>
+    <string name="ai_error_title">Analysis failed</string>
+    <string name="ai_cancelled">Analysis cancelled.</string>
+    <string name="ai_questions">The AI asks</string>
+    <string name="estimate_total">Estimated total</string>
+    <string name="save_to_diary">Save %1$d items to %2$s</string>
+    <string name="save_one">Save to %1$s</string>
+    <string name="saved_to_diary">Saved to your diary</string>
+    <string name="remove_item">Remove item</string>
+    <string name="edit_item">Edit item</string>
+    <string name="item_name">Name</string>
+    <string name="item_weight">Weight (g)</string>
+    <string name="item_kcal">Calories (kcal)</string>
+    <string name="add_item">Add item manually</string>
+    <string name="nothing_to_save">Nothing to save — all items were removed.</string>
+    <string name="ai_disclaimer">AI estimates — check before saving.</string>
+    <string name="text_log_title">Describe what you ate</string>
+    <string name="voice_title">Voice log</string>
+    <string name="voice_tap">Tap the mic and speak</string>
+    <string name="voice_listening">Listening…</string>
+    <string name="voice_perm">Microphone access lets you log meals by voice. You can always type instead.</string>
+    <string name="voice_perm_denied">Microphone permission is off. You can type your meal, or enable it in Settings.</string>
+    <string name="voice_unavailable">Speech recognition isn\'t available on this device. Type your meal instead.</string>
+    <string name="voice_error">Didn\'t catch that. Tap the mic to try again.</string>
+    <string name="voice_examples">e.g. “Two rotis, one egg and a cup of milk”</string>
+    <string name="cd_mic">Start voice input</string>
+    <string name="cd_mic_stop">Stop listening</string>
+    <string name="err_text_short">Describe at least one food (3+ characters).</string>
+    <string name="meal_for">Log to</string>
+
+    <!-- Hydration -->
+    <string name="hydration">Hydration</string>
+    <string name="glass">Glass · %1$s</string>
+    <string name="bottle">Bottle · %1$s</string>
+    <string name="flask">Large bottle · %1$s</string>
+    <string name="custom_amount">Custom amount</string>
+    <string name="water_to_go">%1$s to go.</string>
+    <string name="water_done">Daily goal reached. Nice work.</string>
+    <string name="last_drink">Last drink %1$s.</string>
+    <string name="no_drinks">No drinks logged yet today.</string>
+    <string name="this_week">This week</string>
+    <string name="goal_value">goal %1$s</string>
+    <string name="today_drinks">Today\'s drinks</string>
+    <string name="rem_every">Every %1$s</string>
+    <string name="rem_hours">%1$s – %2$s</string>
+    <string name="rem_meals">Meal log nudges</string>
+    <string name="rem_meals_sub">If a meal isn\'t logged by %1$s · %2$s · %3$s</string>
+    <string name="rem_cutoff">Evening cut-off</string>
+    <string name="rem_cutoff_sub">Stop at %1$s</string>
+    <string name="rem_interval_title">Reminder interval</string>
+    <string name="rem_start">Start</string>
+    <string name="rem_end">End</string>
+    <string name="notif_perm_title">Allow notifications?</string>
+    <string name="notif_perm_body">Reminders need notifications. Turn them off any time.</string>
+    <string name="notif_perm_denied">Notifications are blocked. Enable them in Settings to receive reminders.</string>
+    <string name="ml_hint">Amount (ml)</string>
+    <string name="err_ml">Enter 1–5000 ml.</string>
+    <string name="minutes_ago">%1$d min ago</string>
+    <string name="hours_ago">%1$d h ago</string>
+    <string name="just_now">just now</string>
+    <string name="cd_gauge">%1$s of %2$s water today</string>
+
+    <!-- Progress -->
+    <string-array name="period_segments">
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+    <string name="cal_vs_target">Calories vs target</string>
+    <string name="avg_kcal">avg %1$d kcal</string>
+    <string name="in_range">In target range</string>
+    <string name="in_range_value">%1$d of %2$d</string>
+    <string name="avg_protein">Avg protein</string>
+    <string name="logged_days">Logged days</string>
+    <string name="weight">Weight</string>
+    <string name="current">Current</string>
+    <string name="change_in_period">%1$s in this period</string>
+    <string name="add_weight">Add weight</string>
+    <string name="weight_history">History</string>
+    <string name="no_weight">Log your weight to see a trend.</string>
+    <string name="consistency">Consistency</string>
+    <string name="goals_hit">Goals hit</string>
+    <string name="calories">Calories</string>
+    <string name="hydration_trend">Hydration</string>
+    <string name="macro_trend">Average macros</string>
+    <string name="progress_empty_title">No data for this period</string>
+    <string name="progress_empty_body">Log meals and water to see trends here.</string>
+    <string name="share_summary">Share summary</string>
+    <string name="cd_bar_chart">Calories by day. %1$s</string>
+
+    <!-- Weight -->
+    <string name="weight_title">Weight</string>
+    <string name="weight_hint">Weight (%1$s)</string>
+    <string name="note_optional">Note (optional)</string>
+    <string name="err_weight_value">Enter a realistic weight.</string>
+    <string name="weight_deleted">Weight entry deleted</string>
+
+    <!-- Profile / settings -->
+    <string name="profile">Profile</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="goals_targets">Goals &amp; targets</string>
+    <string name="recipes">Recipes</string>
+    <string name="assistant">Nutrition assistant</string>
+    <string name="reminders">Reminders</string>
+    <string name="units">Units</string>
+    <string name="data_export">Export &amp; import</string>
+    <string name="privacy">Privacy &amp; data</string>
+    <string name="sign_out">Sign out</string>
+    <string name="delete_account">Delete account</string>
+    <string name="sync_now">Sync now</string>
+    <string name="change_photo">Change photo</string>
+    <string name="sign_out_q">Sign out?</string>
+    <string name="sign_out_pending">%1$d change(s) haven\'t synced yet and will be lost from this device.</string>
+    <string name="sign_out_body">Your data stays in your account. This device\'s copy will be cleared.</string>
+    <string name="delete_q">Delete your account?</string>
+    <string name="delete_body">This permanently deletes your profile, meals, water, weights, photos, chats, posts, clips and friendships from NutriFit AI\'s cloud and this device. It can\'t be undone.</string>
+    <string name="delete_confirm_pw">Enter your password to confirm</string>
+    <string name="delete_google">Confirm with Google</string>
+    <string name="deleting">Deleting your account…</string>
+    <string name="units_metric">Metric (kg, cm, ml)</string>
+    <string name="units_imperial">Imperial (lb, ft/in, fl oz)</string>
+    <string name="ai_server_body">The app sends photos and text only to this NutriFit AI proxy, which holds the AI provider key.</string>
+    <string name="ai_server_ok">Connected · AI ready</string>
+    <string name="ai_server_bad">Not reachable or not configured</string>
+    <string name="test_connection">Test connection</string>
+    <string name="version">Version %1$s</string>
+
+    <!-- Privacy -->
+    <string name="privacy_body">• Photos: taken or picked only when you choose. Before analysis, the app strips location metadata, rotates and resizes the image on your device.\n\n• AI analysis: the processed photo or your text is sent over HTTPS to the NutriFit AI proxy, which forwards it to the configured AI provider and returns a structured estimate. The proxy does not store images and redacts content from logs.\n\n• Storage: your diary lives on this device (Room database) and syncs to your private Firebase account. Meal photos are stored in a private folder that only your account can read.\n\n• Assistant: only your goal, remaining targets, diet tags and declared allergies are shared with the assistant — never your name, email or birth date.\n\n• Social: your name and handle are visible to signed-in NutriFit AI users so friends can find you. Posts, photos and clips you share are visible only to you and the friends you had when you posted. In a challenge, your reps, points and a simple pose outline are shared with the other players; your camera video and voice are sent only while you turn them on, directly to the people in the call, and are never recorded.\n\n• Walks: while a walk you started is running, the app uses your location to draw the route and measure distance, pace and speed. The route is saved with the walk in your private account and is never shared unless you share it. Map tiles come from OpenStreetMap data via CARTO.
+
+• Deleting your account removes your cloud data, photos and this device\'s copy.\n\nNutriFit AI provides general nutrition estimates. It does not diagnose conditions and cannot guarantee foods are allergen-free.</string>
+
+    <!-- Export / import -->
+    <string name="export_title">Export &amp; import</string>
+    <string name="export_csv">CSV for spreadsheets</string>
+    <string name="export_xml">XML backup (re-importable)</string>
+    <string name="export_start">Export</string>
+    <string name="export_running">Exporting your nutrition data…</string>
+    <string name="export_ready">Export ready</string>
+    <string name="export_ready_text">Tap to share your file.</string>
+    <string name="export_done_count">Exported %1$d records.</string>
+    <string name="export_cancelled">Export cancelled.</string>
+    <string name="export_failed">Export failed. Please try again.</string>
+    <string name="share_export">Share NutriFit AI export</string>
+    <string name="import_title">Import an XML backup</string>
+    <string name="import_pick">Choose XML file</string>
+    <string name="import_preview">%1$d meals (%2$d items), %3$d drinks, %4$d weights, %5$d goals, %6$d custom foods</string>
+    <string name="import_dupes">%1$d already exist on this account · %2$d new</string>
+    <string name="import_errors">%1$d record(s) were invalid and will be skipped</string>
+    <string name="import_skip">Skip duplicates</string>
+    <string name="import_replace">Replace duplicates</string>
+    <string name="import_apply">Import</string>
+    <string name="import_done">Imported: %1$d added, %2$d replaced, %3$d skipped.</string>
+
+    <!-- Assistant -->
+    <string name="assistant_title">NutriFit AI Coach</string>
+    <string name="assistant_hint">Ask about your meals, workouts, health…</string>
+    <string name="assistant_empty">Ask me anything about your meals, workouts or health.</string>
+    <string name="assistant_q1">What did I eat today?</string>
+    <string name="assistant_q2">How was my protein this week?</string>
+    <string name="assistant_q3">Dinner idea for my remaining calories</string>
+    <string name="assistant_thinking">Thinking…</string>
+    <string name="assistant_failed">Not sent · tap to retry</string>
+    <string name="new_chat">New chat</string>
+    <string name="add_suggestion">Add to diary…</string>
+    <string name="confirm_suggestion">Add \"%1$s\" (%2$d kcal, AI estimate) to %3$s on %4$s?</string>
+    <string name="as_planned">Add as planned</string>
+    <string name="as_eaten">Log as eaten</string>
+    <string name="cd_send">Send message</string>
+
+    <!-- Recipes -->
+    <string name="recipes_title">Recipes</string>
+    <string name="recipes_empty">Save your home recipes once and log a serving in one tap.</string>
+    <string name="new_recipe">New recipe</string>
+    <string name="recipe_name">Recipe name</string>
+    <string name="recipe_servings">Makes how many servings?</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="add_ingredient">Add ingredient</string>
+    <string name="per_serving">Per serving</string>
+    <string name="recipe_total">%1$d kcal per serving · %2$d g</string>
+    <string name="log_serving">Log a serving</string>
+    <string name="recipe_need_ing">Add at least one ingredient.</string>
+    <string name="ingredient_grams">Amount for %1$s (g)</string>
+    <string name="delete_recipe_q">Delete this recipe?</string>
+
+    <!-- Notifications -->
+    <string name="ch_hydration">Hydration reminders</string>
+    <string name="ch_hydration_desc">Gentle reminders to drink water during your active hours.</string>
+    <string name="ch_meals">Meal reminders</string>
+    <string name="ch_meals_desc">A nudge if a meal hasn\'t been logged.</string>
+    <string name="ch_export">Exports</string>
+    <string name="ch_export_desc">Progress of data exports.</string>
+    <string name="notif_water_title">Time for some water 💧</string>
+    <string name="notif_water_text">A glass now keeps you on track.</string>
+    <string name="notif_water_progress">%1$d of %2$d ml so far today.</string>
+    <string name="notif_add_glass">+200 ml</string>
+    <string name="notif_meal_title">Logged %1$s yet?</string>
+    <string name="notif_meal_text">Tap to add it — a photo is the fastest way.</string>
+</resources>

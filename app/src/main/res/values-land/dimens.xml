@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Landscape: the navigation is a rail on the left, so content needs no room for a bottom bar. -->
+<resources>
+    <dimen name="nav_clearance">28dp</dimen>
+    <dimen name="fab_above_nav">20dp</dimen>
+    <dimen name="nav_rail_width">88dp</dimen>
+</resources>
