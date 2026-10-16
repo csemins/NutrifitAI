@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GPS walks: live map, summary, history, sharing. -->
+<resources>
+    <string name="walk_title">Walk</string>
+    <string name="walk_map">Map of your walk</string>
+    <string name="walk_go">GO</string>
+    <string name="walk_finish">Finish</string>
+    <string name="walk_hint_start">Tap GO to start. Your route is drawn as you move.</string>
+    <string name="walk_hint_running">Tap to finish. It keeps tracking with the screen off.</string>
+    <string name="walk_recentre">Centre on me</string>
+    <string name="walk_gps_searching">Finding GPS…</string>
+    <string name="walk_gps_ok">GPS ±%1$d m</string>
+    <string name="walk_gps_off">GPS off</string>
+    <string name="walk_no_gps">Location is off, so only steps and time are recorded.</string>
+    <string name="walk_turn_on_location">Turn on location</string>
+    <string name="walk_finish_q">Finish this walk?</string>
+    <string name="walk_finish_body">%1$s km in %2$s. It will be saved with its route.</string>
+    <string name="walk_keep_going">Keep going</string>
+    <string name="walk_too_short">Too short to save. Walk a little further next time.</string>
+    <string name="walk_notif_live">%1$s km · %2$s · %3$s /km · %4$d steps</string>
+    <string name="unit_km">km</string>
+    <string name="walk_pace">pace /km</string>
+    <string name="walk_speed">km/h</string>
+    <string name="walk_steps">steps</string>
+    <string name="walk_elev">m climb</string>
+    <string name="walk_title_morning">Morning walk</string>
+    <string name="walk_title_afternoon">Afternoon walk</string>
+    <string name="walk_title_evening">Evening walk</string>
+    <string name="walk_title_night">Night walk</string>
+    <string name="perm_why_location">Location lets the app draw your route and measure distance, pace and speed while you walk.</string>
+
+    <!-- Summary -->
+    <string name="walk_summary">Walk summary</string>
+    <string name="walk_s_distance">Distance</string>
+    <string name="walk_s_time">Moving time</string>
+    <string name="walk_s_elapsed">Total time</string>
+    <string name="walk_s_pace">Avg pace</string>
+    <string name="walk_s_speed">Avg speed</string>
+    <string name="walk_s_max">Top speed</string>
+    <string name="walk_s_elev">Climb</string>
+    <string name="walk_s_steps">Steps</string>
+    <string name="walk_s_kcal">Energy</string>
+    <string name="walk_splits">Splits</string>
+    <string name="walk_split_row">Km %1$d</string>
+    <string name="walk_no_route">This walk was recorded without GPS, so there is no map.</string>
+    <string name="walk_delete_q">Delete this walk?</string>
+    <string name="walk_counting_note">Your steps already count toward today through your phone and Google Fit; this walk shows them, it doesn\'t add them again.</string>
+    <string name="walk_value_km">%1$s km</string>
+    <string name="walk_value_kmh">%1$s km/h</string>
+    <string name="walk_value_pace">%1$s /km</string>
+    <string name="walk_value_m">%1$d m</string>
+    <string name="walk_value_kcal">%1$d kcal</string>
+
+    <!-- History -->
+    <string name="walk_history">Your walks</string>
+    <string name="walk_history_empty">Your mapped walks appear here, with their routes.</string>
+    <string name="walk_row">%1$s km · %2$s · %3$s /km</string>
+    <string name="walk_row_steps">%1$s steps · %2$s</string>
+    <string name="walk_open">Open</string>
+    <string name="walk_start_mapped">Start a mapped walk</string>
+    <string name="walk_start_mapped_sub">Route, distance, pace and speed on a live map</string>
+
+    <!-- Sharing -->
+    <string name="share_kicker_walk">Walk</string>
+</resources>

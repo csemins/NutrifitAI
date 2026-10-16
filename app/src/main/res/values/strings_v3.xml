@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- muscle map -->
+    <string name="muscle_front">Front</string>
+    <string name="muscle_back">Back</string>
+    <string name="targets">Targets</string>
+    <string name="cd_muscle_select">Muscle map. Tap muscles to focus on them.</string>
+    <string name="cd_muscle_selected">Selected: %1$s.</string>
+    <string name="cd_muscle_map">Muscle map: %1$s</string>
+    <string name="cd_muscle_none">Muscle map: no muscles worked yet</string>
+    <string name="muscles_trained">Muscles trained</string>
+    <string name="muscles_mostly">Mostly %1$s</string>
+    <string name="percent">%1$d%%</string>
+    <string name="muscles_this_week">Muscles this week</string>
+    <string name="muscles_week_empty">Train to light up your muscle map.</string>
+    <string name="targets_muscles">Works: %1$s</string>
+
+    <!-- live workout -->
+    <string name="add_15s">+15 s</string>
+    <string name="restart_exercise">Restart this exercise</string>
+    <string name="end_and_save">End workout and save</string>
+    <string name="plus_one_rep">+1 rep</string>
+    <string name="no_rep_fault">No rep · %1$s</string>
+    <string name="pause_sub_hold">%1$s · %2$d of %3$d s</string>
+    <string name="pause_sub_reps">%1$s · %2$d of %3$d reps</string>
+    <string name="camera_hint_hold">Timer runs only while your form is right</string>
+    <string name="camera_hint_reps">Camera counts clean reps · %1$d not counted</string>
+    <string name="reps_slash">/%1$d</string>
+    <string name="form_perfect">Form %1$d%% · every rep counted</string>
+    <string name="form_score">Form %1$d%% · %2$d reps not counted</string>
+
+    <!-- AI workout builder -->
+    <string name="clear">Clear</string>
+    <string name="focus_glutes">Glutes</string>
+    <string name="focus_mobility">Mobility</string>
+    <string name="ai_intensity">Intensity</string>
+    <string name="intensity_easy">Easy</string>
+    <string name="intensity_moderate">Moderate</string>
+    <string name="intensity_hard">Hard</string>
+    <string name="ai_builder_hero">Your plan, built in seconds</string>
+    <string name="ai_target_muscles">Target muscles</string>
+    <string name="ai_target_hint">Optional: tap muscles on the figure</string>
+    <string name="ai_target_selected">Focus: %1$s</string>
+    <string name="ai_pick_list">List</string>
+    <string name="ai_opt_warmup">Start with a warm-up</string>
+    <string name="ai_opt_cooldown">Finish with stretches</string>
+    <string name="ai_opt_low_impact">Low impact (no jumping, apartment friendly)</string>
+    <string name="ai_opt_camera">Prefer camera-tracked moves</string>
+    <string name="ai_your_plan">Your AI plan</string>
+    <string name="ai_regenerate">Regenerate</string>
+    <string name="ai_view_plan">View plan</string>
+    <string name="ai_plan_meta">%1$d min · %2$d exercises · %3$d tracked</string>
+    <string name="phase_warmup">Warm-up</string>
+    <string name="phase_main">Main set</string>
+    <string name="phase_cooldown">Cool-down</string>
+
+    <!-- coach -->
+    <string name="assistant_q4">Give me a 10-minute core workout</string>
+    <string name="assistant_q5">Am I drinking enough water?</string>
+    <string name="assistant_q6">How do I eat well with high blood pressure?</string>
+    <string name="coach_workout_title">Workout · %1$s</string>
+    <string name="coach_save_workout">Save and open</string>
+    <string name="coach_save_workout_q">Save this workout to your plans? You can review it before starting.</string>
+
+    <!-- steps / walk tracker / Health Connect -->
+    <string name="walk_tracker">Walk tracker</string>
+    <string name="steps_of_goal">of %1$s steps</string>
+    <string name="steps_per_day">%1$s steps a day</string>
+    <string name="step_goal">Daily step goal</string>
+    <string name="distance">Distance</string>
+    <string name="walks_today">Walks today</string>
+    <string name="walk_start_title">Go for a walk</string>
+    <string name="walk_start_sub">Counts with the screen off. Stop to save it.</string>
+    <string name="walk_start">Start</string>
+    <string name="walk_stop">Stop</string>
+    <string name="walk_running">Walking · %1$s</string>
+    <string name="walk_running_sub">%1$s steps this walk</string>
+    <string name="walk_saved">Walk saved</string>
+    <string name="walk_notif_title">Walk in progress</string>
+    <string name="walk_notif_body">%1$d steps · %2$s</string>
+    <string name="steps_this_week">This week</string>
+    <string name="steps_week_avg">Average %1$s a day on %2$d days with data</string>
+    <string name="steps_week_empty">No steps recorded yet this week.</string>
+    <string name="steps_need_perm">Allow physical activity so NutriFit AI can count your steps in the background.</string>
+    <string name="steps_perm_denied">Step counting needs the physical-activity permission.</string>
+    <string name="steps_no_sensor">This device has no step sensor. Connect Health Connect to use steps from a watch or another app.</string>
+    <string name="steps_add_manual">Add steps manually</string>
+    <string name="steps_add_hint">Steps, e.g. 2500</string>
+    <string name="steps_add_invalid">Enter between 1 and 50,000 steps.</string>
+    <string name="cd_steps_ring">%1$d of %2$d steps today</string>
+    <string name="allow">Allow</string>
+    <string name="syncing">Syncing…</string>
+    <string name="steps_today">Steps</string>
+    <string name="hc_title">Health Connect</string>
+    <string name="hc_explain">NutriFit AI will ask Health Connect to read your steps and to write workouts, weight and water. You can change this any time in Health Connect.</string>
+    <string name="hc_continue">Continue</string>
+    <string name="hc_connect">Connect</string>
+    <string name="hc_manage">Manage</string>
+    <string name="hc_connected">Connected</string>
+    <string name="hc_synced">Connected · synced %1$s</string>
+    <string name="hc_not_connected">Not connected</string>
+    <string name="hc_denied">Health Connect access was not granted.</string>
+    <string name="hc_needs_14">Health Connect is built into Android 14 and newer.</string>
+    <string name="hc_unavailable">Health Connect is not available right now.</string>
+
+    <!-- settings -->
+    <string name="section_activity">Activity &amp; health</string>
+    <string name="section_coach">Workout coach</string>
+    <string name="section_advanced">Advanced</string>
+    <string name="walk_tracker_sub">Daily steps, walks and goal</string>
+    <string name="fasting_title">Fasting timer</string>
+    <string name="fasting_sub">Time a fasting window</string>
+    <string name="achievements">Achievements</string>
+    <string name="achievements_sub">Streaks and badges</string>
+    <string name="hc_row_sub">Google Fit, Samsung Health, watches</string>
+    <string name="coach_strictness">Form strictness</string>
+    <string name="coach_strictness_sub">How strictly the camera judges each rep</string>
+    <string name="strict_relaxed">Relaxed · counts most reps</string>
+    <string name="strict_standard">Standard · rejects clear form faults</string>
+    <string name="strict_strict">Strict · full range, controlled tempo</string>
+    <string name="rest_between">Rest between exercises</string>
+    <string name="rest_between_sub">Applies to every workout</string>
+    <string name="rest_seconds_value">%1$d seconds</string>
+    <string name="voice_coach_sub">Spoken counts, cues and corrections</string>
+    <string name="show_skeleton">Show body outline</string>
+    <string name="show_skeleton_sub">Draw the tracked skeleton over the camera</string>
+    <string name="haptics">Vibration</string>
+    <string name="haptics_sub">Buzz on every counted rep</string>
+    <string name="pose_model">Pose model</string>
+    <string name="pose_model_sub">Accuracy vs speed of camera tracking</string>
+    <string name="model_auto">Auto</string>
+    <string name="model_lite">Lite</string>
+    <string name="model_full">Full</string>
+    <string name="model_heavy">Heavy</string>
+    <string name="model_heavy_missing">Heavy (not downloaded, using Full)</string>
+    <string name="model_auto_long">Auto: Full with a GPU, otherwise Lite</string>
+    <string name="model_lite_long">Lite: fastest, for older phones</string>
+    <string name="model_full_long">Full: balanced (recommended)</string>
+    <string name="model_heavy_long">Heavy: most accurate, 29 MB download</string>
+    <string name="model_remove_heavy_q">Remove the downloaded Heavy model to free 29 MB?</string>
+    <string name="model_downloading">Downloading Heavy model</string>
+    <string name="model_download_body">About 29 MB from Google\'s MediaPipe model storage. It is checked before use.</string>
+    <string name="model_heavy_ready">Heavy model ready</string>
+    <string name="model_download_failed">The download failed. Check your connection and try again.</string>
+    <string name="pose_processor">Processor</string>
+    <string name="pose_processor_sub">Where pose tracking runs</string>
+    <string name="proc_auto">Auto (GPU when available)</string>
+    <string name="proc_gpu">GPU</string>
+    <string name="proc_cpu">CPU only</string>
+    <string name="remove">Remove</string>
+    <string name="keep">Keep</string>
+    <string name="developer">Developer options</string>
+    <string name="developer_sub">Server address and sync diagnostics</string>
+
+    <!-- fasting -->
+    <string name="fasting_elapsed">Fasting</string>
+    <string name="fasting_of">of %1$d h</string>
+    <string name="fasting_window">Fasting window</string>
+    <string name="fasting_preset">%1$d:%2$d</string>
+    <string name="fasting_start">Start fast now</string>
+    <string name="fasting_end">End fast</string>
+    <string name="fasting_started_earlier">I started earlier…</string>
+    <string name="fasting_idle">Not fasting</string>
+    <string name="fasting_since">Fasting since %1$s</string>
+    <string name="fasting_ends">Ends at %1$s · %2$s left</string>
+    <string name="fasting_reached">Target reached at %1$s. End it whenever you eat.</string>
+    <string name="fasting_end_q">End this fast?</string>
+    <string name="fasting_end_body">You fasted for %1$s.</string>
+    <string name="fasting_history">Recent fasts</string>
+    <string name="fasting_delete_q">Delete this fast?</string>
+    <string name="fasting_done_title">Fast complete</string>
+    <string name="fasting_done_body">You reached your %1$d-hour goal.</string>
+    <string name="cd_fasting">Fasting for %1$s of %2$d hours</string>
+
+    <!-- achievements -->
+    <string name="current_streak">Current logging streak</string>
+    <string name="best_streak">Best streak: %1$d · %2$d of %3$d badges</string>
+    <string name="badge_earned">Earned</string>
+    <string name="badge_progress">%1$d / %2$d</string>
+    <string name="cd_streak">Current streak %1$d days, best %2$d days</string>
+    <plurals name="days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+
+    <!-- camera modes / barcode -->
+    <string name="cam_mode_workout">Workout</string>
+    <string name="cam_mode_food">Food</string>
+    <string name="cam_mode_barcode">Barcode</string>
+    <string name="cam_hint_workout">Pick a move, then step back so your whole body is in view</string>
+    <string name="cam_hint_barcode">Point at a product barcode</string>
+    <string name="cam_workout_title">Camera workout</string>
+    <string name="cam_start_today">Start today\'s workout</string>
+    <string name="cd_start_exercise">Start %1$s with camera counting</string>
+    <string name="cam_enter_code">Type the barcode</string>
+    <string name="cam_looking_up">Looking up %1$s…</string>
+    <string name="barcode_unknown">Product not found</string>
+    <string name="barcode_unknown_body">%1$s is not in Open Food Facts yet. You can add it as your own food from its label.</string>
+    <string name="create_custom_food">Create food</string>
+    <string name="scan_again">Scan again</string>
+    <string name="barcode_hint">8 to 14 digits</string>
+    <string name="barcode_invalid">A barcode has 8 to 14 digits.</string>
+
+    <!-- home -->
+    <string name="quick_add">Quick add</string>
+    <string name="fasting_short">Fasting</string>
+    <string name="fasting_off">Off</string>
+    <string name="fasting_tap_start">Tap to start a fast</string>
+    <plurals name="streak_days">
+        <item quantity="one">%d-day streak</item>
+        <item quantity="other">%d-day streak</item>
+    </plurals>
+    <string name="quick_add_title">Quick add calories</string>
+    <string name="quick_add_name">What was it? (optional)</string>
+    <string name="quick_add_kcal">Calories (kcal)</string>
+    <string name="quick_add_protein">Protein g</string>
+    <string name="quick_add_carbs">Carbs g</string>
+    <string name="quick_add_fat">Fat g</string>
+    <string name="quick_add_invalid">Enter calories between 1 and 5000.</string>
+    <string name="quick_add_default_name">Quick add</string>
+
+    <!-- v3.1: AI everywhere -->
+    <string name="confirm">Confirm</string>
+    <string name="chat_history_empty">No earlier chats yet.</string>
+    <string name="voice_network">Voice input needs a connection. Type instead, or try again.</string>
+    <string name="act_water">Log %1$d ml water</string>
+    <string name="act_weight">Log weight %1$s kg</string>
+    <string name="act_fast">Start a %1$d h fast</string>
+    <string name="act_steps">Step goal %1$d</string>
+    <string name="act_food">Log: %1$s</string>
+    <string name="act_open">Open %1$s</string>
+    <string name="act_confirm">NutriFit AI will save this to your log.</string>
+    <string name="act_done">Done</string>
+    <string name="act_done_water">Logged %1$d ml water</string>
+    <string name="q_home_2">Plan the rest of my day</string>
+    <string name="q_meals_2">Log 2 rotis and an egg for breakfast</string>
+    <string name="q_meals_4">High-protein Bangladeshi dinner ideas</string>
+    <string name="q_train_2">Which muscles did I skip this week?</string>
+    <string name="q_train_3">Build me a 15-minute leg workout</string>
+    <string name="q_train_4">How do I do a proper push-up?</string>
+    <string name="q_progress_2">Am I on track for my weight goal?</string>
+    <string name="q_progress_3">Compare this week with last week</string>
+    <string name="q_profile_1">Are my calorie targets right for me?</string>
+    <string name="q_profile_2">Start a 16-hour fast</string>
+    <string name="q_profile_4">Set my step goal to 10,000</string>
+    <string name="cd_ai_chat">Ask the AI coach</string>
+    <string name="exercise_library_sub_v3">%1$d moves · all camera-tracked</string>
+    <string name="ai_builder_row">AI workout builder</string>
+    <string name="train_greeting">Let\'s move, %1$s</string>
+    <string name="fasting_idle_short">%1$d:%2$d window selected</string>
+    <string name="strict_relaxed_short">Relaxed</string>
+    <string name="strict_standard_short">Standard</string>
+    <string name="strict_strict_short">Strict</string>
+</resources>

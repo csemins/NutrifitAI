@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Welcome -->
+    <string name="welcome_sign_in">Sign in</string>
+    <string name="welcome_start">Get started</string>
+    <string name="welcome_have_account">I already have an account</string>
+    <string name="welcome_page">Page %1$d of %2$d</string>
+    <string name="welcome_1_title">Snap your plate</string>
+    <string name="welcome_1_body">Snap any meal, rice, dal or curry, and see its calories in seconds.</string>
+    <string name="welcome_2_title">Train with a camera coach</string>
+    <string name="welcome_2_body">Your camera counts every rep and keeps your form in check.</string>
+    <string name="welcome_3_title">Reach your daily targets</string>
+    <string name="welcome_3_body">Calories, water, steps and workouts, all in one place.</string>
+
+    <!-- Appearance -->
+    <string name="appearance">Appearance</string>
+    <string name="theme_system">Match system</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+
+    <!-- Privacy & data -->
+    <string name="privacy_your_data">Your data</string>
+
+    <!-- System events -->
+    <string name="sys_airplane_on">Airplane mode is on. Logs are saved on this phone and sync later.</string>
+    <string name="sys_airplane_off">Back online. Syncing your logs.</string>
+    <string name="sys_power_saving">Saving battery: the workout camera now uses its lighter pose model.</string>
+
+    <!-- Export -->
+    <string name="save_downloads">Save to Downloads</string>
+    <string name="saved_downloads">Saved %d file(s) to Downloads/NutriFit AI</string>
+    <string name="save_downloads_failed">Couldn\'t save to Downloads</string>
+
+    <string name="nav_social">Social</string>
+    <string name="more">More options</string>
+
+    <!-- AI access -->
+    <string name="ai_access_title">AI features are not on for you yet</string>
+    <string name="ai_access_body">AI features are rolling out gradually. Ask to join and we\'ll switch them on for you.</string>
+    <string name="ai_access_request">Request access</string>
+    <string name="ai_access_later">Maybe later</string>
+    <string name="ai_access_received">Request received</string>
+    <string name="ai_access_thanks_title">Thanks for your interest!</string>
+    <string name="ai_access_thanks_body">We\'ll switch AI on for you soon.</string>
+    <string name="ai_access_failed">Couldn\'t send the request. Check your connection and try again.</string>
+
+    <!-- Assistant chats -->
+    <string name="chats_title">Chats</string>
+    <string name="chats_search">Search chats</string>
+    <string name="chats_today">Today</string>
+    <string name="chats_yesterday">Yesterday</string>
+    <string name="chats_earlier">Earlier</string>
+    <string name="chats_open_now">%s · open now</string>
+    <string name="chats_delete_q">Delete this chat?</string>
+    <string name="chats_delete_one">Delete chat: %s</string>
+
+    <string name="ai_chip_estimate">Estimate</string>
+    <string name="ai_chip_check">Check</string>
+</resources>

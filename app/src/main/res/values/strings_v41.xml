@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4.1: profile card, notifications, chats, groups, comments, reactions, calls, signup, share cards. -->
+<resources>
+    <!-- Profile tab -->
+    <string name="settings">Settings</string>
+    <string name="notifications">Notifications</string>
+    <string name="choose_username">Choose a username</string>
+    <string name="goal_lose_short">Losing weight</string>
+    <string name="goal_gain_short">Gaining weight</string>
+    <string name="goal_maintain_short">Maintaining weight</string>
+    <string name="goal_line">%1$s · %2$s → %3$s %4$s</string>
+    <plurals name="unread_notifications">
+        <item quantity="one">%d new</item>
+        <item quantity="other">%d new</item>
+    </plurals>
+    <plurals name="stat_streak">
+        <item quantity="one">day streak</item>
+        <item quantity="other">day streak</item>
+    </plurals>
+    <plurals name="stat_workouts">
+        <item quantity="one">workout</item>
+        <item quantity="other">workouts</item>
+    </plurals>
+    <plurals name="stat_friends">
+        <item quantity="one">friend</item>
+        <item quantity="other">friends</item>
+    </plurals>
+    <string name="cd_avatar_unread">Profile and settings, %1$d new notifications</string>
+
+    <!-- Notifications -->
+    <string name="ch_social">Friends and challenges</string>
+    <string name="ch_social_desc">Friend requests, messages, comments, reactions, calls and challenge invites.</string>
+    <string name="mark_all_read">Mark all as read</string>
+    <string name="notif_empty_title">You\'re all caught up</string>
+    <string name="notif_empty_body">Friend requests, challenges, comments and messages show up here.</string>
+    <string name="find_friends">Find friends</string>
+    <string name="unread">Unread</string>
+
+    <!-- Reactions and comments -->
+    <string name="react_like">Like</string>
+    <string name="react_love">Love</string>
+    <string name="react_haha">Haha</string>
+    <string name="react_wow">Wow</string>
+    <string name="react_strong">Strong</string>
+    <string name="react_fire">Fire</string>
+    <string name="react_clap">Clap</string>
+    <string name="cd_react">React. Current: %1$s. Double tap to like, hold for more reactions.</string>
+    <plurals name="reactions_count">
+        <item quantity="one">%d reaction</item>
+        <item quantity="other">%d reactions</item>
+    </plurals>
+    <plurals name="comments_count">
+        <item quantity="one">%d comment</item>
+        <item quantity="other">%d comments</item>
+    </plurals>
+    <string name="comment">Comment</string>
+    <string name="comments">Comments</string>
+    <string name="comment_hint">Write a comment…</string>
+    <string name="comment_delete_q">Delete this comment?</string>
+    <string name="post_gone">This post was removed.</string>
+    <string name="post_type_achievement">Achievement</string>
+
+    <!-- Social tab -->
+    <string name="set">Set</string>
+    <string name="friend">Friend</string>
+    <string name="selected">selected</string>
+    <string name="not_selected">not selected</string>
+    <string name="add_food">Add food</string>
+    <string name="progress_title">Your trends</string>
+    <string name="chats_empty_title">No chats yet</string>
+    <string name="chats_empty_body">Message a friend or start a group to plan workouts together.</string>
+    <string name="chat_new_message">New message</string>
+    <string name="chat_message">Message</string>
+    <string name="chat_need_friends">Add a friend first, then you can message them.</string>
+    <string name="chat_say_hi">Say hi 👋</string>
+    <string name="group_members_count">%1$d members</string>
+
+    <!-- Chat -->
+    <string name="chat_hint">Message…</string>
+    <string name="chat_empty_body">Messages, challenges and calls with your friends appear here.</string>
+    <string name="chat_say_hi_to">Say hi to %1$s</string>
+    <string name="chat_friend">Friend</string>
+    <string name="chat_you_challenged">You started a challenge</string>
+    <string name="chat_challenged_you">%1$s started a challenge</string>
+    <plurals name="members">
+        <item quantity="one">%d member</item>
+        <item quantity="other">%d members</item>
+    </plurals>
+    <string name="group_new">New group</string>
+    <string name="group_edit">Edit group</string>
+    <string name="group_members">Members</string>
+    <string name="group_admin">admin</string>
+    <string name="group_leave">Leave group</string>
+    <string name="group_delete">Delete group</string>
+    <string name="group_leave_q">Leave this group?</string>
+    <string name="group_delete_q">Delete this group for everyone?</string>
+    <string name="group_name">Group name</string>
+    <string name="group_name_needed">Give the group a name</string>
+    <string name="group_create">Create group</string>
+    <string name="group_need_friends">Add friends first, then bring them into a group.</string>
+    <string name="group_pick_count">Pick friends · %1$d of %2$d</string>
+    <string name="challenge_group_title">Challenge %1$s</string>
+
+    <!-- Calls -->
+    <string name="call_audio">Voice call</string>
+    <string name="call_video">Video call</string>
+    <string name="call_started_audio">📞 Started a voice call</string>
+    <string name="call_started_video">🎥 Started a video call</string>
+    <string name="call_tap_join">Tap to join</string>
+    <string name="call_earlier">Call ended</string>
+    <string name="call_join">Join</string>
+    <string name="call_again">Call again</string>
+    <string name="call_mute">Mute microphone</string>
+    <string name="call_unmute">Turn microphone on</string>
+    <string name="call_camera_off">Turn camera off</string>
+    <string name="call_camera_on">Turn camera on</string>
+    <string name="call_leave">Leave call</string>
+    <string name="call_connecting">Connecting…</string>
+    <string name="call_waiting">Waiting for others to join…</string>
+    <string name="call_no_mic">Microphone access is off, so others can\'t hear you.</string>
+    <string name="call_rejoin_for_camera">Leave and rejoin the call to share your camera.</string>
+    <string name="call_muted">muted</string>
+    <string name="call_camera_is_off">camera off</string>
+    <plurals name="call_in_call">
+        <item quantity="one">%d in call</item>
+        <item quantity="other">%d in call</item>
+    </plurals>
+
+    <!-- Live challenge -->
+    <string name="live_board_title">● LIVE · %1$s</string>
+    <string name="live_share_video">Share camera video</string>
+    <string name="live_share_stick">Show stick figure only</string>
+    <string name="live_react">Send a reaction</string>
+    <string name="cd_scoreboard">Scoreboard. %1$s</string>
+    <string name="cd_reaction_from">%1$s: %2$s</string>
+
+    <!-- Share cards -->
+    <string name="share_failed">Couldn\'t create the image. Try again.</string>
+    <string name="share_footer">Tracked with NutriFit AI</string>
+    <string name="share_sub_stats">Today\'s nutrition</string>
+
+    <!-- Signup -->
+    <string name="username">Username</string>
+    <string name="username_help">3–20 letters, numbers or _ · friends find you by it</string>
+    <string name="username_needed">Choose a username</string>
+    <string name="username_invalid">Use 3–20 lowercase letters, numbers or _</string>
+    <string name="username_taken">That username is taken</string>
+    <string name="username_checking">Checking…</string>
+    <string name="username_free">\@%1$s is available</string>
+    <string name="username_current">This is your username</string>
+    <string name="username_offline">Can\'t check right now. We\'ll try again when you\'re online.</string>
+    <plurals name="username_locked">
+        <item quantity="one">You can change your username again in %d day</item>
+        <item quantity="other">You can change your username again in %d days</item>
+    </plurals>
+    <string name="ob_birth_date">Birth date</string>
+    <string name="err_birth">Pick your birth date</string>
+    <string name="ob_add_photo">Add a profile photo</string>
+    <string name="ob_photo_optional">Add a photo (optional)</string>
+    <string name="ob_photo_change">Tap to change</string>
+    <string name="ob_motto_about">Every journey starts with a name. Let\'s make this yours.</string>
+    <string name="ob_motto_body">No judgement here, just a starting point.</string>
+    <string name="ob_motto_goal">Small, steady steps beat big promises.</string>
+    <string name="ob_motto_diet">Eat what you love, the way that works for you.</string>
+    <string name="ob_motto_targets">Your plan, built from your numbers. Tweak anything.</string>
+    <string name="ob_ready_title">You\'re all set!</string>
+    <string name="ob_ready_title_name">You\'re all set, %1$s!</string>
+    <string name="ob_ready_body">Your plan is ready. Log your first meal and start your streak today.</string>
+    <string name="ob_ready_kcal">kcal per day to start</string>
+    <string name="ob_ready_go">Let\'s go</string>
+
+    <!-- BMI -->
+    <string name="bmi_title">BMI</string>
+    <string name="bmi_under">Below the healthy range</string>
+    <string name="bmi_healthy">In the healthy range</string>
+    <string name="bmi_over">Above the healthy range</string>
+    <string name="bmi_obese">Well above the healthy range</string>
+    <string name="bmi_guide">A rough guide only. It doesn\'t account for muscle, age or body shape.</string>
+    <string name="cd_bmi">BMI %1$s, %2$s</string>
+
+    <!-- Edit profile -->
+    <string name="ep_about">About you</string>
+    <string name="ep_body">Body</string>
+    <string name="ep_goal">Goal and activity</string>
+    <string name="ep_food">Food</string>
+    <string name="ep_activity">Activity level</string>
+    <string name="ep_fix_errors">Check the highlighted fields.</string>
+    <string name="ep_saved_but_username">Saved. Your username wasn\'t changed.</string>
+    <string name="ep_update_targets_q">Update your daily targets?</string>
+    <string name="ep_update_targets_body">Based on your new details: about %1$s kcal, %2$d g protein, %3$d g carbs and %4$d g fat a day. Past days keep their old targets.</string>
+    <string name="ep_update_targets">Update targets</string>
+    <string name="ep_keep_targets">Keep current</string>
+    <!-- Progress share card -->
+    <string name="share_kicker_progress">%1$s progress</string>
+    <string name="share_progress_title">%1$d days of tracking</string>
+    <string name="share_progress_caption">Hit my calorie range on %1$d of %2$d logged days</string>
+    <string name="share_avg_kcal">avg kcal</string>
+    <string name="share_days_logged">days logged</string>
+    <!-- Achievements sharing -->
+    <string name="badge_share_image">Share as image</string>
+    <string name="badge_post_friends">Post to friends</string>
+    <string name="badge_unlocked">Badge unlocked</string>
+    <string name="badge_post_text">Unlocked %1$s 🏅</string>
+    <string name="badge_posted">Posted to your friends</string>
+    <string name="share_day_streak">day streak</string>
+    <string name="share_kicker_workout">Workout complete</string>
+    <!-- System events: walk tracker and the event log -->
+    <string name="walk_stopped_saver">Walk tracker stopped: battery saver is on</string>
+    <string name="walk_stopped_battery">Walk tracker stopped: battery is low</string>
+    <string name="walk_stopped_body">Your walk so far (%1$d steps) was saved. Start a new walk when you\'re charged up.</string>
+    <string name="walk_saver_title">Battery saver is on</string>
+    <string name="walk_saver_body">Walk tracking keeps the step sensor and a notification running, so it\'s paused while your phone saves battery. Turn battery saver off to start a walk.</string>
+    <string name="walk_saver_settings">Battery saver settings</string>
+    <string name="sys_events">System events</string>
+    <string name="sys_events_sub">How the app reacted to airplane mode and battery changes</string>
+    <string name="sys_events_empty">Nothing yet. Turn airplane mode or battery saver on and off, then look again.</string>
+    <string name="sys_events_clear">Clear</string>
+    <string name="sys_log_airplane_on">Showed the offline notice; logs keep saving on the phone</string>
+    <string name="sys_log_airplane_off">Back online: started a sync of pending logs</string>
+    <string name="sys_log_saving">Workout camera switched to the lighter pose model</string>
+    <string name="sys_log_normal">Back to normal: full pose model and walk tracking available</string>
+    <string name="sys_log_walk_stopped">Stopped the walk tracker and saved %1$d steps</string>
+    <string name="sys_log_walk_blocked">Refused to start a walk while battery saver is on</string>
+    <string name="sys_ev_airplane_on">Airplane mode on</string>
+    <string name="sys_ev_airplane_off">Airplane mode off</string>
+    <string name="sys_ev_battery_low">Battery low</string>
+    <string name="sys_ev_battery_okay">Battery okay</string>
+    <string name="sys_ev_saver_on">Battery saver on</string>
+    <string name="sys_ev_saver_off">Battery saver off</string>
+    <string name="challenge_champion">👑 Champion</string>
+    <!-- Permissions -->
+    <string name="perm_title">Allow what helps</string>
+    <string name="perm_motto">Each one switches on a feature. You can change any of them later in Android settings.</string>
+    <string name="perm_later">Skip any you don\'t want; the app asks again only when you use that feature.</string>
+    <string name="perm_allow">Allow</string>
+    <string name="perm_allowed">Allowed</string>
+    <string name="perm_notifications">Notifications</string>
+    <string name="perm_notifications_body">Meal and water reminders, friend requests, messages and challenge invites</string>
+    <string name="perm_camera">Camera</string>
+    <string name="perm_camera_body">Scan meals and count workout reps; video in calls when you turn it on</string>
+    <string name="perm_mic">Microphone</string>
+    <string name="perm_mic_body">Voice logging, talking to the coach, and voice in calls and challenges</string>
+    <string name="perm_activity">Activity &amp; Google Fit</string>
+    <string name="perm_activity_body">Count your steps and read steps from Google Fit through Health Connect</string>
+    <string name="perm_blocked_title">Permission needed</string>
+    <string name="perm_blocked_body">It was declined earlier, so Android won\'t ask again. Turn it on in the app\'s settings.</string>
+    <string name="not_now">Not now</string>
+    <string name="perm_why_notifications">Notifications let reminders, messages and challenge invites reach you.</string>
+    <string name="perm_why_camera">The camera is needed for meal scans, workout tracking and video calls.</string>
+    <string name="perm_why_mic">The microphone is needed for voice logging and for others to hear you in calls.</string>
+    <string name="perm_why_activity">Activity access is needed to count your steps.</string>
+    <string name="notif_off_title">Notifications are off</string>
+    <string name="notif_off_body">Turn them on so you don\'t miss friend requests, messages and challenges.</string>
+    <string name="notif_turn_on">Turn on</string>
+    <string name="welcome_4_title">Challenge your friends</string>
+    <string name="welcome_4_body">Race friends to 20 squats, chat, call and cheer each other on. The camera keeps score.</string>
+    <string name="home_challenge_title">Challenge friends</string>
+    <string name="home_challenge_body">Live workout duels with a scoreboard, reactions and voice</string>
+    <!-- Custom challenge -->
+    <string name="challenge_custom">Build your own</string>
+    <string name="challenge_custom_empty">Add camera-tracked moves with your own reps and sets.</string>
+    <string name="challenge_add_exercise">Add exercise</string>
+    <string name="challenge_exercise">Exercise</string>
+    <string name="challenge_reps">Reps</string>
+    <string name="challenge_seconds">Seconds</string>
+    <string name="challenge_sets">Sets</string>
+    <string name="challenge_custom_row">%1$s × %2$d sets</string>
+    <string name="challenge_custom_reps">%1$d reps</string>
+    <string name="challenge_custom_secs">%1$d seconds</string>
+    <string name="challenge_custom_title">Custom: %1$s</string>
+    <string name="challenge_custom_max">Up to %1$d sets in one challenge</string>
+    <string name="challenge_pick_exercise">Pick an exercise from the list</string>
+    <string name="challenge_target_range">%1$d to %2$d</string>
+    <string name="challenge_my_plan">Mine: %1$s</string>
+</resources>

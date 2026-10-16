@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="social_tabs">
+        <item>Feed</item>
+        <item>Chats</item>
+        <item>Challenges</item>
+        <item>Friends</item>
+    </string-array>
+
+    <string name="you">You</string>
+    <string name="unit_kcal">kcal</string>
+    <string name="unit_min">min</string>
+    <string name="steps_label">steps</string>
+    <string name="reps_label">reps</string>
+    <string name="exercises_label">moves</string>
+
+    <!-- Social tab -->
+    <string name="social_title">Your circle</string>
+    <string name="social_new">Share something</string>
+    <string name="social_find">Find friends</string>
+    <string name="social_share_title">Share with friends</string>
+    <string name="share_stats">Today\'s stats</string>
+    <string name="share_kind_workout">Workout</string>
+    <string name="share_photo">Meal photo</string>
+    <string name="share_clip">Clip</string>
+    <string name="feed_empty_title">Your feed is quiet</string>
+    <string name="feed_empty_body_friends">Add friends to see their meals, workouts and wins here.</string>
+    <string name="feed_empty_body">No posts yet. Share your day to get things going.</string>
+    <string name="social_your_handle">Your handle</string>
+    <string name="social_invite">Invite</string>
+    <string name="social_invite_text">Join me on NutriFit AI! Find me as %s and let\'s challenge each other.</string>
+    <string name="social_search_hint">Search by name or @handle</string>
+    <string name="social_results">Results</string>
+    <string name="social_no_results">Nobody found. Try their exact @handle.</string>
+    <string name="social_already_friends">Already friends</string>
+    <string name="social_requested">Requested</string>
+    <string name="social_add">Add</string>
+    <string name="social_requests">Friend requests</string>
+    <string name="social_wants_friend">Wants to be friends</string>
+    <string name="social_sent">Sent requests</string>
+    <string name="social_waiting">Waiting for an answer</string>
+    <string name="social_withdraw">Withdraw request</string>
+    <string name="social_friends_count">Friends (%d)</string>
+    <string name="friends_empty_title">No friends yet</string>
+    <string name="friends_empty_body">Search for friends by name, or send them your handle.</string>
+    <string name="social_unfriend">Remove friend</string>
+    <string name="social_unfriend_q">Remove %s from your friends?</string>
+
+    <!-- Posts -->
+    <string name="post_meta">%1$s · %2$s</string>
+    <string name="cd_post_media">Photo or clip in the post</string>
+    <string name="post_delete_q">Delete this post?</string>
+    <string name="post_type_stats">Daily stats</string>
+    <string name="post_type_workout">Workout</string>
+    <string name="post_type_meal">Meal</string>
+    <string name="post_type_clip">Clip</string>
+    <string name="post_type_challenge">Challenge</string>
+    <string name="post_type_text">Update</string>
+
+    <!-- Compose -->
+    <string name="share_title">Share</string>
+    <string name="share_pick_photo">Choose a photo</string>
+    <string name="share_pick_clip">Choose a clip</string>
+    <string name="share_caption">Say something (optional)</string>
+    <string name="share_audience">Visible to your friends</string>
+    <string name="share_post">Post</string>
+    <string name="share_no_workout">No workout yet. Finish one to share it.</string>
+    <string name="share_workout_note">Your latest workout: %s</string>
+    <string name="share_workout_default">Finished %s 💪</string>
+    <string name="share_clip_too_big">That clip is too large. Pick one under 25 MB.</string>
+    <string name="share_done">Shared with your friends</string>
+
+    <!-- Challenges -->
+    <string name="challenge_new">Challenge a friend</string>
+    <string name="challenge_short">Challenge</string>
+    <string name="challenge_empty_title">No challenges yet</string>
+    <string name="challenge_empty_body">Pick a friend and a workout. Best form and speed wins.</string>
+    <string name="challenge_invites">Invites</string>
+    <string name="challenge_active">Up next</string>
+    <string name="challenge_done">Finished</string>
+    <string name="challenge_accept">Accept</string>
+    <string name="challenge_decline">Decline</string>
+    <string name="challenge_join">Join now</string>
+    <string name="challenge_open">Open</string>
+    <string name="challenge_with">With %s</string>
+    <string name="challenge_status_live">Live now</string>
+    <string name="challenge_status_open">%1$d of %2$d in</string>
+    <string name="challenge_status_done">Finished</string>
+    <string name="challenge_winner">%s won</string>
+    <string name="challenge_who">Who</string>
+    <string name="challenge_no_friends">Add a friend first in the Friends tab.</string>
+    <string name="challenge_quick">Quick duel</string>
+    <string name="challenge_routine">Or a full routine</string>
+    <string name="challenge_reps_title">%2$d %1$s</string>
+    <string name="challenge_hold_title">%1$s %2$d s</string>
+    <string name="challenge_program_chip">%1$s · %2$d moves</string>
+    <string name="challenge_send">Send challenge</string>
+    <string name="challenge_too_many">Pick up to %d friends</string>
+    <string name="challenge_lobby">Challenge</string>
+    <string name="challenge_players">Players</string>
+    <string name="challenge_host">Host</string>
+    <string name="challenge_in">Ready</string>
+    <string name="challenge_invited">Invited</string>
+    <string name="challenge_declined">Declined</string>
+    <string name="challenge_invited_by">%s challenged you</string>
+    <string name="challenge_you_declined">You declined this challenge</string>
+    <string name="challenge_ready_n">%d players ready</string>
+    <string name="challenge_waiting_accept">Waiting for friends to accept</string>
+    <string name="challenge_waiting_host">Waiting for %s to start</string>
+    <string name="challenge_start">Start challenge</string>
+    <string name="challenge_step_reps">%1$s × %2$d</string>
+    <string name="challenge_step_hold">%1$s %2$d s</string>
+    <string name="challenge_needs_camera">Challenges are scored by the camera, so they need camera access.</string>
+    <string name="challenge_results">Results</string>
+    <string name="challenge_waiting_others">Waiting for everyone to finish…</string>
+    <string name="challenge_share">Share result</string>
+    <string name="challenge_rank_row">%1$s · %2$d pts</string>
+    <string name="challenge_rank_done">%1$d reps · %2$d faults · %3$s</string>
+    <string name="challenge_rank_partial">%1$d reps · %2$d faults · did not finish</string>
+    <string name="challenge_you_win">You win! 🏆</string>
+    <string name="challenge_wins">%s wins!</string>
+    <string name="challenge_place">place</string>
+    <string name="challenge_points">points</string>
+    <string name="challenge_faults">faults</string>
+    <string name="challenge_post_won">Won the %1$s challenge! (#%2$d of %3$d)</string>
+    <string name="challenge_post_played">Took on the %1$s challenge: #%2$d of %3$d</string>
+
+    <!-- Live tiles in the workout -->
+    <string name="live_rank">#%d</string>
+    <string name="live_stats">%1$d reps · %2$d pts</string>
+    <string name="live_on">● LIVE</string>
+    <string name="live_waiting">…</string>
+    <string name="live_done">✓ Done</string>
+    <string name="cd_live_tile">%1$s, place %2$d, %3$d reps, %4$d faults, %5$d points</string>
+
+    <!-- Workout clips -->
+    <string name="cd_record_clip">Record a clip</string>
+    <string name="cd_stop_clip">Stop recording</string>
+    <string name="clip_recording">Recording %1$d / %2$d s</string>
+    <string name="clip_saved">Clip saved</string>
+    <string name="clip_unsupported">This phone can\'t record while tracking your pose.</string>
+</resources>

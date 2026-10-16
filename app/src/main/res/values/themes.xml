@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.NutriFit" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/nl_lime</item>
+        <item name="colorOnPrimary">@color/nl_on_lime</item>
+        <item name="colorPrimaryContainer">@color/nl_lime_dim</item>
+        <item name="colorOnPrimaryContainer">@color/nl_lime</item>
+        <item name="colorSecondary">@color/nl_water</item>
+        <item name="colorOnSecondary">@color/nl_bg</item>
+        <item name="colorTertiary">@color/nl_carbs</item>
+        <item name="colorError">@color/nl_error</item>
+        <item name="android:colorBackground">@color/nl_bg</item>
+        <item name="colorSurface">@color/nl_surface</item>
+        <item name="colorSurfaceContainer">@color/nl_surface_2</item>
+        <item name="colorSurfaceContainerHigh">@color/nl_surface_2</item>
+        <item name="colorSurfaceContainerHighest">@color/nl_surface_3</item>
+        <item name="colorSurfaceContainerLow">@color/nl_surface</item>
+        <item name="colorOnSurface">@color/nl_text</item>
+        <item name="colorOnSurfaceVariant">@color/nl_text_2</item>
+        <item name="colorOutline">@color/nl_stroke_strong</item>
+        <item name="colorOutlineVariant">@color/nl_stroke</item>
+        <item name="android:textColorPrimary">@color/nl_text</item>
+        <item name="android:textColorSecondary">@color/nl_text_2</item>
+        <item name="android:windowBackground">@color/nl_bg</item>
+        <item name="android:statusBarColor" tools:targetApi="34">@android:color/transparent</item>
+        <item name="android:navigationBarColor" tools:targetApi="34">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">@bool/nl_light_bars</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">@bool/nl_light_bars</item>
+        <item name="android:fontFamily">@font/jakarta</item>
+        <item name="fontFamily">@font/jakarta</item>
+        <item name="materialButtonStyle">@style/NL.Button</item>
+        <item name="materialSwitchStyle">@style/NL.Switch</item>
+        <item name="textInputStyle">@style/NL.Input</item>
+        <item name="chipStyle">@style/NL.Chip</item>
+        <item name="bottomSheetDialogTheme">@style/NL.BottomSheetDialog</item>
+        <item name="materialAlertDialogTheme">@style/NL.AlertDialog</item>
+        <item name="snackbarStyle">@style/NL.Snackbar</item>
+        <item name="snackbarTextViewStyle">@style/NL.Snackbar.Text</item>
+        <item name="snackbarButtonStyle">@style/NL.Snackbar.Button</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="Theme.NutriFit.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/nl_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.NutriFit</item>
+    </style>
+
+    <!-- Camera screens are always dark (activities force night mode locally). -->
+    <style name="Theme.NutriFit.Camera" parent="Theme.NutriFit">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+    </style>
+
+    <style name="NL" />
+
+    <!-- ===== Text ===== -->
+    <style name="NL.Text" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/jakarta</item>
+        <item name="android:textColor">@color/nl_text</item>
+    </style>
+    <style name="NL.Text.Display">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/jakarta_extrabold</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <!-- the parent body style has a 20sp line height; headlines that wrap need their own -->
+        <item name="lineHeight">36sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">36sp</item>
+    </style>
+    <style name="NL.Text.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/jakarta_bold</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="lineHeight">26sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">26sp</item>
+    </style>
+    <style name="NL.Text.Section">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">24sp</item>
+    </style>
+    <style name="NL.Text.CardTitle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
+        <item name="android:textColor">@color/nl_text_2</item>
+    </style>
+    <style name="NL.Text.Body">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/jakarta_medium</item>
+    </style>
+    <style name="NL.Text.BodyStrong">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
+    </style>
+    <style name="NL.Text.Secondary">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/jakarta_medium</item>
+        <item name="android:textColor">@color/nl_text_2</item>
+    </style>
+    <style name="NL.Text.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/jakarta_medium</item>
+        <item name="android:textColor">@color/nl_text_3</item>
+    </style>
+    <style name="NL.Text.Overline">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
+        <item name="android:textColor">@color/nl_text_2</item>
+        <item name="android:letterSpacing">0.16</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="NL.Text.Number">
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">@font/jakarta_bold</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+    <style name="NL.Text.NumberHuge">
+        <item name="android:textSize">50sp</item>
+        <item name="android:fontFamily">@font/jakarta_extrabold</item>
+        <item name="android:letterSpacing">-0.05</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="NL.Text.MacroChip">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/jakarta_bold</item>
+    </style>
+
+    <!-- ===== Containers ===== -->
+    <style name="NL.Card">
+        <item name="android:background">@drawable/bg_card</item>
+        <item name="android:padding">@dimen/card_padding</item>
+    </style>
+
+    <!-- ===== Buttons ===== -->
+    <style name="NL.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/jakarta_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="backgroundTint">@color/btn_primary_bg</item>
+        <item name="android:textColor">@color/btn_primary_text</item>
+        <item name="iconTint">@color/btn_primary_text</item>
+        <item name="cornerRadius">26dp</item>
+        <item name="rippleColor">#33000000</item>
+    </style>
+    <style name="NL.Button.Small">
+        <item name="android:minHeight">40dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">20dp</item>
+    </style>
+    <style name="NL.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/jakarta_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="backgroundTint">@color/btn_tonal_bg</item>
+        <item name="android:textColor">@color/btn_tonal_text</item>
+        <item name="iconTint">@color/btn_tonal_text</item>
+        <item name="cornerRadius">26dp</item>
+    </style>
+    <style name="NL.Button.Ghost" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/nl_text</item>
+        <item name="iconTint">@color/nl_text</item>
+        <item name="strokeColor">@color/nl_stroke_strong</item>
+        <item name="backgroundTint">@color/nl_surface</item>
+        <item name="cornerRadius">26dp</item>
+    </style>
+    <style name="NL.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/nl_lime</item>
+    </style>
+    <style name="NL.Button.Danger" parent="NL.Button.Ghost">
+        <item name="android:textColor">@color/nl_error</item>
+        <item name="iconTint">@color/nl_error</item>
+        <item name="strokeColor">@color/nl_error_dim</item>
+    </style>
+
+    <!-- ===== Inputs ===== -->
+    <style name="NL.Input" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/nl_surface_2</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxCornerRadiusTopStart">18dp</item>
+        <item name="boxCornerRadiusTopEnd">18dp</item>
+        <item name="boxCornerRadiusBottomStart">18dp</item>
+        <item name="boxCornerRadiusBottomEnd">18dp</item>
+        <item name="hintTextColor">@color/nl_lime</item>
+        <item name="android:textColorHint">@color/nl_text_3</item>
+        <item name="startIconTint">@color/nl_text_2</item>
+        <item name="endIconTint">@color/nl_text_2</item>
+        <item name="errorTextColor">@color/nl_error</item>
+        <item name="boxStrokeErrorColor">@color/nl_error</item>
+        <item name="errorIconDrawable">@null</item>
+    </style>
+
+    <style name="NL.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="trackTint">@color/switch_track</item>
+        <item name="thumbTint">@color/switch_thumb</item>
+        <item name="trackDecorationTint">@android:color/transparent</item>
+    </style>
+
+    <style name="NL.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_bg</item>
+        <item name="android:textColor">@color/chip_text</item>
+        <item name="chipStrokeColor">@color/chip_stroke</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipCornerRadius">20dp</item>
+        <item name="chipMinHeight">38dp</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="android:textAppearance">@style/NL.ChipText</item>
+    </style>
+    <style name="NL.ChipText" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- ===== Dialogs & sheets ===== -->
+    <style name="NL.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/NL.BottomSheet</item>
+        <item name="android:navigationBarColor" tools:targetApi="34">@color/nl_surface</item>
+    </style>
+    <style name="NL.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/nl_surface</item>
+        <item name="shapeAppearance">@style/NL.SheetShape</item>
+    </style>
+    <style name="NL.SheetShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">28dp</item>
+        <item name="cornerSizeTopRight">28dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+    <style name="NL.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorSurface">@color/nl_surface_2</item>
+        <item name="colorSurfaceContainerHigh">@color/nl_surface_2</item>
+        <item name="colorPrimary">@color/nl_lime</item>
+        <item name="android:fontFamily">@font/jakarta</item>
+        <item name="shapeAppearanceOverlay">@style/NL.DialogShape</item>
+    </style>
+    <style name="NL.DialogShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+    <!-- Snackbars use the inverse of the screen: dark bar with light text in the light theme, and the reverse in dark -->
+    <style name="NL.Snackbar" parent="Widget.Material3.Snackbar">
+        <item name="backgroundTint">@color/nl_text</item>
+    </style>
+    <style name="NL.Snackbar.Text" parent="Widget.Material3.Snackbar.TextView">
+        <item name="android:textColor">@color/nl_bg</item>
+        <item name="android:fontFamily">@font/jakarta_medium</item>
+    </style>
+    <style name="NL.Snackbar.Button" parent="Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textColor">@color/snack_action</item>
+    </style>
+</resources>

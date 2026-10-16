@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_home">Home</string>
+    <string name="nav_meals">Meals</string>
+    <string name="nav_progress">Progress</string>
+    <string name="tools">Tools</string>
+    <string name="data_and_privacy">Data &amp; privacy</string>
+    <string name="edit_profile_sub">Photo, username, body, goal and food</string>
+    <string name="goals_sub">Calories, macros and water — with explanation</string>
+    <string name="recipes_sub">Save home recipes and log a serving</string>
+    <string name="custom_sub_row">Foods you created</string>
+    <string name="reminders_sub">Water and meal reminders</string>
+    <string name="weight_sub">Log and edit weight entries</string>
+    <string name="export_row_sub">CSV, XML backup and import</string>
+    <string name="privacy_sub">Data use, export and account deletion</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string-array name="voice_langs">
+        <item>English</item>
+        <item>বাংলা</item>
+    </string-array>
+    <string name="coach_short">AI Coach</string>
+    <string name="eaten_only">%1$d kcal eaten</string>
+    <string name="ai_screen_title">Meal analysis</string>
+</resources>

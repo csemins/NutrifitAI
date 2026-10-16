@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_train">Train</string>
+    <string name="train_level">Level: %1$s</string>
+    <string name="level_beginner">Beginner</string>
+    <string name="level_intermediate">Intermediate</string>
+    <string name="level_advanced">Advanced</string>
+    <string name="choose_level">Your training level</string>
+
+    <string name="training_schedule">Training schedule</string>
+    <string name="schedule_in">in %1$s</string>
+    <string name="schedule_done_today">Done today</string>
+    <string name="training_reminder">Daily reminder</string>
+    <string name="cd_edit_schedule">Change training time</string>
+
+    <string name="todays_workout">Today\'s workout</string>
+    <string name="chip_minutes">%1$d min</string>
+    <string name="chip_exercises">%1$d exercises</string>
+    <string name="kcal_est">~%1$d kcal</string>
+    <string name="start_workout">Start workout</string>
+    <string name="programs">Programs</string>
+    <string name="your_ai_plans">Your AI plans</string>
+    <string name="exercise_library">Exercise library</string>
+    <string name="recent_workouts">Recent workouts</string>
+    <string name="no_workouts_yet">Your workouts will show here.</string>
+    <string name="consistency_goal">Goal %1$d min a day</string>
+    <string name="workout_row_sub">%1$s · %2$d min · ~%3$d kcal</string>
+    <string name="delete_workout">Delete this workout?</string>
+
+    <string name="ai_workout">AI workout</string>
+    <string name="ai_workout_title">Build a workout with AI</string>
+    <string name="ai_minutes">Minutes</string>
+    <string name="ai_focus">Focus</string>
+    <string name="focus_full">Full body</string>
+    <string name="focus_core">Core</string>
+    <string name="focus_legs">Legs</string>
+    <string name="focus_upper">Upper body</string>
+    <string name="focus_cardio">Cardio</string>
+    <string name="ai_notes_hint">Anything to avoid? e.g. sore knee</string>
+    <string name="generate">Generate</string>
+    <string name="generating">Building your plan…</string>
+
+    <string name="camera_counting">Camera counts reps</string>
+    <string name="voice_coach">Voice coach</string>
+    <string name="plan_steps">Exercises</string>
+    <string name="step_reps">%1$d reps</string>
+    <string name="step_secs">%1$d s</string>
+    <string name="step_rest">rest %1$d s</string>
+    <string name="tracked">Camera</string>
+    <string name="delete_plan">Delete plan</string>
+
+    <string name="get_ready">Get ready</string>
+    <string name="rest">Rest</string>
+    <string name="next_up">Next: %1$s</string>
+    <string name="step_of">%1$d / %2$d</string>
+    <string name="cd_add_rep">Add one rep</string>
+    <string name="skip">Skip</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="end_workout">End workout?</string>
+    <string name="end_workout_body">Finished sets will be saved.</string>
+    <string name="end">End</string>
+    <string name="keep_going">Keep going</string>
+    <string name="mode_camera">Camera</string>
+    <string name="mode_manual">Manual</string>
+    <string name="status_no_person">Step back so your whole body is in view</string>
+    <string name="status_adjust">Adjust: %1$s</string>
+    <string name="status_ready">Tracking ✓</string>
+    <string name="status_holding">Holding ✓</string>
+    <string name="status_out">Get into position</string>
+    <string name="view_side">Turn sideways to the camera</string>
+    <string name="view_front">Face the camera</string>
+    <string name="paused">Paused</string>
+    <string name="cd_voice_on">Mute voice coach</string>
+    <string name="cd_voice_off">Unmute voice coach</string>
+    <string name="cd_flip_camera">Switch camera</string>
+    <string name="cam_perm_workout">Camera lets NutriFit AI count your reps. Video stays on your phone.</string>
+    <string name="manual_hint_reps">Tap +1 for every rep</string>
+    <string name="manual_hint_hold">The timer runs on its own</string>
+    <string name="pose_model_error">Pose tracking is unavailable on this device. Switched to manual.</string>
+
+    <string name="workout_complete">Excellent work today</string>
+    <string name="workout_complete_sub">%1$s saved to your history.</string>
+    <string name="stat_time">Active time</string>
+    <string name="stat_reps">Reps</string>
+    <string name="stat_kcal">Est. kcal</string>
+    <string name="stat_done">Completed</string>
+    <string name="share_workout">Share</string>
+    <string name="nothing_saved">Workout ended before any exercise was done.</string>
+    <string name="set_line_reps">%1$d / %2$d reps</string>
+    <string name="set_line_hold">%1$d / %2$d s</string>
+    <string name="skipped">skipped</string>
+
+    <string name="search_exercises">Search exercises or muscles</string>
+    <string name="filter_cardio">Cardio</string>
+    <string name="no_exercises">No exercises match.</string>
+    <string name="how_to">How to</string>
+    <string name="tips">Form tips</string>
+    <string name="try_it">Try 3 sets</string>
+    <string name="exercise_meta">%1$s · %2$s</string>
+
+    <string name="home_training">Training</string>
+    <string name="home_training_sub">%1$d of %2$d min today</string>
+    <string name="go">Go</string>
+
+    <string name="notif_training_title">Time to train</string>
+    <string name="notif_training_body">Your workout is ready: %1$s</string>
+    <string name="credits">Image credits</string>
+    <string name="retry_hint">Check your connection and try again.</string>
+    <string name="camera_unavailable">The camera is not available. Switched to manual.</string>
+    <string name="yesterday_short">Yesterday</string>
+</resources>

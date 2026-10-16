@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NL.Legend">
+        <item name="android:layout_width">match_parent</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeMinTextSize">9sp</item>
+        <item name="autoSizeMaxTextSize">13sp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
+        <item name="android:textColor">@color/nl_text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_height">20dp</item>
+    </style>
+
+    <style name="NL.WaterPill">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@drawable/bg_pill_water</item>
+        <item name="android:drawableStart">@drawable/ic_drop_water</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:fontFamily">@font/jakarta_semibold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/nl_text</item>
+        <item name="android:maxLines">1</item>
+    </style>
+</resources>
