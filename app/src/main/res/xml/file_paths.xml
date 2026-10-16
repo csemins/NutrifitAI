@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Only exports and generated share cards are shareable through FileProvider. -->
+<paths>
+    <cache-path name="exports" path="exports/" />
+    <cache-path name="cards" path="cards/" />
+</paths>
