@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Live body mass index from height and weight, with a coloured scale. Hidden until both are valid. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bmiCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bmi_title" />
+            <TextView android:id="@+id/bmiCategory" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" tools:text="Healthy range" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/bmiValue" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="32sp" tools:text="22.4" />
+    </LinearLayout>
+
+    <com.transformsai.nutrifitai.ui.widget.BmiScaleView
+        android:id="@+id/bmiScale"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:layout_marginTop="12dp"
+        android:importantForAccessibility="no" />
+
+    <TextView android:id="@+id/bmiNote" style="@style/NL.Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/bmi_guide" />
+</LinearLayout>
