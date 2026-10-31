@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_card_pressable"
+    android:padding="14dp">
+
+    <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+        android:id="@+id/thumb"
+        android:layout_width="@dimen/thumb"
+        android:layout_height="@dimen/thumb"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/NL.Text.BodyStrong"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/kcal"
+        app:layout_constraintStart_toEndOf="@id/thumb"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Chicken biryani" />
+
+    <TextView
+        android:id="@+id/kcal"
+        style="@style/NL.Text.Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="585" />
+
+    <TextView
+        android:id="@+id/sub"
+        style="@style/NL.Text.Secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="@id/name"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:text="1 plate · 350 g" />
+
+    <TextView
+        android:id="@+id/badge"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_badge_lime"
+        android:fontFamily="@font/jakarta_bold"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:textColor="@color/nl_lime"
+        android:textSize="11sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/sub"
+        tools:text="PLANNED"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/textBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="badge,sub,thumb" />
+
+    <TextView
+        android:id="@+id/macros"
+        style="@style/NL.Text.MacroChip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:maxLines="2"
+        app:layout_constraintBottom_toBottomOf="@id/plus"
+        app:layout_constraintEnd_toStartOf="@id/minus"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toTopOf="@id/plus"
+        tools:text="48P   54C   18F   11 fibre" />
+
+    <ImageButton
+        android:id="@+id/minus"
+        style="@style/NL.Stepper"
+        android:background="@drawable/bg_stepper_minus"
+        android:contentDescription="@string/cd_decrease"
+        android:src="@drawable/ic_remove"
+        app:layout_constraintEnd_toStartOf="@id/qty"
+        app:layout_constraintTop_toTopOf="@id/plus"
+        app:tint="@color/nl_text_2" />
+
+    <TextView
+        android:id="@+id/qty"
+        style="@style/NL.Text.BodyStrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="34dp"
+        app:layout_constraintBottom_toBottomOf="@id/plus"
+        app:layout_constraintEnd_toStartOf="@id/plus"
+        app:layout_constraintTop_toTopOf="@id/plus"
+        tools:text="1" />
+
+    <ImageButton
+        android:id="@+id/plus"
+        style="@style/NL.Stepper"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_stepper_plus"
+        android:contentDescription="@string/cd_increase"
+        android:src="@drawable/ic_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textBottom"
+        app:tint="@color/nl_lime" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/eat"
+        style="@style/NL.Button.Tonal"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:minHeight="44dp"
+        android:text="@string/mark_eaten"
+        android:visibility="gone"
+        app:icon="@drawable/ic_check"
+        app:iconGravity="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/plus"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

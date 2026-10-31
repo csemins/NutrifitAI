@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:minHeight="48dp"
+    android:orientation="horizontal"
+    android:paddingTop="18dp"
+    android:paddingBottom="8dp">
+
+    <View
+        android:id="@+id/dot"
+        android:layout_width="9dp"
+        android:layout_height="9dp"
+        android:background="@drawable/bg_dot" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/NL.Text.Section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:accessibilityHeading="true"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/kcal"
+        style="@style/NL.Text.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp" />
+
+    <ImageButton
+        android:id="@+id/more"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/copy_meal"
+        android:padding="9dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_more"
+        app:tint="@color/nl_text_3" />
+</LinearLayout>

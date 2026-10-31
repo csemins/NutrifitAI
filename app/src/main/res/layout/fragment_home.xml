@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/screen_padding"
+        android:paddingTop="12dp"
+        android:paddingBottom="@dimen/nav_clearance">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/NL.Text.Overline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/avatar"
+                tools:text="THURSDAY, 5 NOVEMBER" />
+
+            <TextView
+                android:id="@+id/greeting"
+                style="@style/NL.Text.Display"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:maxLines="1"
+                app:autoSizeMaxTextSize="34sp"
+                app:autoSizeMinTextSize="20sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toStartOf="@id/avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date"
+                tools:text="Evening, Rahman" />
+
+            <TextView
+                android:id="@+id/streak"
+                style="@style/NL.Text.MacroChip"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_chip_glass"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:minHeight="32dp"
+                android:paddingHorizontal="12dp"
+                android:textColor="@color/nl_text"
+                android:visibility="gone"
+                app:drawableStartCompat="@drawable/ic_flame"
+                app:drawableTint="@color/nl_carbs"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/greeting"
+                tools:text="5-day streak"
+                tools:visibility="visible" />
+
+
+            <com.transformsai.nutrifitai.ui.widget.ProfileBadgeView
+                android:id="@+id/avatar"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:contentDescription="@string/cd_avatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Hero calorie card -->
+        <LinearLayout
+            android:id="@+id/heroCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_card_hero"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/ringBox"
+                    android:layout_width="@dimen/ring_size"
+                    android:layout_height="@dimen/ring_size"
+                    android:importantForAccessibility="yes"
+                    android:focusable="true">
+
+                    <com.transformsai.nutrifitai.ui.widget.CalorieRingView
+                        android:id="@+id/ring"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:importantForAccessibility="no" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:importantForAccessibility="noHideDescendants"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/left"
+                            style="@style/NL.Text.NumberHuge"
+                            android:layout_width="124dp"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            app:autoSizeMaxTextSize="42sp"
+                            app:autoSizeMinTextSize="22sp"
+                            app:autoSizeTextType="uniform"
+                            tools:text="931" />
+
+                        <TextView
+                            android:id="@+id/leftLabel"
+                            style="@style/NL.Text.Overline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/kcal_left"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <include android:id="@+id/statEaten" layout="@layout/view_stat_row" />
+
+                    <include android:id="@+id/statTarget" layout="@layout/view_stat_row" />
+
+                    <include android:id="@+id/statFibre" layout="@layout/view_stat_row" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <include android:id="@+id/macroP" layout="@layout/view_macro_tile" />
+
+                <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+                <include android:id="@+id/macroC" layout="@layout/view_macro_tile" />
+
+                <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+                <include android:id="@+id/macroF" layout="@layout/view_macro_tile" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Quick actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <include android:id="@+id/actScan" layout="@layout/view_action_tile" />
+
+            <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+            <include android:id="@+id/actSearch" layout="@layout/view_action_tile" />
+
+            <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+            <include android:id="@+id/actVoice" layout="@layout/view_action_tile" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <include android:id="@+id/actBarcode" layout="@layout/view_action_tile" />
+
+            <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+            <include android:id="@+id/actQuick" layout="@layout/view_action_tile" />
+
+            <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+            <include android:id="@+id/actAsk" layout="@layout/view_action_tile" />
+        </LinearLayout>
+
+        <!-- Social: challenge friends -->
+        <LinearLayout
+            android:id="@+id/challengeCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card_neon"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <ImageView android:layout_width="64dp" android:layout_height="64dp" android:importantForAccessibility="no" android:scaleType="fitCenter" android:src="@drawable/ic3d_challenge" />
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
+                <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nav_social" android:textColor="@color/nl_lime" />
+                <TextView style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/home_challenge_title" android:textSize="17sp" />
+                <TextView style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/home_challenge_body" />
+            </LinearLayout>
+
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginStart="8dp" android:importantForAccessibility="no" android:src="@drawable/ic_chevron_right" app:tint="@color/nl_text_2" />
+        </LinearLayout>
+
+        <!-- Macro split + water -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/splitCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="214dp"
+                android:layout_weight="1.2"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/macro_split" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.transformsai.nutrifitai.ui.widget.MacroDonutView
+                        android:id="@+id/donut"
+                        android:layout_width="68dp"
+                        android:layout_height="68dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView android:id="@+id/legendP" style="@style/NL.Legend" />
+
+                        <TextView android:id="@+id/legendC" style="@style/NL.Legend" />
+
+                        <TextView android:id="@+id/legendF" style="@style/NL.Legend" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Space android:layout_width="1dp" android:layout_height="0dp" android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/viewDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_pill_pressable"
+                    android:fontFamily="@font/jakarta_semibold"
+                    android:gravity="center"
+                    android:text="@string/view_details"
+                    android:textColor="@color/nl_text"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+            <LinearLayout
+                android:id="@+id/waterCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="214dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_pressable"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/water" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:baselineAligned="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/waterNow"
+                        style="@style/NL.Text.Number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        tools:text="1.5" />
+
+                    <TextView
+                        android:id="@+id/waterGoal"
+                        style="@style/NL.Text.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        tools:text="/ 2.4 L" />
+                </LinearLayout>
+
+                <com.transformsai.nutrifitai.ui.widget.WaterSegmentsView
+                    android:id="@+id/waterBars"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="12dp"
+                    android:importantForAccessibility="no" />
+
+                <Space android:layout_width="1dp" android:layout_height="0dp" android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/addWater"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_pill_add"
+                    android:fontFamily="@font/jakarta_bold"
+                    android:gravity="center"
+                    android:text="@string/add_glass"
+                    android:textColor="@color/nl_lime"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Steps + fasting -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gap"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/stepsCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_pressable"
+                android:minHeight="132dp"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/NL.Text.CardTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/steps_today" />
+                    <ImageView android:layout_width="34dp" android:layout_height="34dp" android:importantForAccessibility="no" android:src="@drawable/ic3d_steps" />
+                </LinearLayout>
+
+                <TextView android:id="@+id/stepsNow" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textSize="26sp" tools:text="6,240" />
+                <TextView android:id="@+id/stepsGoal" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="of 8,000" />
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/stepsProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:indicatorColor="@color/nl_lime"
+                    app:indicatorTrackGapSize="0dp"
+                    app:trackColor="@color/nl_surface_3"
+                    app:trackCornerRadius="3dp"
+                    app:trackStopIndicatorSize="0dp"
+                    app:trackThickness="6dp" />
+            </LinearLayout>
+
+            <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+            <LinearLayout
+                android:id="@+id/fastCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_pressable"
+                android:minHeight="132dp"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/NL.Text.CardTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/fasting_short" />
+                    <ImageView android:layout_width="34dp" android:layout_height="34dp" android:importantForAccessibility="no" android:src="@drawable/ic3d_fasting" />
+                </LinearLayout>
+
+                <TextView android:id="@+id/fastNow" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textSize="26sp" tools:text="12:45" />
+                <TextView android:id="@+id/fastSub" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" tools:text="of 16 h" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Training -->
+        <LinearLayout
+            android:id="@+id/trainCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gap"
+            android:background="@drawable/bg_card_neon"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:minHeight="88dp"
+            android:orientation="horizontal"
+            android:padding="14dp">
+
+            <com.transformsai.nutrifitai.ui.widget.ExerciseAnimView
+                android:id="@+id/trainAnim"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/bg_photo_round"
+                android:importantForAccessibility="no" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/NL.Text.CardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_training" />
+
+                <TextView
+                    android:id="@+id/trainSub"
+                    style="@style/NL.Text.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/trainProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:indicatorColor="@color/nl_lime"
+                    app:indicatorTrackGapSize="0dp"
+                    app:trackStopIndicatorSize="0dp"
+                    app:trackColor="@color/nl_surface_3"
+                    app:trackCornerRadius="3dp"
+                    app:trackThickness="6dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/trainGo"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_plus_one"
+                android:fontFamily="@font/jakarta_bold"
+                android:gravity="center"
+                android:text="@string/go"
+                android:textColor="@color/nl_on_lime"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <!-- Today's meals summary -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/NL.Text.Section"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/todays_meals_short" />
+
+                <TextView
+                    android:id="@+id/seeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/jakarta_semibold"
+                    android:gravity="center"
+                    android:paddingHorizontal="6dp"
+                    android:text="@string/see_all"
+                    android:textColor="@color/nl_lime" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mealList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/mealsEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ill_meals" />
+
+                <TextView
+                    style="@style/NL.Text.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="@string/home_empty_meals" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
