@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Docked bottom navigation: opaque surface with a hairline on top. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item><color android:color="@color/nl_surface" /></item>
+    <item android:gravity="top" android:height="1dp"><color android:color="@color/nl_stroke" /></item>
+</layer-list>

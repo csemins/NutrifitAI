@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Landscape: the bottom bar becomes a navigation rail on the left; tabs fill the rest of the width. -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/nav_rail_width" />
+
+    <View
+        android:id="@+id/topScrim"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="top"
+        android:background="@drawable/bg_top_scrim" />
+
+    <ImageButton
+        android:id="@+id/aiChat"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="@dimen/fab_above_nav"
+        android:background="@drawable/bg_fab_ai"
+        android:contentDescription="@string/cd_ai_chat"
+        android:elevation="14dp"
+        android:padding="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_sparkle"
+        app:tint="@color/nl_on_lime" />
+
+    <LinearLayout
+        android:id="@+id/nav"
+        android:layout_width="@dimen/nav_rail_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/bg_nav_rail"
+        android:elevation="12dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingVertical="6dp">
+
+        <include android:id="@+id/navHome" layout="@layout/view_nav_item" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+
+        <include android:id="@+id/navMeals" layout="@layout/view_nav_item" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/navCamera"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_nav_camera"
+                android:contentDescription="@string/scan_food"
+                android:padding="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_camera"
+                app:tint="@color/nl_on_lime" />
+        </FrameLayout>
+
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/navSocial"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_nav_social"
+                android:contentDescription="@string/nav_social"
+                android:padding="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_people"
+                app:tint="@android:color/white" />
+        </FrameLayout>
+
+        <include android:id="@+id/navTrain" layout="@layout/view_nav_item" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+
+        <include android:id="@+id/navProgress" layout="@layout/view_nav_item" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

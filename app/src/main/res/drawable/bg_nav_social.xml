@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Social: as prominent as the camera, in the hydration blue; a lime ring while its tab is open. -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="@color/nl_shadow_soft">
+    <item>
+        <selector>
+            <item android:state_selected="true">
+                <shape>
+                    <gradient android:angle="270" android:startColor="#FF4FB3FF" android:endColor="#FF2B7FE0" />
+                    <stroke android:width="2.5dp" android:color="@color/nl_lime_bright" />
+                    <corners android:radius="22dp" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <gradient android:angle="270" android:startColor="#FF4FB3FF" android:endColor="#FF2B7FE0" />
+                    <corners android:radius="22dp" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>
