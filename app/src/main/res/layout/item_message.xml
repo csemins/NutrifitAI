@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One chat message. Mine sit on the right in lime; others on the left with their avatar and (in groups) name. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:orientation="horizontal"
+    android:paddingVertical="3dp">
+
+    <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+        android:id="@+id/avatar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="18dp"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:id="@+id/column"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/name" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginBottom="2dp" android:textColor="@color/nl_lime" tools:text="Sami" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bubble_bot"
+            android:fontFamily="@font/jakarta_medium"
+            android:maxWidth="290dp"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/nl_text"
+            android:textIsSelectable="true"
+            android:textSize="15sp"
+            tools:text="Ready for the squat duel?" />
+
+        <!-- Challenge / call invitation -->
+        <LinearLayout
+            android:id="@+id/card"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_neon"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:visibility="gone">
+
+            <TextView android:id="@+id/cardTitle" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="8dp" android:gravity="center_vertical" app:drawableStartCompat="@drawable/ic_trophy" app:drawableTint="@color/nl_carbs" tools:text="Squat duel" />
+            <TextView android:id="@+id/cardBody" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" tools:text="Sami started a challenge" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/cardAction" style="@style/NL.Button.Small" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_marginTop="10dp" tools:text="Open" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/time" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginHorizontal="8dp" android:layout_marginTop="2dp" android:textSize="11sp" tools:text="9:41" />
+    </LinearLayout>
+</LinearLayout>

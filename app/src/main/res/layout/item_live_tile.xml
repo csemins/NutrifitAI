@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A friend in a live challenge, like a small call window: their camera video (if shared) or tracked pose, rank, points. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="136dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_workout_panel"
+    android:clipToOutline="true">
+
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.transformsai.nutrifitai.ui.widget.LivePoseView
+        android:id="@+id/pose"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/rank"
+        style="@style/NL.Text.MacroChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@drawable/bg_chip_glass"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="2dp"
+        android:textColor="@color/nl_text"
+        tools:text="#1" />
+
+    <TextView
+        android:id="@+id/live"
+        style="@style/NL.Text.MacroChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="6dp"
+        android:textColor="@color/nl_error"
+        tools:text="● LIVE" />
+
+    <TextView
+        android:id="@+id/reaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="40sp"
+        android:visibility="gone"
+        tools:text="🔥"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/muted"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_volume"
+        android:visibility="gone"
+        app:tint="@color/share_lime" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_hero_scrim"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingBottom="6dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/NL.Text.BodyStrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"
+            tools:text="Sami" />
+
+        <TextView
+            android:id="@+id/stats"
+            style="@style/NL.Text.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            tools:text="12 reps · 95 pts" />
+    </LinearLayout>
+</FrameLayout>
