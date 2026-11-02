@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/hero"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bg_hero_scrim" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/screen_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:id="@+id/name" style="@style/NL.Text.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="26sp" tools:text="Chicken biryani" />
+                        <TextView android:id="@+id/nameBn" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:id="@+id/serving" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/density"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/bg_badge_lime"
+                        android:gravity="center"
+                        android:minWidth="84dp"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp">
+
+                        <TextView android:id="@+id/densityValue" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/nl_lime" android:textSize="24sp" />
+                        <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/p_per_100kcal" android:textColor="@color/nl_lime" android:textSize="10sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Servings -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_card"
+                    android:gravity="center_vertical"
+                    android:minHeight="72dp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/servings" android:textSize="15sp" />
+                        <TextView
+                            android:id="@+id/unit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginTop="2dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:drawablePadding="4dp"
+                            android:fontFamily="@font/jakarta_semibold"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/nl_lime"
+                            android:textSize="14sp"
+                            app:drawableEndCompat="@drawable/ic_chevron_right"
+                            app:drawableTint="@color/nl_lime" />
+                    </LinearLayout>
+
+                    <ImageButton android:id="@+id/minus" style="@style/NL.Stepper" android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_stepper_minus" android:contentDescription="@string/cd_decrease" android:src="@drawable/ic_remove" app:tint="@color/nl_text_2" />
+
+                    <EditText
+                        android:id="@+id/amount"
+                        android:layout_width="72dp"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:fontFamily="@font/jakarta_bold"
+                        android:gravity="center"
+                        android:hint="1"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:selectAllOnFocus="true"
+                        android:textColor="@color/nl_text"
+                        android:textSize="18sp" />
+
+                    <ImageButton android:id="@+id/plus" style="@style/NL.Stepper" android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_stepper_plus" android:contentDescription="@string/cd_increase" android:src="@drawable/ic_add" app:tint="@color/nl_lime" />
+                </LinearLayout>
+
+                <!-- Calories + macros -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_card"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <LinearLayout android:id="@+id/kcalBox" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:layout_weight="0.8" android:focusable="true" android:gravity="center_horizontal" android:orientation="vertical">
+                        <ImageView android:layout_width="26dp" android:layout_height="26dp" android:importantForAccessibility="no" android:src="@drawable/ic_flame" app:tint="@color/nl_carbs" />
+                        <TextView android:id="@+id/kcal" style="@style/NL.Text.NumberHuge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textSize="40sp" />
+                        <TextView style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/kcal" />
+                        <TextView style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/total_calories" />
+                    </LinearLayout>
+
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:layout_marginHorizontal="16dp" android:background="@color/nl_stroke" />
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.4" android:orientation="vertical">
+                        <include android:id="@+id/rowP" layout="@layout/view_goal_row" />
+                        <include android:id="@+id/rowC" layout="@layout/view_goal_row" />
+                        <include android:id="@+id/rowF" layout="@layout/view_goal_row" />
+                        <include android:id="@+id/rowFib" layout="@layout/view_goal_row" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Tiles -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="horizontal">
+                    <include android:id="@+id/tileSugar" layout="@layout/view_info_tile" />
+                    <Space android:layout_width="10dp" android:layout_height="1dp" />
+                    <include android:id="@+id/tileSodium" layout="@layout/view_info_tile" />
+                    <Space android:layout_width="10dp" android:layout_height="1dp" />
+                    <include android:id="@+id/tileDensity" layout="@layout/view_info_tile" />
+                </LinearLayout>
+
+                <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="26dp" android:text="@string/vitamins_minerals" />
+
+                <LinearLayout android:id="@+id/micros" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+
+                <TextView android:id="@+id/microsNote" style="@style/NL.Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" />
+
+                <!-- Source -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_banner_info"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:importantForAccessibility="no" android:src="@drawable/ic_info" app:tint="@color/nl_water" />
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/source" android:textSize="14sp" />
+                        <TextView android:id="@+id/source" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" />
+                        <TextView android:id="@+id/sourceRef" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageButton
+        android:id="@+id/back"
+        style="@style/NL.IconButton"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_camera_round"
+        android:contentDescription="@string/cd_back"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/fav"
+        style="@style/NL.IconButton"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_camera_round"
+        android:contentDescription="@string/favourite"
+        android:src="@drawable/ic_heart_outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/editFood"
+        style="@style/NL.IconButton"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_camera_round"
+        android:contentDescription="@string/edit_custom"
+        android:src="@drawable/ic_edit"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/fav"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_bar"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/screen_padding"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/targetRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/mealChip" style="@style/NL.AuthPill" android:drawablePadding="6dp" app:drawableStartCompat="@drawable/ic_meals" app:drawableTint="@color/nl_text_2" />
+            <TextView android:id="@+id/dateChip" style="@style/NL.AuthPill" android:drawablePadding="6dp" app:drawableStartCompat="@drawable/ic_calendar" app:drawableTint="@color/nl_text_2" />
+            <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/planned" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/planned" android:textColor="@color/nl_text_2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/delete"
+                style="@style/NL.IconButton"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/delete"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"
+                app:tint="@color/nl_error" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/primary"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

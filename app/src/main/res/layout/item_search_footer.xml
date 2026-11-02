@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingVertical="16dp">
+
+    <TextView
+        android:id="@+id/message"
+        style="@style/NL.Text.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/frequent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/create"
+        style="@style/NL.Button.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_marginTop="14dp"
+        android:paddingHorizontal="22dp"
+        android:text="@string/create_custom"
+        app:icon="@drawable/ic_add"
+        app:iconGravity="textStart" />
+</LinearLayout>

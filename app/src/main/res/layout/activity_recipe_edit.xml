@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg"
+    android:orientation="vertical">
+
+    <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/screen_padding">
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/nameLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/recipe_name">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textCapSentences" android:maxLength="60" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/servingsLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="@string/recipe_servings">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/servings" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:maxLength="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:background="@drawable/bg_card_hero" android:orientation="vertical" android:padding="16dp">
+                <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/per_serving" />
+                <TextView android:id="@+id/perServing" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" />
+                <TextView android:id="@+id/perServingMacros" style="@style/NL.Text.MacroChip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/ingredients" />
+            <LinearLayout android:id="@+id/ingredients" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="vertical" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/addIngredient" style="@style/NL.Button.Ghost" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="6dp" android:text="@string/add_ingredient" app:icon="@drawable/ic_add" app:iconGravity="textStart" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="@dimen/screen_padding">
+        <com.google.android.material.button.MaterialButton android:id="@+id/delete" style="@style/NL.Button.Danger" android:layout_width="wrap_content" android:layout_height="56dp" android:layout_marginEnd="10dp" android:text="@string/delete" android:visibility="gone" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/save" android:layout_width="0dp" android:layout_height="56dp" android:layout_weight="1" android:text="@string/save" />
+    </LinearLayout>
+</LinearLayout>

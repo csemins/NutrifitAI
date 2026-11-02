@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_card_pressable"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <com.transformsai.nutrifitai.ui.widget.FoodThumbView android:id="@+id/thumb" android:layout_width="54dp" android:layout_height="54dp" android:importantForAccessibility="no" />
+
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
+        <TextView android:id="@+id/name" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/sub" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton android:id="@+id/log" style="@style/NL.Button.Small" android:layout_width="wrap_content" android:layout_height="40dp" android:text="@string/log_serving" />
+</LinearLayout>

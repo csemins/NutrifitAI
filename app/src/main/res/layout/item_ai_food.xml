@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/name" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16sp" />
+            <TextView android:id="@+id/bn" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/nl_text_2" />
+            <TextView android:id="@+id/portion" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="end" android:orientation="vertical">
+            <TextView android:id="@+id/kcal" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" />
+            <TextView android:id="@+id/confidence" android:layout_width="wrap_content" android:layout_height="24dp" android:layout_marginTop="4dp" android:background="@drawable/bg_badge_lime" android:fontFamily="@font/jakarta_bold" android:gravity="center" android:paddingHorizontal="10dp" android:textColor="@color/nl_lime" android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView android:id="@+id/macros" style="@style/NL.Text.MacroChip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" />
+    <TextView android:id="@+id/range" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" />
+    <TextView android:id="@+id/assumptions" style="@style/NL.Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton android:id="@+id/edit" style="@style/NL.Button.Tonal" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:minHeight="44dp" android:text="@string/edit" app:icon="@drawable/ic_edit" app:iconGravity="textStart" />
+        <Space android:layout_width="10dp" android:layout_height="1dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/remove" style="@style/NL.Button.Danger" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:minHeight="44dp" android:text="@string/remove_item" />
+    </LinearLayout>
+</LinearLayout>

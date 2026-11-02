@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_card_pressable"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+        android:id="@+id/thumb"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+            <TextView
+                android:id="@+id/name"
+                style="@style/NL.Text.BodyStrong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1" />
+            <ImageView
+                android:id="@+id/fav"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="6dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_heart"
+                android:visibility="gone"
+                app:tint="@color/nl_protein" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bn"
+            style="@style/NL.Text.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@color/nl_text_2" />
+
+        <TextView
+            android:id="@+id/sub"
+            style="@style/NL.Text.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/add"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_stepper_plus"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_add"
+        app:tint="@color/nl_lime" />
+</LinearLayout>
