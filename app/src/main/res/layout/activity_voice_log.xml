@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_auth"
+    android:orientation="vertical">
+
+    <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_horizontal" android:orientation="vertical" android:padding="@dimen/screen_padding">
+
+            <com.transformsai.nutrifitai.ui.widget.SegmentedView android:id="@+id/lang" android:layout_width="match_parent" android:layout_height="wrap_content" app:segments="@array/voice_langs" />
+
+            <FrameLayout android:layout_width="180dp" android:layout_height="180dp" android:layout_marginTop="28dp">
+                <View android:id="@+id/pulse" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_glow_lime" />
+                <ImageButton android:id="@+id/mic" android:layout_width="96dp" android:layout_height="96dp" android:layout_gravity="center" android:background="@drawable/bg_mic" android:contentDescription="@string/cd_mic" android:padding="26dp" android:scaleType="fitCenter" android:src="@drawable/ic_mic" app:tint="@color/nl_on_lime" />
+            </FrameLayout>
+
+            <TextView android:id="@+id/status" style="@style/NL.Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/voice_tap" />
+            <TextView android:id="@+id/statusSub" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center" android:text="@string/voice_examples" />
+
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/textLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:hint="@string/text_log_title" app:counterEnabled="true" app:counterMaxLength="500" app:startIconDrawable="@drawable/ic_keyboard">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/text" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="top" android:inputType="textMultiLine|textCapSentences" android:maxLength="500" android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="10dp" android:text="@string/meal_for" />
+                <TextView android:id="@+id/mealChip" style="@style/NL.AuthPill" android:drawablePadding="6dp" app:drawableStartCompat="@drawable/ic_meals" app:drawableTint="@color/nl_text_2" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton android:id="@+id/analyse" android:layout_width="match_parent" android:layout_height="58dp" android:layout_margin="@dimen/screen_padding" android:text="@string/analyse" app:icon="@drawable/ic_sparkle" app:iconGravity="textStart" />
+</LinearLayout>

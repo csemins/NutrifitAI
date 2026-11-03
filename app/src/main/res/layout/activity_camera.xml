@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/preview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/cam_hint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:scaleType="fillCenter" />
+
+    <View
+        android:id="@+id/frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="28dp"
+        android:background="@drawable/bg_viewfinder"
+        app:layout_constraintBottom_toTopOf="@id/controls"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton android:id="@+id/close" style="@style/NL.IconButton" android:background="@drawable/bg_camera_round" android:contentDescription="@string/close" android:src="@drawable/ic_close" />
+
+        <TextView
+            android:id="@+id/hint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="#99000000"
+            android:fontFamily="@font/jakarta_medium"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:text="@string/cam_hint"
+            android:textColor="@color/nl_text"
+            android:textSize="12sp" />
+
+        <ImageButton android:id="@+id/flash" style="@style/NL.IconButton" android:background="@drawable/bg_camera_round" android:contentDescription="@string/cam_flash" android:src="@drawable/ic_flash_off" />
+    </LinearLayout>
+
+    <!-- Quick camera workouts (workout mode) -->
+    <LinearLayout
+        android:id="@+id/workoutPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/bg_workout_panel"
+        android:orientation="vertical"
+        android:paddingVertical="14dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/controls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            style="@style/NL.Text.CardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/cam_workout_title" />
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/workoutList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/startToday"
+            style="@style/NL.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/cam_start_today"
+            app:icon="@drawable/ic_play"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/controls"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="14dp"
+        android:paddingBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Mode switcher: swipe right for Workout, left for Barcode -->
+        <LinearLayout
+            android:id="@+id/modes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_pill"
+            android:backgroundTint="#B3000000"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/modeWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:fontFamily="@font/jakarta_semibold"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="@string/cam_mode_workout"
+                android:textColor="@color/nl_text"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/modeFood"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:fontFamily="@font/jakarta_semibold"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="@string/cam_mode_food"
+                android:textColor="@color/nl_text"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/modeBarcode"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:fontFamily="@font/jakarta_semibold"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="@string/cam_mode_barcode"
+                android:textColor="@color/nl_text"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton android:id="@+id/gallery" android:layout_width="56dp" android:layout_height="56dp" android:background="@drawable/bg_camera_round" android:contentDescription="@string/cam_gallery" android:padding="15dp" android:scaleType="fitCenter" android:src="@drawable/ic_gallery" app:tint="@color/nl_text" />
+
+            <ImageButton android:id="@+id/shutter" android:layout_width="84dp" android:layout_height="84dp" android:layout_marginHorizontal="44dp" android:background="@drawable/bg_camera_shutter" android:contentDescription="@string/cam_capture" />
+
+            <ImageButton android:id="@+id/flip" android:layout_width="56dp" android:layout_height="56dp" android:background="@drawable/bg_camera_round" android:contentDescription="@string/cam_flip" android:padding="14dp" android:scaleType="fitCenter" android:src="@drawable/ic_flip" app:tint="@color/nl_text" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Permission / unavailable panel -->
+    <LinearLayout
+        android:id="@+id/permPanel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_auth"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView android:layout_width="72dp" android:layout_height="72dp" android:background="@drawable/bg_icon_tile" android:importantForAccessibility="no" android:padding="18dp" android:src="@drawable/ic_camera" app:tint="@color/nl_lime" />
+        <TextView android:id="@+id/permTitle" style="@style/NL.Text.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center" android:text="@string/cam_perm_title" />
+        <TextView android:id="@+id/permBody" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="center" android:text="@string/cam_perm_body" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/permAllow" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="24dp" android:text="@string/cam_allow" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/permGallery" style="@style/NL.Button.Ghost" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="10dp" android:text="@string/cam_gallery" app:icon="@drawable/ic_gallery" app:iconGravity="textStart" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/permClose" style="@style/NL.Button.Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/close" />
+    </LinearLayout>
+
+    <!-- Review captured photo -->
+    <LinearLayout
+        android:id="@+id/review"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/nl_bg"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <ImageView android:id="@+id/photo" android:layout_width="match_parent" android:layout_height="match_parent" android:contentDescription="@string/scan_food" android:scaleType="centerCrop" />
+            <View android:layout_width="match_parent" android:layout_height="160dp" android:layout_gravity="bottom" android:background="@drawable/bg_hero_scrim" />
+            <LinearLayout android:id="@+id/reviewTop" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingHorizontal="16dp" android:paddingTop="10dp">
+                <com.google.android.material.button.MaterialButton android:id="@+id/retake" style="@style/NL.Button.Small" android:layout_width="wrap_content" android:layout_height="44dp" android:backgroundTint="#CC000000" android:text="@string/retake" android:textColor="@color/nl_text" app:icon="@drawable/ic_camera" app:iconTint="@color/nl_text" />
+                <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/remove" style="@style/NL.Button.Small" android:layout_width="wrap_content" android:layout_height="44dp" android:backgroundTint="#CC000000" android:text="@string/remove_photo" android:textColor="@color/nl_error" app:icon="@drawable/ic_delete" app:iconTint="@color/nl_error" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout android:id="@+id/reviewPanel" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/screen_padding">
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/note_hint" app:counterEnabled="true" app:counterMaxLength="200">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/note" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine|textCapSentences" android:maxLength="200" android:maxLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="10dp" android:text="@string/meal_for" />
+                <TextView android:id="@+id/mealChip" style="@style/NL.AuthPill" android:drawablePadding="6dp" app:drawableStartCompat="@drawable/ic_meals" app:drawableTint="@color/nl_text_2" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton android:id="@+id/analyse" android:layout_width="match_parent" android:layout_height="58dp" android:layout_marginTop="14dp" android:text="@string/analyse" app:icon="@drawable/ic_sparkle" app:iconGravity="textStart" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/busy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/nl_lime"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
