@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_hydration"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/screen_padding">
+
+            <com.transformsai.nutrifitai.ui.widget.HydrationGaugeView
+                android:id="@+id/gauge"
+                android:layout_width="0dp"
+                android:layout_height="270dp"
+                android:layout_weight="0.9"
+                android:focusable="true" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_weight="1.25"
+                android:orientation="vertical">
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAligned="true" android:orientation="horizontal">
+                    <TextView android:id="@+id/now" style="@style/NL.Text.NumberHuge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="58sp" tools:text="1.5" />
+                    <TextView android:id="@+id/goal" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:fontFamily="@font/jakarta_bold" android:textSize="18sp" tools:text="/ 2.4 L" />
+                </LinearLayout>
+
+                <TextView android:id="@+id/status" style="@style/NL.Text.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:lineSpacingExtra="2dp" android:textSize="15sp" />
+
+                <TextView android:id="@+id/glass" style="@style/NL.WaterPill" android:layout_marginTop="16dp" />
+                <TextView android:id="@+id/bottle" style="@style/NL.WaterPill" />
+                <TextView android:id="@+id/flask" style="@style/NL.WaterPill" />
+                <TextView android:id="@+id/custom" style="@style/NL.WaterPill" android:text="@string/custom_amount" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- This week -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/screen_padding"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/bg_card_water"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/this_week" android:textColor="@color/nl_text" />
+                <TextView android:id="@+id/weekGoal" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <com.transformsai.nutrifitai.ui.widget.BarChartView android:id="@+id/week" android:layout_width="match_parent" android:layout_height="150dp" android:layout_marginTop="14dp" />
+        </LinearLayout>
+
+        <!-- Today's drinks -->
+        <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/screen_padding" android:layout_marginTop="24dp" android:text="@string/today_drinks" />
+
+        <LinearLayout android:id="@+id/drinks" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginHorizontal="@dimen/screen_padding" android:layout_marginTop="10dp" android:orientation="vertical" />
+
+        <TextView android:id="@+id/noDrinks" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/screen_padding" android:layout_marginTop="6dp" android:text="@string/no_drinks" />
+
+        <!-- Reminders -->
+        <TextView android:id="@+id/remindersLabel" style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/screen_padding" android:layout_marginTop="24dp" android:text="@string/reminders" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/screen_padding"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_card_water"
+            android:orientation="vertical">
+
+            <include android:id="@+id/remWater" layout="@layout/view_toggle_row" />
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/nl_stroke" />
+            <include android:id="@+id/remMeals" layout="@layout/view_toggle_row" />
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/nl_stroke" />
+            <include android:id="@+id/remCutoff" layout="@layout/view_toggle_row" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
