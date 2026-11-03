@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/screen_padding"
+        android:paddingTop="12dp"
+        android:paddingBottom="@dimen/nav_clearance">
+
+        <include android:id="@+id/top" layout="@layout/view_tab_header" />
+
+        <com.transformsai.nutrifitai.ui.widget.SegmentedView
+            android:id="@+id/period"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            app:segments="@array/period_segments" />
+
+        <TextView
+            android:id="@+id/range"
+            style="@style/NL.Text.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            tools:text="Nov 2 – Nov 8" />
+
+        <!-- Empty -->
+        <LinearLayout
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card_dashed"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="28dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ill_progress" />
+
+            <TextView style="@style/NL.Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="@string/progress_empty_title" />
+
+            <TextView style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:gravity="center" android:text="@string/progress_empty_body" />
+        </LinearLayout>
+
+        <!-- Calories vs target -->
+        <LinearLayout
+            android:id="@+id/calCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/cal_vs_target" android:textColor="@color/nl_text" />
+                <TextView android:id="@+id/avgKcal" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <com.transformsai.nutrifitai.ui.widget.BarChartView
+                android:id="@+id/calChart"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/legend"
+                style="@style/NL.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" />
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="14dp" android:background="@color/nl_stroke" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:orientation="horizontal">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/in_range" />
+                    <TextView android:id="@+id/inRange" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textSize="20sp" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/avg_protein" />
+                    <TextView android:id="@+id/avgProtein" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/nl_protein" android:textSize="20sp" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="end" android:orientation="vertical">
+                    <TextView style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/logged_days" />
+                    <TextView android:id="@+id/loggedDays" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/nl_lime" android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Weight -->
+        <LinearLayout
+            android:id="@+id/weightCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/weight" android:textColor="@color/nl_text" />
+                <TextView android:id="@+id/weightChange" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/nl_lime" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+                <com.transformsai.nutrifitai.ui.widget.LineChartView
+                    android:id="@+id/weightChart"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:layout_marginStart="12dp" android:gravity="end" android:orientation="vertical">
+                    <TextView style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/current" android:textColor="@color/nl_text_2" />
+                    <TextView android:id="@+id/weightNow" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="26sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView android:id="@+id/weightEmpty" style="@style/NL.Text.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/no_weight" android:visibility="gone" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:id="@+id/addWeight" style="@style/NL.Button.Tonal" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:minHeight="48dp" android:text="@string/add_weight" app:icon="@drawable/ic_add" app:iconGravity="textStart" />
+                <Space android:layout_width="10dp" android:layout_height="1dp" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/weightHistory" style="@style/NL.Button.Ghost" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:minHeight="48dp" android:text="@string/weight_history" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Score + goals -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/scoreCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="196dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_pressable"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                    <TextView style="@style/NL.Text.CardTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/consistency" />
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp" android:importantForAccessibility="no" android:src="@drawable/ic_info" app:tint="@color/nl_text_3" />
+                </LinearLayout>
+
+                <FrameLayout android:layout_width="110dp" android:layout_height="110dp" android:layout_gravity="center_horizontal" android:layout_marginTop="10dp">
+                    <com.transformsai.nutrifitai.ui.widget.CalorieRingView android:id="@+id/scoreRing" android:layout_width="match_parent" android:layout_height="match_parent" app:ringStroke="10dp" />
+                    <TextView android:id="@+id/score" style="@style/NL.Text.Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:textSize="30sp" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <Space android:layout_width="10dp" android:layout_height="1dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="196dp"
+                android:layout_weight="1.2"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/goals_hit" />
+
+                <include android:id="@+id/goalCal" layout="@layout/view_goal_row" />
+                <include android:id="@+id/goalProtein" layout="@layout/view_goal_row" />
+                <include android:id="@+id/goalWater" layout="@layout/view_goal_row" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Hydration trend -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/hydration_trend" android:textColor="@color/nl_text" />
+                <TextView android:id="@+id/avgWater" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <com.transformsai.nutrifitai.ui.widget.BarChartView android:id="@+id/waterChart" android:layout_width="match_parent" android:layout_height="130dp" android:layout_marginTop="14dp" />
+        </LinearLayout>
+
+        <!-- Macro averages -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView style="@style/NL.Text.CardTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/macro_trend" android:textColor="@color/nl_text" />
+            <include android:id="@+id/avgP" layout="@layout/view_goal_row" />
+            <include android:id="@+id/avgC" layout="@layout/view_goal_row" />
+            <include android:id="@+id/avgF" layout="@layout/view_goal_row" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
