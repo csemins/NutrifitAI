@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg"
+    android:orientation="vertical">
+
+    <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_padding">
+
+            <TextView style="@style/NL.Text.Body" android:layout_width="match_parent" android:layout_height="wrap_content" android:lineSpacingExtra="4dp" android:text="@string/privacy_body" android:textColor="@color/nl_text_2" />
+
+            <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:accessibilityHeading="true" android:text="@string/privacy_your_data" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:paddingVertical="6dp">
+
+                <include android:id="@+id/rowExport" layout="@layout/view_setting_row" />
+            </LinearLayout>
+
+            <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:accessibilityHeading="true" android:text="@string/delete_account" />
+
+            <TextView style="@style/NL.Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:lineSpacingExtra="3dp" android:text="@string/delete_body" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteAccount"
+                style="@style/NL.Button.Danger"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/delete_account"
+                app:icon="@drawable/ic_delete"
+                app:iconGravity="textStart" />
+
+            <TextView style="@style/NL.Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:accessibilityHeading="true" android:text="@string/credits" />
+
+            <TextView android:id="@+id/credits" style="@style/NL.Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:lineSpacingExtra="3dp" android:textIsSelectable="true" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg"
+    android:orientation="vertical">
+
+    <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingBottom="24dp">
+
+            <!-- Photo -->
+            <FrameLayout
+                android:id="@+id/photoBox"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/change_photo"
+                android:focusable="true">
+
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_avatar_ring" />
+                <com.transformsai.nutrifitai.ui.widget.FoodThumbView android:id="@+id/photo" android:layout_width="104dp" android:layout_height="104dp" android:layout_gravity="center" android:importantForAccessibility="no" />
+                <ImageView android:layout_width="34dp" android:layout_height="34dp" android:layout_gravity="bottom|end" android:background="@drawable/bg_nav_camera" android:importantForAccessibility="no" android:padding="8dp" android:src="@drawable/ic_camera" app:tint="@color/nl_on_lime" />
+            </FrameLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/removePhoto"
+                style="@style/NL.Button.Ghost"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/remove_photo"
+                android:visibility="gone" />
+
+            <!-- About -->
+            <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:accessibilityHeading="true" android:text="@string/ep_about" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/nameLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/hint_name" app:startIconDrawable="@drawable/ic_person">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content" android:autofillHints="name" android:inputType="textPersonName|textCapWords" android:maxLength="40" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/usernameLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="@string/username" app:helperText="@string/username_help" app:prefixText="\@">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/username" android:layout_width="match_parent" android:layout_height="wrap_content" android:digits="abcdefghijklmnopqrstuvwxyz0123456789_" android:inputType="textNoSuggestions|textVisiblePassword" android:maxLength="20" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/birthLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="@string/ob_birth_date" app:startIconDrawable="@drawable/ic_calendar">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/birth" android:layout_width="match_parent" android:layout_height="wrap_content" android:cursorVisible="false" android:focusable="false" android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/ob_sex" />
+                <com.transformsai.nutrifitai.ui.widget.SegmentedView android:id="@+id/sex" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:segments="@array/sex_options" />
+            </LinearLayout>
+
+            <!-- Body -->
+            <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:accessibilityHeading="true" android:text="@string/ep_body" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="16dp">
+
+                <com.transformsai.nutrifitai.ui.widget.SegmentedView android:id="@+id/units" android:layout_width="match_parent" android:layout_height="wrap_content" app:segments="@array/unit_options" />
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/heightCmLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="@string/ob_height_cm" app:startIconDrawable="@drawable/ic_body">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/heightCm" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:maxLength="5" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout android:id="@+id/heightImperial" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal" android:visibility="gone">
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/heightFtLayout" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="@string/ob_height_ft">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/heightFt" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:maxLength="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:layout_weight="1" android:hint="@string/ob_height_in">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/heightIn" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:maxLength="2" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/weightLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:startIconDrawable="@drawable/ic_scale">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/weight" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:maxLength="6" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/targetLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" app:startIconDrawable="@drawable/ic_star">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/target" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:maxLength="6" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <include android:id="@+id/bmi" layout="@layout/view_bmi_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" />
+            </LinearLayout>
+
+            <!-- Goal -->
+            <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:accessibilityHeading="true" android:text="@string/ep_goal" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="16dp">
+                <com.transformsai.nutrifitai.ui.widget.SegmentedView android:id="@+id/goal" android:layout_width="match_parent" android:layout_height="wrap_content" app:segments="@array/goal_options" />
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/activityLayout" style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:hint="@string/ep_activity" app:startIconDrawable="@drawable/ic_steps">
+                    <AutoCompleteTextView android:id="@+id/activity" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Food -->
+            <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:accessibilityHeading="true" android:text="@string/ep_food" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="16dp">
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ob_diet" />
+                <com.google.android.material.chip.ChipGroup android:id="@+id/diet" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" />
+                <TextView style="@style/NL.Text.CardTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/ob_allergies" />
+                <com.google.android.material.chip.ChipGroup android:id="@+id/allergies" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" />
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:hint="@string/ob_allergy_other">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/otherAllergies" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textCapSentences" android:maxLength="120" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_bar"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/save_changes" />
+    </LinearLayout>
+</LinearLayout>

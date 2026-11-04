@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/screen_padding"
+        android:paddingTop="12dp"
+        android:paddingBottom="@dimen/nav_clearance">
+
+        <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings" />
+        <TextView style="@style/NL.Text.Display" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:accessibilityHeading="true" android:text="@string/profile" />
+
+        <!-- Profile card: photo, name, @username, goal, and three highlights -->
+        <LinearLayout
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_profile_card"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="20dp">
+
+            <FrameLayout android:layout_width="104dp" android:layout_height="104dp">
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_avatar_ring" />
+                <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+                    android:id="@+id/avatar"
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/change_photo" />
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/bg_nav_camera"
+                    android:importantForAccessibility="no"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_camera"
+                    app:tint="@color/nl_on_lime" />
+            </FrameLayout>
+
+            <TextView android:id="@+id/name" style="@style/NL.Text.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:ellipsize="end" android:maxLines="1" android:textSize="24sp" />
+            <TextView android:id="@+id/handle" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:textColor="@color/nl_lime" />
+            <TextView
+                android:id="@+id/goalChip"
+                style="@style/NL.Text.MacroChip"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_chip_glass"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="14dp"
+                android:textColor="@color/nl_text"
+                app:drawableStartCompat="@drawable/ic_flame"
+                app:drawableTint="@color/nl_carbs" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_card"
+                android:orientation="horizontal"
+                android:paddingVertical="14dp">
+
+                <include android:id="@+id/statStreak" layout="@layout/view_profile_stat" />
+                <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/nl_stroke" />
+                <include android:id="@+id/statWorkouts" layout="@layout/view_profile_stat" />
+                <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/nl_stroke" />
+                <include android:id="@+id/statFriends" layout="@layout/view_profile_stat" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:paddingVertical="6dp">
+            <include android:id="@+id/rowNotifications" layout="@layout/view_setting_row" />
+        </LinearLayout>
+
+        <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/profile" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_card" android:orientation="vertical" android:paddingVertical="6dp">
+            <include android:id="@+id/rowEdit" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowGoals" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowUnits" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowTheme" layout="@layout/view_setting_row" />
+        </LinearLayout>
+
+        <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/section_activity" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_card" android:orientation="vertical" android:paddingVertical="6dp">
+            <include android:id="@+id/rowSteps" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowFasting" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowAchievements" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowHealth" layout="@layout/view_setting_row" />
+        </LinearLayout>
+
+        <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/section_coach" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_card" android:orientation="vertical" android:paddingVertical="6dp">
+            <include android:id="@+id/rowStrict" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowRest" layout="@layout/view_setting_row" />
+            <include android:id="@+id/tVoice" layout="@layout/view_toggle_row" />
+            <include android:id="@+id/tSkeleton" layout="@layout/view_toggle_row" />
+            <include android:id="@+id/tHaptics" layout="@layout/view_toggle_row" />
+        </LinearLayout>
+
+        <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/tools" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_card" android:orientation="vertical" android:paddingVertical="6dp">
+            <include android:id="@+id/rowAssistant" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowRecipes" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowCustom" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowReminders" layout="@layout/view_setting_row" />
+            <include android:id="@+id/tTraining" layout="@layout/view_toggle_row" />
+            <include android:id="@+id/rowWeight" layout="@layout/view_setting_row" />
+        </LinearLayout>
+
+        <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/data_and_privacy" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_card" android:orientation="vertical" android:paddingVertical="6dp">
+            <include android:id="@+id/rowExport" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowPrivacy" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowSystemEvents" layout="@layout/view_setting_row" />
+        </LinearLayout>
+
+        <TextView style="@style/NL.Text.Overline" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/section_advanced" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_card" android:orientation="vertical" android:paddingVertical="6dp">
+            <include android:id="@+id/rowModel" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowProcessor" layout="@layout/view_setting_row" />
+            <include android:id="@+id/rowServer" layout="@layout/view_setting_row" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signOut"
+            style="@style/NL.Button.Ghost"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/sign_out"
+            app:icon="@drawable/ic_logout"
+            app:iconGravity="textStart" />
+
+        <TextView android:id="@+id/version" style="@style/NL.Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
