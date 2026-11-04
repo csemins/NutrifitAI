@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_auth"
+    android:orientation="vertical">
+
+    <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/list" android:layout_width="match_parent" android:layout_height="match_parent" android:clipToPadding="false" android:paddingHorizontal="@dimen/screen_padding" android:paddingVertical="12dp" />
+
+        <LinearLayout android:id="@+id/empty" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center" android:gravity="center_horizontal" android:orientation="vertical" android:padding="28dp">
+            <ImageView android:layout_width="150dp" android:layout_height="150dp" android:importantForAccessibility="no" android:src="@drawable/ill_chat" />
+            <TextView style="@style/NL.Text.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/assistant_title" />
+            <TextView style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center" android:text="@string/assistant_empty" />
+            <com.google.android.material.chip.ChipGroup android:id="@+id/starters" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView android:id="@+id/thinking" style="@style/NL.Text.Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/screen_padding" android:paddingBottom="6dp" android:text="@string/assistant_thinking" android:textColor="@color/nl_lime" android:visibility="gone" />
+
+    <LinearLayout android:id="@+id/inputBar" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="bottom" android:orientation="horizontal" android:paddingHorizontal="@dimen/screen_padding" android:paddingVertical="10dp">
+        <EditText android:id="@+id/input" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:background="@drawable/bg_input_chat" android:fontFamily="@font/jakarta_medium" android:hint="@string/assistant_hint" android:importantForAutofill="no" android:inputType="textMultiLine|textCapSentences" android:maxLength="600" android:maxLines="4" android:minHeight="52dp" android:paddingHorizontal="18dp" android:paddingVertical="12dp" android:textColor="@color/nl_text" android:textColorHint="@color/nl_text_3" android:textSize="15sp" />
+        <ImageButton android:id="@+id/mic" android:layout_width="52dp" android:layout_height="52dp" android:layout_marginStart="8dp" android:background="@drawable/bg_round_glass" android:contentDescription="@string/cd_mic" android:padding="14dp" android:scaleType="fitCenter" android:src="@drawable/ic_mic" app:tint="@color/nl_text" />
+        <ImageButton android:id="@+id/send" android:layout_width="52dp" android:layout_height="52dp" android:layout_marginStart="8dp" android:background="@drawable/bg_nav_camera" android:contentDescription="@string/cd_send" android:padding="14dp" android:scaleType="fitCenter" android:src="@drawable/ic_send" app:tint="@color/nl_on_lime" />
+    </LinearLayout>
+</LinearLayout>
