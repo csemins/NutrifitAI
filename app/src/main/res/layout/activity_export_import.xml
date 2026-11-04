@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg"
+    android:orientation="vertical">
+
+    <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/screen_padding">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+                <TextView style="@style/NL.Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/export_start" />
+                <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/csv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:checked="true" android:text="@string/export_csv" />
+                <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/xml" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/export_xml" />
+                <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@+id/progress" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:visibility="gone" app:indicatorColor="@color/nl_lime" app:trackColor="@color/nl_surface_3" app:trackCornerRadius="3dp" />
+                <TextView android:id="@+id/exportStatus" style="@style/NL.Text.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:visibility="gone" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/export" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="@string/export_start" app:icon="@drawable/ic_download" app:iconGravity="textStart" />
+                    <Space android:layout_width="10dp" android:layout_height="1dp" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/share" style="@style/NL.Button.Tonal" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:enabled="false" android:text="@string/share" app:icon="@drawable/ic_share" app:iconGravity="textStart" />
+                </LinearLayout>
+                <com.google.android.material.button.MaterialButton android:id="@+id/saveDownloads" style="@style/NL.Button.Ghost" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="10dp" android:enabled="false" android:text="@string/save_downloads" app:icon="@drawable/ic_download" app:iconGravity="textStart" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+                <TextView style="@style/NL.Text.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/import_title" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/pick" style="@style/NL.Button.Ghost" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="12dp" android:text="@string/import_pick" app:icon="@drawable/ic_upload" app:iconGravity="textStart" />
+
+                <LinearLayout android:id="@+id/preview" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/bg_banner_info" android:orientation="vertical" android:padding="14dp" android:visibility="gone">
+                    <TextView android:id="@+id/fileName" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@+id/counts" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/dupes" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/errors" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/nl_warning" />
+                    <RadioGroup android:id="@+id/mode" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+                        <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/skip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/import_skip" />
+                        <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/replace" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/import_replace" />
+                    </RadioGroup>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/apply" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="8dp" android:text="@string/import_apply" />
+                </LinearLayout>
+                <TextView android:id="@+id/importResult" style="@style/NL.Text.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
