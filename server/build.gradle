@@ -1,0 +1,43 @@
+// NutriFit AI server: AI proxy + private image bucket (Java 17, JDK HttpServer, Gson).
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.transformsai.nutrifitai'
+version = '2.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories { mavenCentral() }
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.13.2'
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+application { mainClass = 'com.transformsai.nutrifitai.server.Main' }
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+test {
+    useJUnitPlatform()
+    testLogging { events 'failed'; exceptionFormat 'full' }
+}
+
+// Single runnable jar: java -jar build/libs/nutrifitai-server.jar
+tasks.register('fatJar', Jar) {
+    archiveFileName = 'nutrifitai-server.jar'
+    manifest { attributes 'Main-Class': application.mainClass.get() }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from sourceSets.main.output
+    dependsOn configurations.runtimeClasspath
+    from { configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) } }
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'module-info.class'
+}
+assemble.dependsOn fatJar
