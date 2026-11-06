@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/startBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="320dp">
+
+                <com.transformsai.nutrifitai.ui.widget.ExerciseAnimView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bg_hero_scrim" />
+
+                <ImageButton
+                    android:id="@+id/back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/bg_round_glass"
+                    android:contentDescription="@string/cd_back"
+                    android:padding="13dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_back"
+                    app:tint="@color/nl_text" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/screen_padding">
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/NL.Text.Display"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textSize="28sp"
+                    tools:text="Bodyweight squat" />
+
+                <TextView
+                    android:id="@+id/meta"
+                    style="@style/NL.Text.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    tools:text="Beginner · Body only" />
+
+                <TextView
+                    android:id="@+id/muscles"
+                    style="@style/NL.Text.MacroChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_badge_lime"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:textColor="@color/nl_lime"
+                    tools:text="Quads · glutes" />
+
+                <TextView
+                    android:id="@+id/tipsTitle"
+                    style="@style/NL.Text.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:accessibilityHeading="true"
+                    android:text="@string/tips" />
+
+                <TextView
+                    android:id="@+id/tips"
+                    style="@style/NL.Text.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="6dp" />
+
+                <TextView
+                    android:id="@+id/stepsTitle"
+                    style="@style/NL.Text.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:accessibilityHeading="true"
+                    android:text="@string/how_to" />
+
+                <TextView
+                    android:id="@+id/steps"
+                    style="@style/NL.Text.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="6dp" />
+
+                <TextView
+                    android:id="@+id/source"
+                    style="@style/NL.Text.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/startBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_bar"
+        android:paddingHorizontal="@dimen/screen_padding"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/start"
+            style="@style/NL.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/try_it"
+            app:icon="@drawable/ic_play"
+            app:iconGravity="textStart" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

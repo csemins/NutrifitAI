@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg">
+
+    <include
+        android:id="@+id/bar"
+        layout="@layout/view_top_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/actions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingBottom="24dp">
+
+            <!-- Hero -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_card_neon"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic3d_coach" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/NL.Text.CardTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ai_builder_hero" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/NL.Text.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="@string/ai_minutes" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/minutes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:selectionRequired="true"
+                app:singleSelection="true" />
+
+            <TextView
+                style="@style/NL.Text.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/ai_focus" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/focus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:selectionRequired="true"
+                app:singleSelection="true" />
+
+            <TextView
+                style="@style/NL.Text.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/ai_intensity" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/intensity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:selectionRequired="true"
+                app:singleSelection="true" />
+
+            <!-- Target muscles -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/NL.Text.BodyStrong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ai_target_muscles" />
+
+                        <TextView
+                            android:id="@+id/muscleHint"
+                            style="@style/NL.Text.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ai_target_hint" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/pickList"
+                        style="@style/NL.Button.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ai_pick_list" />
+                </LinearLayout>
+
+                <com.transformsai.nutrifitai.ui.widget.MuscleMapView
+                    android:id="@+id/muscleMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingHorizontal="20dp"
+                    app:selectable="true" />
+            </LinearLayout>
+
+            <!-- Options -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap_sm"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp">
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/warmup"
+                    style="@style/NL.Switch"
+                    app:trackTint="@color/switch_track_lime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:minHeight="52dp"
+                    android:text="@string/ai_opt_warmup" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/cooldown"
+                    style="@style/NL.Switch"
+                    app:trackTint="@color/switch_track_lime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:minHeight="52dp"
+                    android:text="@string/ai_opt_cooldown" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/lowImpact"
+                    style="@style/NL.Switch"
+                    app:trackTint="@color/switch_track_lime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="52dp"
+                    android:text="@string/ai_opt_low_impact" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/cameraOnly"
+                    android:visibility="gone"
+                    style="@style/NL.Switch"
+                    app:trackTint="@color/switch_track_lime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="52dp"
+                    android:text="@string/ai_opt_camera" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/notes"
+                style="@style/NL.Input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap_sm"
+                android:hint="@string/ai_notes_hint"
+                android:importantForAutofill="no"
+                android:inputType="textCapSentences"
+                android:maxLength="200" />
+
+            <TextView
+                android:id="@+id/error"
+                style="@style/NL.Text.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_banner_error"
+                android:padding="12dp"
+                android:textColor="@color/nl_error"
+                android:visibility="gone" />
+
+            <!-- Result -->
+            <LinearLayout
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_card_neon"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    style="@style/NL.Text.Overline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ai_your_plan"
+                    android:textColor="@color/nl_lime" />
+
+                <TextView
+                    android:id="@+id/planTitle"
+                    style="@style/NL.Text.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    tools:text="Core and glutes burner" />
+
+                <TextView
+                    android:id="@+id/planSummary"
+                    style="@style/NL.Text.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/planMeta"
+                    style="@style/NL.Text.MacroChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_badge_lime"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:textColor="@color/nl_lime"
+                    tools:text="18 min · 9 exercises · 6 tracked" />
+
+                <com.transformsai.nutrifitai.ui.widget.MuscleMapView
+                    android:id="@+id/planMuscles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:paddingHorizontal="40dp" />
+
+                <LinearLayout
+                    android:id="@+id/planSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/regenerate"
+                        style="@style/NL.Button.Ghost"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/ai_regenerate" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/details"
+                        style="@style/NL.Button.Ghost"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/ai_view_plan" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Pinned actions: never hidden behind a sheet or the keyboard -->
+    <LinearLayout
+        android:id="@+id/actions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_bar"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/screen_padding"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="12dp"
+            android:indeterminateTint="@color/nl_lime"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/generate"
+            style="@style/NL.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/generate"
+            app:icon="@drawable/ic_sparkle"
+            app:iconGravity="textStart" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/startPlan"
+            style="@style/NL.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="@string/start_workout"
+            android:visibility="gone"
+            app:icon="@drawable/ic_play"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

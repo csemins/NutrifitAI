@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg"
+    android:orientation="vertical">
+
+    <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_padding">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip android:id="@+id/tStats" style="@style/NL.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/share_stats" />
+                <com.google.android.material.chip.Chip android:id="@+id/tWorkout" style="@style/NL.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/share_kind_workout" />
+                <com.google.android.material.chip.Chip android:id="@+id/tPhoto" style="@style/NL.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/share_photo" />
+                <com.google.android.material.chip.Chip android:id="@+id/tClip" style="@style/NL.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/share_clip" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Preview of what friends will see -->
+            <LinearLayout
+                android:id="@+id/stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_card_neon"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <include android:id="@+id/s1" layout="@layout/view_post_stat" />
+                <include android:id="@+id/s2" layout="@layout/view_post_stat" />
+                <include android:id="@+id/s3" layout="@layout/view_post_stat" />
+                <include android:id="@+id/s4" layout="@layout/view_post_stat" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/statsNote"
+                style="@style/NL.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" />
+
+            <FrameLayout
+                android:id="@+id/mediaBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/media"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:background="@drawable/bg_photo_round"
+                    android:clipToOutline="true"
+                    android:contentDescription="@string/cd_post_media"
+                    android:scaleType="centerCrop" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/pick"
+                    style="@style/NL.Button.Tonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:text="@string/share_pick_photo"
+                    app:icon="@drawable/ic_gallery"
+                    app:iconGravity="textStart" />
+            </FrameLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/share_caption"
+                app:counterEnabled="true"
+                app:counterMaxLength="500">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="500"
+                    android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                style="@style/NL.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/share_audience" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_bar"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/share"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/share_post"
+            app:icon="@drawable/ic_send"
+            app:iconGravity="textStart" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/nl_on_lime"
+            app:indicatorSize="24dp" />
+    </FrameLayout>
+</LinearLayout>
