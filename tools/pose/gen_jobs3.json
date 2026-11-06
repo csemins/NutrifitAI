@@ -1,0 +1,56 @@
+[
+ {
+  "out": "tools/pose/generated2/lunge__rest__0.png",
+  "prompt": "Full-body photograph of a young Bangladeshi man in a black t-shirt and shorts side view standing tall in a split stance, one foot forward and one back, both legs almost straight, hands on hips, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated2/lunge__rest__1.png",
+  "prompt": "Full-body photograph of a fit woman in a lime-green sports top and black leggings side view standing tall in a split stance, one foot forward and one back, both legs almost straight, hands on hips, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated2/lunge__rest__2.png",
+  "prompt": "Full-body photograph of a young woman wearing a hijab and dark athletic wear side view standing tall in a split stance, one foot forward and one back, both legs almost straight, hands on hips, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated2/lunge__peak__0.png",
+  "prompt": "Full-body photograph of a young Bangladeshi man in a black t-shirt and shorts side view at the bottom of a forward lunge, front knee bent at 90 degrees over the ankle, back knee just above the floor, torso upright, hands on hips, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated2/lunge__peak__1.png",
+  "prompt": "Full-body photograph of a fit woman in a lime-green sports top and black leggings side view at the bottom of a forward lunge, front knee bent at 90 degrees over the ankle, back knee just above the floor, torso upright, hands on hips, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated2/lunge__peak__2.png",
+  "prompt": "Full-body photograph of a young woman wearing a hijab and dark athletic wear side view at the bottom of a forward lunge, front knee bent at 90 degrees over the ankle, back knee just above the floor, torso upright, hands on hips, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated2/mountain_climber__rest__0.png",
+  "prompt": "Full-body photograph of a young Bangladeshi man in a black t-shirt and shorts side view holding a high plank on straight arms, legs straight back, body in one line, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated2/mountain_climber__rest__1.png",
+  "prompt": "Full-body photograph of a fit woman in a lime-green sports top and black leggings side view holding a high plank on straight arms, legs straight back, body in one line, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated2/mountain_climber__rest__2.png",
+  "prompt": "Full-body photograph of a young woman wearing a hijab and dark athletic wear side view holding a high plank on straight arms, legs straight back, body in one line, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ }
+]

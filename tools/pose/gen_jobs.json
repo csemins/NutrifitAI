@@ -1,0 +1,114 @@
+[
+ {
+  "out": "tools/pose/generated/jj_open_0.png",
+  "prompt": "Full-body photograph of a young Bangladeshi man in a plain black t-shirt and black shorts facing the camera doing a jumping jack at the top position: both arms straight up overhead, legs spread wide apart, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/jj_closed_0.png",
+  "prompt": "Full-body photograph of a young Bangladeshi man in a plain black t-shirt and black shorts facing the camera standing upright in the start position of a jumping jack: arms straight down at the sides, feet together, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/hk_up_0.png",
+  "prompt": "Full-body photograph of a young Bangladeshi man in a plain black t-shirt and black shorts facing the camera doing high knees running in place: right knee lifted up to hip height, thigh parallel to the floor, arms pumping, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/wallsit_0.png",
+  "prompt": "Full-body photograph of a young Bangladeshi man in a plain black t-shirt and black shorts side view, doing a wall sit with back flat against a plain wall, thighs parallel to the floor, knees bent at 90 degrees, arms crossed, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/jj_open_1.png",
+  "prompt": "Full-body photograph of a fit woman in a lime-green sports top and black leggings facing the camera doing a jumping jack at the top position: both arms straight up overhead, legs spread wide apart, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/jj_closed_1.png",
+  "prompt": "Full-body photograph of a fit woman in a lime-green sports top and black leggings facing the camera standing upright in the start position of a jumping jack: arms straight down at the sides, feet together, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/hk_up_1.png",
+  "prompt": "Full-body photograph of a fit woman in a lime-green sports top and black leggings facing the camera doing high knees running in place: right knee lifted up to hip height, thigh parallel to the floor, arms pumping, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/wallsit_1.png",
+  "prompt": "Full-body photograph of a fit woman in a lime-green sports top and black leggings side view, doing a wall sit with back flat against a plain wall, thighs parallel to the floor, knees bent at 90 degrees, arms crossed, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/jj_open_2.png",
+  "prompt": "Full-body photograph of a middle-aged South Asian man in a grey t-shirt and track pants facing the camera doing a jumping jack at the top position: both arms straight up overhead, legs spread wide apart, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/jj_closed_2.png",
+  "prompt": "Full-body photograph of a middle-aged South Asian man in a grey t-shirt and track pants facing the camera standing upright in the start position of a jumping jack: arms straight down at the sides, feet together, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/hk_up_2.png",
+  "prompt": "Full-body photograph of a middle-aged South Asian man in a grey t-shirt and track pants facing the camera doing high knees running in place: right knee lifted up to hip height, thigh parallel to the floor, arms pumping, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/wallsit_2.png",
+  "prompt": "Full-body photograph of a middle-aged South Asian man in a grey t-shirt and track pants side view, doing a wall sit with back flat against a plain wall, thighs parallel to the floor, knees bent at 90 degrees, arms crossed, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/jj_open_3.png",
+  "prompt": "Full-body photograph of a young woman wearing a hijab and dark athletic wear facing the camera doing a jumping jack at the top position: both arms straight up overhead, legs spread wide apart, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/jj_closed_3.png",
+  "prompt": "Full-body photograph of a young woman wearing a hijab and dark athletic wear facing the camera standing upright in the start position of a jumping jack: arms straight down at the sides, feet together, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/hk_up_3.png",
+  "prompt": "Full-body photograph of a young woman wearing a hijab and dark athletic wear facing the camera doing high knees running in place: right knee lifted up to hip height, thigh parallel to the floor, arms pumping, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "tools/pose/generated/wallsit_3.png",
+  "prompt": "Full-body photograph of a young woman wearing a hijab and dark athletic wear side view, doing a wall sit with back flat against a plain wall, thighs parallel to the floor, knees bent at 90 degrees, arms crossed, whole body visible from head to feet, plain dark charcoal studio background, soft even light, realistic photo, sharp focus, no text",
+  "max": 768,
+  "format": "png"
+ },
+ {
+  "out": "app/src/main/res/drawable-nodpi/art_body_front.webp",
+  "prompt": "Studio 3D render of an athletic human anatomy figure with clearly visible red muscle fibres and white tendons, front view, standing relaxed with arms slightly away from the body, full body centred, pure black background, subtle lime-green rim light from behind, high detail, no text",
+  "max": 900,
+  "format": "webp",
+  "black_to_alpha": true,
+  "quality": 85
+ },
+ {
+  "out": "app/src/main/res/drawable-nodpi/art_body_flex.webp",
+  "prompt": "Studio 3D render of an athletic human anatomy figure with visible red muscles, upper body and head, front double-biceps flex pose, centred, pure black background, subtle lime-green rim light, high detail, no text",
+  "max": 900,
+  "format": "webp",
+  "black_to_alpha": true,
+  "quality": 85
+ }
+]
