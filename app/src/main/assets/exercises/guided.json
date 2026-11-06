@@ -1,0 +1,1556 @@
+{
+ "version": 4,
+ "exercises": [
+  {
+   "id": "jumping_jack",
+   "name": "Jumping jacks",
+   "kind": "reps",
+   "camera": true,
+   "db": null,
+   "met": 8.0,
+   "default": 20,
+   "muscles": "Full body · cardio",
+   "cues": [
+    "Land softly on the balls of your feet",
+    "Arms all the way overhead"
+   ],
+   "steps": [],
+   "images": [],
+   "targets": {
+    "shoulders": 0.6,
+    "calves": 0.7,
+    "quads": 0.5,
+    "glutes": 0.4,
+    "abductors": 0.5,
+    "adductors": 0.4
+   },
+   "role": "warmup"
+  },
+  {
+   "id": "squat",
+   "name": "Bodyweight squat",
+   "kind": "reps",
+   "camera": true,
+   "db": "Bodyweight_Squat",
+   "met": 5.0,
+   "default": 12,
+   "muscles": "Quads · glutes",
+   "cues": [
+    "Chest up, push your hips back",
+    "Knees follow your toes"
+   ],
+   "steps": [
+    "Stand with your feet shoulder width apart. You can place your hands behind your head. This will be your starting position.",
+    "Begin the movement by flexing your knees and hips, sitting back with your hips.",
+    "Continue down to full depth if you are able,and quickly reverse the motion until you return to the starting position. As you squat, keep your head and chest up and push your knees out."
+   ],
+   "images": [],
+   "targets": {
+    "quads": 1,
+    "glutes": 0.9,
+    "hamstrings": 0.4,
+    "adductors": 0.4,
+    "lower_back": 0.3,
+    "calves": 0.2
+   },
+   "role": "main"
+  },
+  {
+   "id": "pushup",
+   "name": "Push-up",
+   "kind": "reps",
+   "camera": true,
+   "db": "Pushups",
+   "met": 8.0,
+   "default": 10,
+   "muscles": "Chest · triceps · core",
+   "cues": [
+    "Body in one straight line",
+    "Lower your chest close to the floor"
+   ],
+   "steps": [
+    "Lie on the floor face down and place your hands about 36 inches apart while holding your torso up at arms length.",
+    "Next, lower yourself downward until your chest almost touches the floor as you inhale.",
+    "Now breathe out and press your upper body back up to the starting position while squeezing your chest.",
+    "After a brief pause at the top contracted position, you can begin to lower yourself downward again for as many repetitions as needed."
+   ],
+   "images": [],
+   "targets": {
+    "chest": 1,
+    "triceps": 0.8,
+    "shoulders": 0.6,
+    "abs": 0.4
+   },
+   "role": "main"
+  },
+  {
+   "id": "lunge",
+   "name": "Lunge",
+   "kind": "reps",
+   "camera": true,
+   "db": "Bodyweight_Walking_Lunge",
+   "met": 4.0,
+   "default": 12,
+   "muscles": "Quads · glutes",
+   "cues": [
+    "Step long, drop the back knee",
+    "Front knee over the ankle"
+   ],
+   "steps": [
+    "Begin standing with your feet shoulder width apart and your hands on your hips.",
+    "Step forward with one leg, flexing the knees to drop your hips. Descend until your rear knee nearly touches the ground. Your posture should remain upright, and your front knee should stay above the front foot.",
+    "Drive through the heel of your lead foot and extend both knees to raise yourself back up.",
+    "Step forward with your rear foot, repeating the lunge on the opposite leg."
+   ],
+   "images": [],
+   "targets": {
+    "quads": 1,
+    "glutes": 0.9,
+    "hamstrings": 0.5,
+    "calves": 0.3,
+    "adductors": 0.3
+   },
+   "role": "main"
+  },
+  {
+   "id": "high_knees",
+   "name": "High knees",
+   "kind": "reps",
+   "camera": true,
+   "db": null,
+   "met": 8.0,
+   "default": 24,
+   "muscles": "Cardio · hip flexors",
+   "cues": [
+    "Drive each knee to hip height",
+    "Stay light and quick"
+   ],
+   "steps": [],
+   "images": [],
+   "targets": {
+    "hip_flexors": 0.9,
+    "quads": 0.6,
+    "calves": 0.6,
+    "abs": 0.4
+   },
+   "role": "warmup"
+  },
+  {
+   "id": "situp",
+   "name": "Sit-up",
+   "kind": "reps",
+   "camera": true,
+   "db": "Sit-Up",
+   "met": 3.8,
+   "default": 12,
+   "muscles": "Abs",
+   "cues": [
+    "Exhale as you come up",
+    "Lower with control"
+   ],
+   "steps": [
+    "Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees.",
+    "Place your hands behind your head and lock them together by clasping your fingers. This is the starting position.",
+    "Elevate your upper body so that it creates an imaginary V-shape with your thighs. Breathe out when performing this part of the exercise.",
+    "Once you feel the contraction for a second, lower your upper body back down to the starting position while inhaling.",
+    "Repeat for the recommended amount of repetitions."
+   ],
+   "images": [],
+   "targets": {
+    "abs": 1,
+    "hip_flexors": 0.6,
+    "obliques": 0.4
+   },
+   "role": "main"
+  },
+  {
+   "id": "crunch",
+   "name": "Crunch",
+   "kind": "reps",
+   "camera": true,
+   "db": "Crunches",
+   "met": 3.8,
+   "default": 15,
+   "muscles": "Abs",
+   "cues": [
+    "Lift your shoulder blades",
+    "Keep your neck relaxed"
+   ],
+   "steps": [
+    "Lie flat on your back with your feet flat on the ground, or resting on a bench with your knees bent at a 90 degree angle. If you are resting your feet on a bench, place them three to four inches apart and point your toes inward so they touch.",
+    "Now place your hands lightly on either side of your head keeping your elbows in. Tip: Don't lock your fingers behind your head.",
+    "While pushing the small of your back down in the floor to better isolate your abdominal muscles, begin to roll your shoulders off the floor.",
+    "Continue to push down as hard as you can with your lower back as you contract your abdominals and exhale. Your shoulders should come up off the floor only about four inches, and your lower back should remain on the floor. At the top of the movement, contract your abdominals hard and keep the contraction for a second. Tip: Focus on slow, controlled movement - don't cheat yourself by using momentum.",
+    "After the one second contraction, begin to come down slowly again to the starting position as you inhale."
+   ],
+   "images": [],
+   "targets": {
+    "abs": 1,
+    "obliques": 0.4
+   },
+   "role": "main"
+  },
+  {
+   "id": "glute_bridge",
+   "name": "Glute bridge",
+   "kind": "reps",
+   "camera": true,
+   "db": "Butt_Lift_Bridge",
+   "met": 3.5,
+   "default": 12,
+   "muscles": "Glutes · hamstrings",
+   "cues": [
+    "Drive through your heels",
+    "Squeeze at the top"
+   ],
+   "steps": [
+    "Lie flat on the floor on your back with the hands by your side and your knees bent. Your feet should be placed around shoulder width. This will be your starting position.",
+    "Pushing mainly with your heels, lift your hips off the floor while keeping your back straight. Breathe out as you perform this part of the motion and hold at the top for a second.",
+    "Slowly go back to the starting position as you breathe in."
+   ],
+   "images": [],
+   "targets": {
+    "glutes": 1,
+    "hamstrings": 0.7,
+    "lower_back": 0.4
+   },
+   "role": "main"
+  },
+  {
+   "id": "mountain_climber",
+   "name": "Mountain climbers",
+   "kind": "reps",
+   "camera": true,
+   "db": "Mountain_Climbers",
+   "met": 8.0,
+   "default": 20,
+   "muscles": "Core · cardio",
+   "cues": [
+    "Hips level with your shoulders",
+    "Knee towards your chest"
+   ],
+   "steps": [
+    "Begin in a pushup position, with your weight supported by your hands and toes. Flexing the knee and hip, bring one leg until the knee is approximately under the hip. This will be your starting position.",
+    "Explosively reverse the positions of your legs, extending the bent leg until the leg is straight and supported by the toe, and bringing the other foot up with the hip and knee flexed. Repeat in an alternating fashion for 20-30 seconds."
+   ],
+   "images": [],
+   "targets": {
+    "abs": 0.9,
+    "hip_flexors": 0.7,
+    "shoulders": 0.6,
+    "quads": 0.4,
+    "chest": 0.3
+   },
+   "role": "main"
+  },
+  {
+   "id": "jump_squat",
+   "name": "Jump squat",
+   "kind": "reps",
+   "camera": true,
+   "db": "Freehand_Jump_Squat",
+   "met": 8.0,
+   "default": 10,
+   "muscles": "Legs · power",
+   "cues": [
+    "Squat, then jump explosively",
+    "Land softly into the next squat"
+   ],
+   "steps": [
+    "Cross your arms over your chest.",
+    "With your head up and your back straight, position your feet at shoulder width.",
+    "Keeping your back straight and chest up, squat down as you inhale until your upper thighs are parallel, or lower, to the floor.",
+    "Now pressing mainly with the ball of your feet, jump straight up in the air as high as possible, using the thighs like springs. Exhale during this portion of the movement.",
+    "When you touch the floor again, immediately squat down and jump again."
+   ],
+   "images": [],
+   "targets": {
+    "quads": 1,
+    "glutes": 0.9,
+    "calves": 0.7,
+    "hamstrings": 0.4
+   },
+   "role": "main"
+  },
+  {
+   "id": "shoulder_press",
+   "name": "Shoulder press",
+   "kind": "reps",
+   "camera": false,
+   "db": "Dumbbell_Shoulder_Press",
+   "met": 3.5,
+   "default": 12,
+   "muscles": "Shoulders · triceps",
+   "cues": [
+    "Use dumbbells or water bottles",
+    "Press straight overhead"
+   ],
+   "steps": [
+    "While holding a dumbbell in each hand, sit on a military press bench or utility bench that has back support. Place the dumbbells upright on top of your thighs.",
+    "Now raise the dumbbells to shoulder height one at a time using your thighs to help propel them up into position.",
+    "Make sure to rotate your wrists so that the palms of your hands are facing forward. This is your starting position.",
+    "Now, exhale and push the dumbbells upward until they touch at the top.",
+    "Then, after a brief pause at the top contracted position, slowly lower the weights back down to the starting position while inhaling."
+   ],
+   "images": [],
+   "targets": {
+    "shoulders": 1,
+    "triceps": 0.6,
+    "traps": 0.3
+   },
+   "archived": true,
+   "needs": "Dumbbells",
+   "role": "main"
+  },
+  {
+   "id": "bicep_curl",
+   "name": "Biceps curl",
+   "kind": "reps",
+   "camera": false,
+   "db": "Dumbbell_Bicep_Curl",
+   "met": 3.5,
+   "default": 12,
+   "muscles": "Biceps",
+   "cues": [
+    "Elbows stay by your sides",
+    "Lower slowly"
+   ],
+   "steps": [
+    "Stand up straight with a dumbbell in each hand at arm's length. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward. This will be your starting position.",
+    "Now, keeping the upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps.",
+    "Then, inhale and slowly begin to lower the dumbbells back to the starting position.",
+    "Repeat for the recommended amount of repetitions."
+   ],
+   "images": [],
+   "targets": {
+    "biceps": 1,
+    "forearms": 0.5
+   },
+   "archived": true,
+   "needs": "Dumbbells",
+   "role": "main"
+  },
+  {
+   "id": "lateral_raise",
+   "name": "Lateral raise",
+   "kind": "reps",
+   "camera": false,
+   "db": "Side_Lateral_Raise",
+   "met": 3.5,
+   "default": 12,
+   "muscles": "Shoulders",
+   "cues": [
+    "Lift to shoulder height",
+    "Slight bend in the elbows"
+   ],
+   "steps": [
+    "Pick a couple of dumbbells and stand with a straight torso and the dumbbells by your side at arms length with the palms of the hand facing you. This will be your starting position.",
+    "While maintaining the torso in a stationary position (no swinging), lift the dumbbells to your side with a slight bend on the elbow and the hands slightly tilted forward as if pouring water in a glass. Continue to go up until you arms are parallel to the floor. Exhale as you execute this movement and pause for a second at the top.",
+    "Lower the dumbbells back down slowly to the starting position as you inhale.",
+    "Repeat for the recommended amount of repetitions."
+   ],
+   "images": [],
+   "targets": {
+    "shoulders": 1,
+    "traps": 0.4
+   },
+   "archived": true,
+   "needs": "Dumbbells",
+   "role": "main"
+  },
+  {
+   "id": "plank",
+   "name": "Plank",
+   "kind": "hold",
+   "camera": true,
+   "db": "Plank",
+   "met": 3.8,
+   "default": 30,
+   "muscles": "Core · shoulders",
+   "cues": [
+    "Elbows under shoulders",
+    "Hips level, squeeze your glutes"
+   ],
+   "steps": [
+    "Get into a prone position on the floor, supporting your weight on your toes and your forearms. Your arms are bent and directly below the shoulder.",
+    "Keep your body straight at all times, and hold this position as long as possible. To increase difficulty, an arm or leg can be raised."
+   ],
+   "images": [],
+   "targets": {
+    "abs": 1,
+    "shoulders": 0.6,
+    "lower_back": 0.4,
+    "glutes": 0.3,
+    "quads": 0.2
+   },
+   "role": "main"
+  },
+  {
+   "id": "side_plank",
+   "name": "Side plank",
+   "kind": "hold",
+   "camera": true,
+   "db": "Side_Bridge",
+   "met": 3.8,
+   "default": 20,
+   "muscles": "Obliques · core",
+   "cues": [
+    "Stack your feet",
+    "Lift your hips high"
+   ],
+   "steps": [],
+   "images": [],
+   "targets": {
+    "obliques": 1,
+    "abs": 0.6,
+    "shoulders": 0.5,
+    "abductors": 0.4
+   },
+   "role": "main"
+  },
+  {
+   "id": "wall_sit",
+   "name": "Wall sit",
+   "kind": "hold",
+   "camera": true,
+   "db": null,
+   "met": 4.0,
+   "default": 30,
+   "muscles": "Quads · glutes",
+   "cues": [
+    "Back flat on the wall",
+    "Thighs parallel to the floor"
+   ],
+   "steps": [],
+   "images": [],
+   "targets": {
+    "quads": 1,
+    "glutes": 0.6,
+    "calves": 0.2
+   },
+   "role": "main"
+  },
+  {
+   "id": "superman",
+   "name": "Superman hold",
+   "kind": "hold",
+   "camera": true,
+   "db": "Superman",
+   "met": 3.0,
+   "default": 20,
+   "muscles": "Lower back · glutes",
+   "cues": [
+    "Lift arms and legs together",
+    "Look at the floor"
+   ],
+   "steps": [
+    "To begin, lie straight and face down on the floor or exercise mat. Your arms should be fully extended in front of you. This is the starting position.",
+    "Simultaneously raise your arms, legs, and chest off of the floor and hold this contraction for 2 seconds. Tip: Squeeze your lower back to get the best results from this exercise. Remember to exhale during this movement. Note: When holding the contracted position, you should look like superman when he is flying.",
+    "Slowly begin to lower your arms, legs and chest back down to the starting position while inhaling.",
+    "Repeat for the recommended amount of repetitions prescribed in your program."
+   ],
+   "images": [],
+   "targets": {
+    "lower_back": 1,
+    "glutes": 0.7,
+    "middle_back": 0.5,
+    "hamstrings": 0.4
+   },
+   "role": "main",
+   "camera_spec": {
+    "kind": "hold",
+    "features": [
+     "HIP",
+     "BODY_TILT"
+    ],
+    "view": "side",
+    "cue": "Lift arms and legs off the floor",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "centre": [
+     148.4,
+     6.54
+    ],
+    "tolerance": [
+     14.0,
+     28.0
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "russian_twist",
+   "name": "Russian twist",
+   "kind": "reps",
+   "camera": true,
+   "db": "Russian_Twist",
+   "met": 3.8,
+   "default": 16,
+   "muscles": "Obliques",
+   "cues": [
+    "Lean back slightly",
+    "Rotate from your ribs"
+   ],
+   "steps": [
+    "Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees.",
+    "Elevate your upper body so that it creates an imaginary V-shape with your thighs. Your arms should be fully extended in front of you perpendicular to your torso and with the hands clasped. This is the starting position.",
+    "Twist your torso to the right side until your arms are parallel with the floor while breathing out.",
+    "Hold the contraction for a second and move back to the starting position while breathing out. Now move to the opposite side performing the same techniques you applied to the right side.",
+    "Repeat for the recommended amount of repetitions."
+   ],
+   "images": [],
+   "targets": {
+    "obliques": 1,
+    "abs": 0.7
+   },
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "ARM_RAISE",
+     "WRIST_HEIGHT"
+    ],
+    "view": "side",
+    "cue": "Rotate further, hands towards the floor",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "rest": [
+     59.26,
+     0.36
+    ],
+    "peak": [
+     22.38,
+     0.02
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "flutter_kicks",
+   "name": "Flutter kicks",
+   "kind": "reps",
+   "camera": true,
+   "db": "Flutter_Kicks",
+   "met": 3.8,
+   "default": 20,
+   "muscles": "Lower abs",
+   "cues": [
+    "Lower back pressed down",
+    "Small, quick kicks"
+   ],
+   "steps": [
+    "On a flat bench lie facedown with the hips on the edge of the bench, the legs straight with toes high off the floor and with the arms on top of the bench holding on to the front edge.",
+    "Squeeze your glutes and hamstrings and straighten the legs until they are level with the hips. This will be your starting position.",
+    "Start the movement by lifting the left leg higher than the right leg.",
+    "Then lower the left leg as you lift the right leg.",
+    "Continue alternating in this manner (as though you are doing a flutter kick in water) until you have done the recommended amount of repetitions for each leg. Make sure that you keep a controlled movement at all times. Tip: You will breathe normally as you perform this movement."
+   ],
+   "images": [],
+   "targets": {
+    "abs": 0.9,
+    "hip_flexors": 0.8
+   },
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "LEG_SPLIT"
+    ],
+    "view": "side",
+    "cue": "Bigger kicks, legs straight",
+    "source": "rule-based thresholds",
+    "rest": [
+     4
+    ],
+    "peak": [
+     24
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "arm_circles",
+   "name": "Arm circles",
+   "kind": "hold",
+   "camera": true,
+   "db": "Arm_Circles",
+   "met": 2.5,
+   "default": 30,
+   "muscles": "Shoulders · warm-up",
+   "cues": [
+    "Arms straight out to the sides",
+    "Small circles, then bigger"
+   ],
+   "steps": [
+    "Stand up and extend your arms straight out by the sides. The arms should be parallel to the floor and perpendicular (90-degree angle) to your torso. This will be your starting position.",
+    "Slowly start to make circles of about 1 foot in diameter with each outstretched arm. Breathe normally as you perform the movement.",
+    "Continue the circular motion of the outstretched arms for about ten seconds. Then reverse the movement, going the opposite direction."
+   ],
+   "images": [],
+   "targets": {
+    "shoulders": 1,
+    "traps": 0.4
+   },
+   "role": "warmup",
+   "camera_spec": {
+    "kind": "hold",
+    "features": [
+     "ARM_RAISE",
+     "ELBOW"
+    ],
+    "view": "front",
+    "cue": "Arms straight out to the sides",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "centre": [
+     114.64,
+     164.01
+    ],
+    "tolerance": [
+     28.0,
+     28.0
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 40,
+     "max": 90
+    }
+   }
+  },
+  {
+   "id": "inchworm",
+   "name": "Inchworm",
+   "kind": "reps",
+   "camera": true,
+   "db": "Inchworm",
+   "met": 3.5,
+   "default": 6,
+   "muscles": "Hamstrings · core",
+   "cues": [
+    "Walk your hands out to a plank",
+    "Walk your feet back in"
+   ],
+   "steps": [
+    "Stand with your feet close together. Keeping your legs straight, stretch down and put your hands on the floor directly in front of you. This will be your starting position.",
+    "Begin by walking your hands forward slowly, alternating your left and your right. As you do so, bend only at the hip, keeping your legs straight.",
+    "Keep going until your body is parallel to the ground in a pushup position.",
+    "Now, keep your hands in place and slowly take short steps with your feet, moving only a few inches at a time.",
+    "Continue walking until your feet are by hour hands, keeping your legs straight as you do so."
+   ],
+   "images": [],
+   "targets": {
+    "hamstrings": 0.8,
+    "abs": 0.6,
+    "shoulders": 0.6,
+    "chest": 0.3
+   },
+   "role": "warmup",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "HIP"
+    ],
+    "view": "side",
+    "cue": "Walk your hands all the way out",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "rest": [
+     56.37
+    ],
+    "peak": [
+     99.48
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "bench_dips",
+   "name": "Chair dips",
+   "kind": "reps",
+   "camera": false,
+   "db": "Bench_Dips",
+   "met": 3.8,
+   "default": 10,
+   "muscles": "Triceps",
+   "cues": [
+    "Use a sturdy chair",
+    "Elbows point straight back"
+   ],
+   "steps": [
+    "For this exercise you will need to place a bench behind your back. With the bench perpendicular to your body, and while looking away from it, hold on to the bench on its edge with the hands fully extended, separated at shoulder width. The legs will be extended forward, bent at the waist and perpendicular to your torso. This will be your starting position.",
+    "Slowly lower your body as you inhale by bending at the elbows until you lower yourself far enough to where there is an angle slightly smaller than 90 degrees between the upper arm and the forearm. Tip: Keep the elbows as close as possible throughout the movement. Forearms should always be pointing down.",
+    "Using your triceps to bring your torso up again, lift yourself back to the starting position.",
+    "Repeat for the recommended amount of repetitions."
+   ],
+   "images": [],
+   "targets": {
+    "triceps": 1,
+    "chest": 0.4,
+    "shoulders": 0.4
+   },
+   "archived": true,
+   "needs": "Bench",
+   "role": "main"
+  },
+  {
+   "id": "calf_raise",
+   "name": "Calf raise",
+   "kind": "reps",
+   "camera": true,
+   "db": "Standing_Gastrocnemius_Calf_Stretch",
+   "met": 2.8,
+   "default": 15,
+   "muscles": "Calves",
+   "cues": [
+    "Rise onto your toes",
+    "Lower slowly"
+   ],
+   "steps": [
+    "Stand with your torso upright holding two dumbbells in your hands by your sides. Place the ball of the foot on a sturdy and stable wooden board (that is around 2-3 inches tall) while your heels extend off and touch the floor. This will be your starting position.",
+    "With the toes pointing either straight (to hit all parts equally), inwards (for emphasis on the outer head) or outwards (for emphasis on the inner head), raise the heels off the floor as you exhale by contracting the calves. Hold the top contraction for a second.",
+    "As you inhale, go back to the starting position by slowly lowering the heels.",
+    "Repeat for the recommended amount of times."
+   ],
+   "images": [],
+   "targets": {
+    "calves": 1
+   },
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "HEEL_RISE"
+    ],
+    "view": "side",
+    "cue": "Rise all the way onto your toes",
+    "source": "rule-based thresholds",
+    "rest": [
+     0.0
+    ],
+    "peak": [
+     0.1
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 40,
+     "max": 90
+    }
+   }
+  },
+  {
+   "id": "reverse_crunch",
+   "name": "Reverse crunch",
+   "kind": "reps",
+   "camera": true,
+   "db": "Reverse_Crunch",
+   "met": 3.8,
+   "default": 12,
+   "muscles": "Lower abs",
+   "cues": [
+    "Curl your hips off the floor",
+    "Control the way down"
+   ],
+   "steps": [
+    "Lie down on the floor with your legs fully extended and arms to the side of your torso with the palms on the floor. Your arms should be stationary for the entire exercise.",
+    "Move your legs up so that your thighs are perpendicular to the floor and feet are together and parallel to the floor. This is the starting position.",
+    "While inhaling, move your legs towards the torso as you roll your pelvis backwards and you raise your hips off the floor. At the end of this movement your knees will be touching your chest.",
+    "Hold the contraction for a second and move your legs back to the starting position while exhaling.",
+    "Repeat for the recommended amount of repetitions."
+   ],
+   "images": [],
+   "targets": {
+    "abs": 1,
+    "hip_flexors": 0.4
+   },
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "HIP_MIN"
+    ],
+    "view": "side",
+    "cue": "Bring your knees closer to your chest",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "rest": [
+     94.3
+    ],
+    "peak": [
+     50.53
+    ]
+   }
+  },
+  {
+   "id": "glute_kickback",
+   "name": "Glute kickback",
+   "kind": "reps",
+   "camera": true,
+   "db": "Glute_Kickback",
+   "met": 3.5,
+   "default": 12,
+   "muscles": "Glutes",
+   "cues": [
+    "Kick back and up",
+    "Keep your back flat"
+   ],
+   "steps": [
+    "Kneel on the floor or an exercise mat and bend at the waist with your arms extended in front of you (perpendicular to the torso) in order to get into a kneeling push-up position but with the arms spaced at shoulder width. Your head should be looking forward and the bend of the knees should create a 90-degree angle between the hamstrings and the calves. This will be your starting position.",
+    "As you exhale, lift up your right leg until the hamstrings are in line with the back while maintaining the 90-degree angle bend. Contract the glutes throughout this movement and hold the contraction at the top for a second. Tip: At the end of the movement the upper leg should be parallel to the floor while the calf should be perpendicular to it.",
+    "Go back to the initial position as you inhale and now repeat with the left leg.",
+    "Continue to alternate legs until all of the recommended repetitions have been performed."
+   ],
+   "images": [],
+   "targets": {
+    "glutes": 1,
+    "hamstrings": 0.5
+   },
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "HIP",
+     "KNEE_LIFT"
+    ],
+    "view": "side",
+    "cue": "Kick the heel higher, squeeze the glute",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "rest": [
+     118.24,
+     -0.58
+    ],
+    "peak": [
+     143.47,
+     0.19
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "star_jump",
+   "name": "Star jumps",
+   "kind": "reps",
+   "camera": true,
+   "db": "Star_Jump",
+   "met": 8.0,
+   "default": 10,
+   "muscles": "Full body · power",
+   "cues": [
+    "Explode into a star shape",
+    "Land softly"
+   ],
+   "steps": [
+    "Begin in a relaxed stance with your feet shoulder width apart and hold your arms close to the body.",
+    "To initiate the move, squat down halfway and explode back up as high as possible. Fully extend your entire body, spreading your legs and arms away from the body.",
+    "As you land, bring your limbs back in and absorb your impact through the legs."
+   ],
+   "images": [],
+   "targets": {
+    "quads": 0.8,
+    "glutes": 0.7,
+    "calves": 0.8,
+    "shoulders": 0.5
+   },
+   "role": "warmup",
+   "track_as": "jumping_jack"
+  },
+  {
+   "id": "burpee",
+   "name": "Burpee",
+   "kind": "reps",
+   "camera": true,
+   "db": null,
+   "met": 8.0,
+   "default": 8,
+   "muscles": "Full body · cardio",
+   "cues": [
+    "Hands down, jump back to a plank",
+    "Jump in and explode up"
+   ],
+   "steps": [],
+   "images": [],
+   "targets": {
+    "quads": 0.8,
+    "chest": 0.7,
+    "shoulders": 0.6,
+    "abs": 0.6,
+    "triceps": 0.5,
+    "glutes": 0.5,
+    "calves": 0.5
+   },
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "BODY_TILT"
+    ],
+    "view": "side",
+    "cue": "Jump the feet all the way back to a plank",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "rest": [
+     89.87
+    ],
+    "peak": [
+     17.15
+    ]
+   }
+  },
+  {
+   "id": "wide_pushup",
+   "name": "Wide push-up",
+   "kind": "reps",
+   "db": "Push-Up_Wide",
+   "met": 3.8,
+   "default": 10,
+   "track_as": "pushup",
+   "muscles": "Chest · shoulders",
+   "cues": [
+    "Hands wider than shoulders",
+    "Body in one straight line"
+   ],
+   "targets": {
+    "chest": 1,
+    "shoulders": 0.7,
+    "triceps": 0.5,
+    "abs": 0.4
+   },
+   "camera": true,
+   "steps": [
+    "With your hands wide apart, support your body on your toes and hands in a plank position. Your elbows should be extended and your body straight. Do not allow your hips to sag. This will be your starting position.",
+    "To begin, allow the elbows to flex, lowering your chest to the floor as you inhale.",
+    "Using your pectoral muscles, press your upper body back up to the starting position by extending the elbows. Exhale as you perform this step.",
+    "After pausing at the contracted position, repeat the movement for the prescribed amount of repetitions."
+   ],
+   "images": [],
+   "role": "main"
+  },
+  {
+   "id": "diamond_pushup",
+   "name": "Close-grip push-up",
+   "kind": "reps",
+   "db": "Push-Ups_-_Close_Triceps_Position",
+   "met": 3.8,
+   "default": 8,
+   "track_as": "pushup",
+   "muscles": "Triceps · chest",
+   "cues": [
+    "Elbows stay close to your ribs",
+    "Lower slowly"
+   ],
+   "targets": {
+    "triceps": 1,
+    "chest": 0.7,
+    "shoulders": 0.5,
+    "abs": 0.3
+   },
+   "camera": true,
+   "steps": [
+    "Lie on the floor face down and place your hands closer than shoulder width for a close hand position. Make sure that you are holding your torso up at arms' length.",
+    "Lower yourself until your chest almost touches the floor as you inhale.",
+    "Using your triceps and some of your pectoral muscles, press your upper body back up to the starting position and squeeze your chest. Breathe out as you perform this step.",
+    "After a second pause at the contracted position, repeat the movement for the prescribed amount of repetitions."
+   ],
+   "images": [],
+   "role": "main"
+  },
+  {
+   "id": "split_squat",
+   "name": "Split squat",
+   "kind": "reps",
+   "db": "Split_Squats",
+   "met": 4.0,
+   "default": 10,
+   "track_as": "lunge",
+   "muscles": "Quads · glutes",
+   "cues": [
+    "Front knee over the ankle",
+    "Torso tall"
+   ],
+   "targets": {
+    "quads": 1,
+    "glutes": 0.8,
+    "hamstrings": 0.5,
+    "calves": 0.3
+   },
+   "camera": true,
+   "steps": [
+    "Being in a standing position. Jump into a split leg position, with one leg forward and one leg back, flexing the knees and lowering your hips slightly as you do so.",
+    "As you descend, immediately reverse direction, standing back up and jumping, reversing the position of your legs. Repeat 5-10 times on each leg."
+   ],
+   "images": [],
+   "role": "main"
+  },
+  {
+   "id": "single_leg_bridge",
+   "name": "Single-leg glute bridge",
+   "kind": "reps",
+   "db": "Single_Leg_Glute_Bridge",
+   "met": 3.5,
+   "default": 10,
+   "track_as": "glute_bridge",
+   "muscles": "Glutes · hamstrings",
+   "cues": [
+    "Hips level",
+    "Squeeze at the top"
+   ],
+   "targets": {
+    "glutes": 1,
+    "hamstrings": 0.7,
+    "lower_back": 0.3
+   },
+   "camera": true,
+   "steps": [
+    "Lay on the floor with your feet flat and knees bent.",
+    "Raise one leg off of the ground, pulling the knee to your chest. This will be your starting position.",
+    "Execute the movement by driving through the heel, extending your hip upward and raising your glutes off of the ground.",
+    "Extend as far as possible, pause and then return to the starting position."
+   ],
+   "images": [],
+   "role": "main"
+  },
+  {
+   "id": "butt_kicks",
+   "name": "Butt kicks",
+   "kind": "reps",
+   "db": "Single_Leg_Butt_Kick",
+   "met": 8.0,
+   "default": 30,
+   "muscles": "Hamstrings · cardio",
+   "cues": [
+    "Quick light feet",
+    "Heels to glutes"
+   ],
+   "targets": {
+    "hamstrings": 0.8,
+    "quads": 0.5,
+    "calves": 0.6
+   },
+   "camera": true,
+   "steps": [
+    "Begin by standing on one leg, with the bent knee raised. This will be your start position.",
+    "Using a countermovement jump, take off upward by extending the hip, knee, and ankle of the grounded leg.",
+    "Immediately flex the knee and attempt to touch your butt with the heel of your jumping leg.",
+    "Return the leg to a partially bent position underneath the hips and land. Your opposite leg should stay in relatively the same position throughout the drill."
+   ],
+   "images": [],
+   "role": "warmup",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "KNEE"
+    ],
+    "view": "side",
+    "cue": "Heels all the way to your glutes",
+    "source": "rule-based thresholds",
+    "rest": [
+     168
+    ],
+    "peak": [
+     75
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 40,
+     "max": 90
+    }
+   }
+  },
+  {
+   "id": "dead_bug",
+   "name": "Dead bug",
+   "kind": "reps",
+   "db": "Dead_Bug",
+   "met": 3.0,
+   "default": 12,
+   "muscles": "Deep core",
+   "cues": [
+    "Lower back pressed to the floor",
+    "Move slowly, opposite arm and leg"
+   ],
+   "targets": {
+    "abs": 1,
+    "hip_flexors": 0.4,
+    "obliques": 0.4
+   },
+   "camera": true,
+   "steps": [
+    "Begin lying on your back with your hands extended above you toward the ceiling.",
+    "Bring your feet, knees, and hips up to 90 degrees.",
+    "Exhale hard to bring your ribcage down and flatten your back onto the floor, rotating your pelvis up and squeezing your glutes. Hold this position throughout the movement. This will be your starting position.",
+    "Initiate the exercise by extending one leg, straightening the knee and hip to bring the leg just above the ground.",
+    "Maintain the position of your lumbar and pelvis as you perform the movement, as your back is going to want to arch.",
+    "Stay tight and return the working leg to the starting position."
+   ],
+   "images": [],
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "HIP",
+     "KNEE_MEAN"
+    ],
+    "view": "side",
+    "cue": "Extend the leg further, lower back stays down",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "rest": [
+     77.56,
+     100.24
+    ],
+    "peak": [
+     122.03,
+     131.41
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "side_leg_raise",
+   "name": "Side-lying leg raise",
+   "kind": "reps",
+   "db": "Side_Leg_Raises",
+   "met": 3.0,
+   "default": 12,
+   "muscles": "Outer hips",
+   "cues": [
+    "Keep the top leg straight",
+    "Do not roll backwards"
+   ],
+   "targets": {
+    "abductors": 1,
+    "glutes": 0.6,
+    "obliques": 0.3
+   },
+   "camera": true,
+   "steps": [
+    "Stand next to a chair, which you may hold onto as a support. Stand on one leg. This will be your starting position.",
+    "Keeping your leg straight, raise it as far out to the side as possible, and swing it back down, allowing it to cross the opposite leg.",
+    "Repeat this swinging motion 5-10 times, increasing the range of motion as you do so."
+   ],
+   "images": [],
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "LEG_SPREAD"
+    ],
+    "view": "front",
+    "cue": "Lift the top leg higher",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "rest": [
+     0.34
+    ],
+    "peak": [
+     2.12
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 40,
+     "max": 90
+    }
+   }
+  },
+  {
+   "id": "elbow_to_knee",
+   "name": "Elbow to knee crunch",
+   "kind": "reps",
+   "db": "Elbow_to_Knee",
+   "met": 3.8,
+   "default": 16,
+   "muscles": "Obliques · abs",
+   "cues": [
+    "Rotate from the ribs",
+    "Do not pull on your neck"
+   ],
+   "targets": {
+    "obliques": 1,
+    "abs": 0.8,
+    "hip_flexors": 0.3
+   },
+   "camera": true,
+   "steps": [
+    "Lie on the floor, crossing your right leg across your bent left knee. Clasp your hands behind your head, beginning with your shoulder blades on the ground. This will be your starting position.",
+    "Perform the motion by flexing the spine and rotating your torso to bring the left elbow to the right knee.",
+    "Return to the starting position and repeat the movement for the desired number of repetitions before switching sides."
+   ],
+   "images": [],
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "LEG_SPLIT"
+    ],
+    "view": "side",
+    "cue": "Drive the knee all the way in",
+    "source": "rule-based thresholds",
+    "rest": [
+     8
+    ],
+    "peak": [
+     45
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "tuck_jump",
+   "name": "Tuck jump",
+   "kind": "reps",
+   "db": "Knee_Tuck_Jump",
+   "met": 8.0,
+   "default": 8,
+   "muscles": "Legs · power",
+   "cues": [
+    "Knees up to the chest",
+    "Land softly"
+   ],
+   "targets": {
+    "quads": 0.9,
+    "calves": 0.8,
+    "glutes": 0.7,
+    "hamstrings": 0.5,
+    "abs": 0.4
+   },
+   "camera": true,
+   "steps": [
+    "Begin in a comfortable standing position with your knees slightly bent. Hold your hands in front of you, palms down with your fingertips together at chest height. This will be your starting position.",
+    "Rapidly dip down into a quarter squat and immediately explode upward. Drive the knees towards the chest, attempting to touch them to the palms of the hands.",
+    "Jump as high as you can, raising your knees up, and then ensure a good land be re-extending your legs, absorbing impact through be allowing the knees to rebend."
+   ],
+   "images": [],
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "KNEE_MEAN",
+     "HIP_MIN"
+    ],
+    "view": "front",
+    "cue": "Knees up to your chest",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "rest": [
+     165.99,
+     167.22
+    ],
+    "peak": [
+     127.92,
+     126.59
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 40,
+     "max": 90
+    }
+   }
+  },
+  {
+   "id": "scissor_kick",
+   "name": "Scissor kicks",
+   "kind": "reps",
+   "db": "Scissor_Kick",
+   "met": 3.8,
+   "default": 20,
+   "muscles": "Lower abs",
+   "cues": [
+    "Lower back down",
+    "Small controlled kicks"
+   ],
+   "targets": {
+    "abs": 1,
+    "hip_flexors": 0.8,
+    "quads": 0.3
+   },
+   "camera": true,
+   "steps": [
+    "To begin, lie down with your back pressed against the floor or on an exercise mat (optional). Your arms should be fully extended to the sides with your palms facing down. Note: The arms should be stationary the entire time.",
+    "With a slight bend at the knees, lift your legs up so that your heels are about 6 inches off the ground. This is the starting position.",
+    "Now lift your left leg up to about a 45 degree angle while your right leg is lowered until the heel is about 2-3 inches from the ground.",
+    "Switch movements by raising your right leg up and lowering your left leg. Remember to breathe while performing this exercise.",
+    "Repeat for the recommended amount of repetitions."
+   ],
+   "images": [],
+   "role": "main",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "LEG_SPLIT"
+    ],
+    "view": "side",
+    "cue": "Keep the scissor motion big",
+    "source": "rule-based thresholds",
+    "rest": [
+     4
+    ],
+    "peak": [
+     26
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "childs_pose",
+   "name": "Child's pose",
+   "kind": "hold",
+   "db": "Childs_Pose",
+   "met": 2.0,
+   "default": 30,
+   "muscles": "Lower back · stretch",
+   "cues": [
+    "Breathe slowly",
+    "Sink the hips back"
+   ],
+   "targets": {
+    "lower_back": 0.6,
+    "lats": 0.4,
+    "glutes": 0.3
+   },
+   "camera": true,
+   "steps": [
+    "Get on your hands and knees, walk your hands in front of you.",
+    "Lower your buttocks down to sit on your heels. Let your arms drag along the floor as you sit back to stretch your entire spine.",
+    "Once you settle onto your heels, bring your hands next to your feet and relax. \"breathe\" into your back. Rest your forehead on the floor. Avoid this position if you have knee problems."
+   ],
+   "images": [],
+   "role": "cooldown",
+   "camera_spec": {
+    "kind": "hold",
+    "features": [
+     "HIP_MIN",
+     "KNEE_MEAN"
+    ],
+    "view": "side",
+    "cue": "Sit your hips back to your heels",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "centre": [
+     37.27,
+     48.31
+    ],
+    "tolerance": [
+     28.0,
+     28.0
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "cat_cow",
+   "name": "Cat-cow stretch",
+   "kind": "hold",
+   "db": "Cat_Stretch",
+   "met": 2.0,
+   "default": 30,
+   "muscles": "Spine · mobility",
+   "cues": [
+    "Move with your breath",
+    "Round, then arch gently"
+   ],
+   "targets": {
+    "lower_back": 0.6,
+    "middle_back": 0.5,
+    "abs": 0.2
+   },
+   "camera": true,
+   "steps": [
+    "Position yourself on the floor on your hands and knees.",
+    "Pull your belly in and round your spine, lower back, shoulders, and neck, letting your head drop.",
+    "Hold for 15 seconds."
+   ],
+   "images": [],
+   "role": "cooldown",
+   "camera_spec": {
+    "kind": "hold",
+    "features": [
+     "HIP",
+     "KNEE_MEAN"
+    ],
+    "view": "side",
+    "cue": "Hands under shoulders, knees under hips",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "centre": [
+     87.04,
+     94.96
+    ],
+    "tolerance": [
+     28.0,
+     28.0
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "hamstring_stretch",
+   "name": "Hamstring stretch",
+   "kind": "hold",
+   "db": "Hamstring_Stretch",
+   "met": 2.0,
+   "default": 30,
+   "muscles": "Hamstrings · stretch",
+   "cues": [
+    "Hinge at the hips",
+    "No bouncing"
+   ],
+   "targets": {
+    "hamstrings": 0.7,
+    "calves": 0.3,
+    "lower_back": 0.2
+   },
+   "camera": true,
+   "steps": [
+    "Lie on your back with one leg extended above you, with the hip at ninety degrees. Keep the other leg flat on the floor.",
+    "Loop a belt, band, or rope over the ball of your foot. This will be your starting position.",
+    "Pull on the belt to create tension in the calves and hamstrings. Hold this stretch for 10-30 seconds, and repeat with the other leg."
+   ],
+   "images": [],
+   "role": "cooldown",
+   "camera_spec": {
+    "kind": "hold",
+    "features": [
+     "HIP_MIN",
+     "KNEE_MEAN"
+    ],
+    "view": "side",
+    "cue": "Hinge forward with straight knees",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "centre": [
+     89.44,
+     167.65
+    ],
+    "tolerance": [
+     28.0,
+     28.0
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 0,
+     "max": 55
+    }
+   }
+  },
+  {
+   "id": "hip_flexor_stretch",
+   "name": "Kneeling hip-flexor stretch",
+   "kind": "hold",
+   "db": "Kneeling_Hip_Flexor",
+   "met": 2.0,
+   "default": 30,
+   "muscles": "Hip flexors · stretch",
+   "cues": [
+    "Tuck the pelvis under",
+    "Tall torso"
+   ],
+   "targets": {
+    "hip_flexors": 0.7,
+    "quads": 0.4
+   },
+   "camera": true,
+   "steps": [
+    "Kneel on a mat and bring your right knee up so the bottom of your foot is on the floor and extend your left leg out behind you so the top of your foot is on the floor.",
+    "Shift your weight forward until you feel a stretch in your hip. Hold for 15 seconds, then repeat for your other side."
+   ],
+   "images": [],
+   "role": "cooldown",
+   "camera_spec": {
+    "kind": "hold",
+    "features": [
+     "KNEE",
+     "TORSO_TILT"
+    ],
+    "view": "side",
+    "cue": "Tall torso, tuck the pelvis",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "centre": [
+     42.69,
+     1.35
+    ],
+    "tolerance": [
+     28.0,
+     28.0
+    ],
+    "gate": {
+     "feature": "BODY_TILT",
+     "min": 40,
+     "max": 90
+    }
+   }
+  },
+  {
+   "id": "worlds_greatest",
+   "name": "World's greatest stretch",
+   "kind": "reps",
+   "db": "Worlds_Greatest_Stretch",
+   "met": 2.5,
+   "default": 6,
+   "muscles": "Full-body mobility",
+   "cues": [
+    "Step long",
+    "Rotate and reach to the ceiling"
+   ],
+   "targets": {
+    "hamstrings": 0.5,
+    "hip_flexors": 0.5,
+    "glutes": 0.4,
+    "middle_back": 0.4,
+    "shoulders": 0.3
+   },
+   "camera": true,
+   "steps": [
+    "This is a three-part stretch. Begin by lunging forward, with your front foot flat on the ground and on the toes of your back foot. With your knees bent, squat down until your knee is almost touching the ground. Keep your torso erect, and hold this position for 10-20 seconds.",
+    "Now, place the arm on the same side as your front leg on the ground, with the elbow next to the foot. Your other hand should be placed on the ground, parallel to your lead leg, to help support you during this portion of the stretch.",
+    "After 10-20 seconds, place your hands on either side of your front foot. Raise the toes of the front foot off of the ground, and straighten your leg. You may need to reposition your rear leg to do so. Hold for 10-20 seconds, and then repeat the entire sequence for the other side."
+   ],
+   "images": [],
+   "role": "warmup",
+   "camera_spec": {
+    "kind": "reps",
+    "features": [
+     "HIP_MIN",
+     "ARM_RAISE"
+    ],
+    "view": "side",
+    "cue": "Step longer and reach higher",
+    "source": "free-exercise-db start/end photos (MediaPipe landmarks)",
+    "rest": [
+     75.89,
+     1.39
+    ],
+    "peak": [
+     137.28,
+     69.28
+    ]
+   }
+  }
+ ]
+}
