@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF000000"
+    android:keepScreenOn="true">
+
+    <!-- Manual mode / no camera: animated demo of the current exercise -->
+    <com.transformsai.nutrifitai.ui.widget.ExerciseAnimView
+        android:id="@+id/demo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.9"
+        android:importantForAccessibility="no" />
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/mode_camera"
+        app:scaleType="fillCenter" />
+
+    <com.transformsai.nutrifitai.ui.widget.PoseOverlayView
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="top"
+        android:background="@drawable/bg_top_scrim" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_nav_fade" />
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="10dp">
+
+        <ImageButton
+            android:id="@+id/close"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_round_glass"
+            android:contentDescription="@string/end"
+            android:padding="13dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_close"
+            app:tint="@color/nl_text" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/stepOf"
+                style="@style/NL.Text.MacroChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/nl_text"
+                tools:text="3 / 8" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:indicatorColor="@color/nl_lime"
+                app:indicatorTrackGapSize="0dp"
+                app:trackColor="#33FFFFFF"
+                app:trackCornerRadius="3dp"
+                app:trackStopIndicatorSize="0dp"
+                app:trackThickness="5dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/mode"
+            style="@style/NL.Text.MacroChip"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_chip_glass"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:minWidth="48dp"
+            android:paddingHorizontal="12dp"
+            android:textColor="@color/nl_text"
+            app:drawableStartCompat="@drawable/ic_camera_small"
+            app:drawableTint="@color/nl_lime"
+            tools:text="Camera" />
+
+        <ImageButton
+            android:id="@+id/record"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_round_glass"
+            android:contentDescription="@string/cd_record_clip"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_record"
+            android:visibility="gone"
+            app:tint="@color/nl_error" />
+
+        <ImageButton
+            android:id="@+id/flip"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_round_glass"
+            android:contentDescription="@string/cd_flip_camera"
+            android:padding="11dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_flip"
+            app:tint="@color/nl_text" />
+
+        <ImageButton
+            android:id="@+id/voice"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_round_glass"
+            android:contentDescription="@string/cd_voice_on"
+            android:padding="11dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_volume"
+            app:tint="@color/nl_text" />
+    </LinearLayout>
+
+    <!-- Tracking status + form fault, under the top bar -->
+    <LinearLayout
+        android:id="@+id/statusBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="74dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/recChip"
+            style="@style/NL.Text.MacroChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_chip_glass"
+            android:drawablePadding="6dp"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="8dp"
+            android:textColor="@color/nl_text"
+            android:visibility="gone"
+            app:drawableStartCompat="@drawable/ic_record"
+            app:drawableTint="@color/nl_error"
+            tools:text="Recording 0:12 / 0:30"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/status"
+            style="@style/NL.Text.MacroChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_chip_glass"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="8dp"
+            android:textColor="@color/nl_text"
+            tools:text="Tracking ✓" />
+
+        <TextView
+            android:id="@+id/fault"
+            style="@style/NL.Text.BodyStrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="24dp"
+            android:accessibilityLiveRegion="assertive"
+            android:background="@drawable/bg_fault"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:maxWidth="320dp"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/nl_text"
+            android:visibility="gone"
+            app:drawableStartCompat="@drawable/ic_warning"
+            app:drawableTint="@color/nl_protein"
+            tools:text="No rep · Keep your back straight"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <!-- Challenge: live scoreboard (top-left) -->
+    <LinearLayout
+        android:id="@+id/scoreboard"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="74dp"
+        android:background="@drawable/bg_workout_panel"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/scoreTitle"
+            style="@style/NL.Text.Overline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/nl_error"
+            android:textSize="10sp"
+            tools:text="● LIVE · 01:24" />
+
+        <LinearLayout
+            android:id="@+id/scoreRows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <!-- Challenge: friends as call tiles (video, or their tracked stick figure), and my call controls -->
+    <LinearLayout
+        android:id="@+id/livePanel"
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="12dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/liveTiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton android:id="@+id/liveMic" android:layout_width="36dp" android:layout_height="36dp" android:background="@drawable/bg_call_button" android:contentDescription="@string/call_unmute" android:padding="9dp" android:scaleType="fitCenter" android:src="@drawable/ic_mic_off" app:tint="@android:color/white" />
+            <ImageButton android:id="@+id/liveCam" android:layout_width="36dp" android:layout_height="36dp" android:layout_marginStart="4dp" android:background="@drawable/bg_call_button" android:contentDescription="@string/live_share_video" android:padding="9dp" android:scaleType="fitCenter" android:src="@drawable/ic_stick" app:tint="@android:color/white" />
+            <TextView android:id="@+id/liveReact" android:layout_width="36dp" android:layout_height="36dp" android:layout_marginStart="4dp" android:background="@drawable/bg_call_button" android:contentDescription="@string/live_react" android:gravity="center" android:text="🔥" android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Reactions and point pops float up here -->
+    <FrameLayout
+        android:id="@+id/fxLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:importantForAccessibility="no" />
+
+    <!-- Which muscles this exercise works -->
+    <LinearLayout
+        android:id="@+id/muscleCard"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="74dp"
+        android:background="@drawable/bg_workout_panel"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            style="@style/NL.Text.Overline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/targets"
+            android:textSize="9sp" />
+
+        <com.transformsai.nutrifitai.ui.widget.MuscleMapView
+            android:id="@+id/muscles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/jakarta_extrabold"
+        android:shadowColor="@color/nl_lime"
+        android:shadowRadius="40"
+        android:textColor="@color/nl_lime"
+        android:textSize="140sp"
+        android:visibility="gone"
+        tools:text="3"
+        tools:visibility="visible" />
+
+    <!-- Compact bottom panel: about a quarter of the screen -->
+    <LinearLayout
+        android:id="@+id/panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_workout_panel"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.transformsai.nutrifitai.ui.widget.ExerciseAnimView
+                android:id="@+id/thumb"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_photo_round"
+                android:importantForAccessibility="no" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/phase"
+                    style="@style/NL.Text.Overline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/nl_lime"
+                    tools:text="GET READY" />
+
+                <TextView
+                    android:id="@+id/exercise"
+                    style="@style/NL.Text.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:accessibilityLiveRegion="polite"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="18sp"
+                    tools:text="Jumping jacks" />
+
+                <TextView
+                    android:id="@+id/cue"
+                    style="@style/NL.Text.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="Arms all the way overhead" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="76dp"
+                android:minWidth="76dp">
+
+                <LinearLayout
+                    android:id="@+id/repsBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/reps"
+                        style="@style/NL.Text.NumberHuge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:accessibilityLiveRegion="polite"
+                        android:textSize="52sp"
+                        tools:text="7" />
+
+                    <TextView
+                        android:id="@+id/target"
+                        style="@style/NL.Text.Number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/nl_text_3"
+                        android:textSize="18sp"
+                        tools:text="/20" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/ringBox"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone">
+
+                    <com.transformsai.nutrifitai.ui.widget.CalorieRingView
+                        android:id="@+id/ring"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:ringStroke="7dp" />
+
+                    <TextView
+                        android:id="@+id/seconds"
+                        style="@style/NL.Text.NumberHuge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:accessibilityLiveRegion="polite"
+                        android:textSize="26sp"
+                        tools:text="24" />
+                </FrameLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/pause"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_round_glass"
+                android:contentDescription="@string/pause"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_pause"
+                app:tint="@color/nl_text" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/plusOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_plus_one_pill"
+                    android:contentDescription="@string/cd_add_rep"
+                    android:fontFamily="@font/jakarta_extrabold"
+                    android:gravity="center"
+                    android:text="@string/plus_one_rep"
+                    android:textColor="@color/nl_on_lime"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addRest"
+                    style="@style/NL.Button.Ghost"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/add_15s"
+                    android:visibility="gone"
+                    app:icon="@drawable/ic_timer"
+                    app:iconGravity="textStart" />
+
+                <TextView
+                    android:id="@+id/hint"
+                    style="@style/NL.Text.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    tools:text="The camera counts your reps" />
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/skip"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_round_glass"
+                android:contentDescription="@string/skip"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_skip"
+                app:tint="@color/nl_text" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Pause overlay -->
+    <LinearLayout
+        android:id="@+id/pauseOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D9000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_round_glass"
+            android:importantForAccessibility="no"
+            android:padding="20dp"
+            android:src="@drawable/ic_pause"
+            app:tint="@color/nl_lime" />
+
+        <TextView
+            style="@style/NL.Text.Display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:accessibilityHeading="true"
+            android:text="@string/paused" />
+
+        <TextView
+            android:id="@+id/pauseSub"
+            style="@style/NL.Text.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            tools:text="Squat · 7 of 12 reps" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/resume"
+            style="@style/NL.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:maxWidth="360dp"
+            android:text="@string/resume"
+            app:icon="@drawable/ic_play"
+            app:iconGravity="textStart" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/restart"
+            style="@style/NL.Button.Ghost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/restart_exercise" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/endNow"
+            style="@style/NL.Button.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/end_and_save"
+            android:textColor="@color/nl_protein" />
+    </LinearLayout>
+</FrameLayout>

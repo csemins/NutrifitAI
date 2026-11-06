@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="12dp"
+    android:background="@drawable/bg_card_pressable"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <com.transformsai.nutrifitai.ui.widget.ExerciseAnimView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_photo_round"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/NL.Text.BodyStrong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="6dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="Cardio burn" />
+
+    <TextView
+        android:id="@+id/meta"
+        style="@style/NL.Text.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="6dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="6dp"
+        android:maxLines="1"
+        tools:text="14 min · Intermediate" />
+</LinearLayout>

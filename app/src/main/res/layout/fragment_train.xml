@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingTop="12dp"
+            android:paddingBottom="@dimen/nav_clearance">
+
+            <!-- Header: same layout as Home (title left, actions and avatar right) -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/overline"
+                    style="@style/NL.Text.Overline"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nav_train"
+                    app:layout_constraintEnd_toStartOf="@id/avatar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/avatar" />
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/NL.Text.Display"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="1"
+                    app:autoSizeMaxTextSize="34sp"
+                    app:autoSizeMinTextSize="20sp"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintEnd_toStartOf="@id/avatar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/overline"
+                    tools:text="Let's move, Rahman" />
+
+                <TextView
+                    android:id="@+id/level"
+                    style="@style/NL.Text.MacroChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_chip_glass"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="12dp"
+                    android:textColor="@color/nl_text"
+                    app:drawableStartCompat="@drawable/ic_bolt"
+                    app:drawableTint="@color/nl_lime"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name"
+                    tools:text="Beginner" />
+
+
+                <com.transformsai.nutrifitai.ui.widget.ProfileBadgeView
+                    android:id="@+id/avatar"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:contentDescription="@string/cd_avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Training schedule -->
+            <LinearLayout
+                android:id="@+id/scheduleCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/NL.Text.CardTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:accessibilityHeading="true"
+                        android:text="@string/training_schedule" />
+
+                    <ImageButton
+                        android:id="@+id/editTime"
+                        style="@style/NL.IconButton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="@string/cd_edit_schedule"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_arrow_up_right" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+
+                    <com.transformsai.nutrifitai.ui.widget.ScheduleGaugeView
+                        android:id="@+id/gauge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/time"
+                            style="@style/NL.Text.Number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="30sp"
+                            tools:text="6:00 PM" />
+
+                        <TextView
+                            android:id="@+id/countdown"
+                            style="@style/NL.Text.MacroChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_pill"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="6dp"
+                            android:textColor="@color/nl_text_2"
+                            tools:text="in 09:22:04" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Today's workout -->
+            <LinearLayout
+                android:id="@+id/todayCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap"
+                android:background="@drawable/bg_card_neon"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/card_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/card_padding">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/NL.Text.CardTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:accessibilityHeading="true"
+                            android:text="@string/todays_workout" />
+
+                        <TextView
+                            android:id="@+id/todayTitle"
+                            style="@style/NL.Text.Secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            tools:text="Full-body starter" />
+
+                        <TextView
+                            android:id="@+id/todayKcal"
+                            style="@style/NL.Text.MacroChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/nl_lime"
+                            tools:text="~120 kcal" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_icon_button"
+                        android:importantForAccessibility="no"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_arrow_up_right"
+                        app:tint="@color/nl_text" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                    <com.transformsai.nutrifitai.ui.widget.MuscleMapView
+                        android:id="@+id/hero"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="56dp"
+                        android:paddingTop="50dp"
+                        android:paddingBottom="44dp" />
+
+                    <TextView
+                        android:id="@+id/chipMin"
+                        style="@style/NL.Text.MacroChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|start"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_chip_glass"
+                        android:drawablePadding="6dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="7dp"
+                        android:textColor="@color/nl_text"
+                        app:drawableStartCompat="@drawable/bg_dot_lime"
+                        tools:text="18 min" />
+
+                    <TextView
+                        android:id="@+id/chipCount"
+                        style="@style/NL.Text.MacroChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="18dp"
+                        android:background="@drawable/bg_chip_glass"
+                        android:drawablePadding="6dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="7dp"
+                        android:textColor="@color/nl_text"
+                        app:drawableStartCompat="@drawable/bg_dot_lime"
+                        tools:text="8 exercises" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/bg_hero_scrim" />
+
+                    <TextView
+                        android:id="@+id/todayMoves"
+                        style="@style/NL.Text.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="10dp"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/card_padding"
+                        tools:text="Squat · Push-up · Plank · Lunge" />
+                </FrameLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/start"
+                    style="@style/NL.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/card_padding"
+                    android:text="@string/start_workout"
+                    app:icon="@drawable/ic_play"
+                    app:iconGravity="textStart" />
+            </LinearLayout>
+
+            <!-- Weekly consistency -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/NL.Text.CardTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:accessibilityHeading="true"
+                        android:text="@string/consistency" />
+
+                    <TextView
+                        android:id="@+id/goalText"
+                        style="@style/NL.Text.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/nl_lime"
+                        tools:text="Goal 20 min a day" />
+                </LinearLayout>
+
+                <com.transformsai.nutrifitai.ui.widget.WeekBarsView
+                    android:id="@+id/week"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <!-- Muscles this week -->
+            <LinearLayout
+                android:id="@+id/weekMusclesCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    style="@style/NL.Text.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:accessibilityHeading="true"
+                    android:text="@string/muscles_this_week" />
+
+                <TextView
+                    android:id="@+id/weekMusclesSub"
+                    style="@style/NL.Text.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/muscles_week_empty" />
+
+                <com.transformsai.nutrifitai.ui.widget.MuscleMapView
+                    android:id="@+id/weekMuscles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="36dp" />
+            </LinearLayout>
+
+            <!-- Programs -->
+            <TextView
+                style="@style/NL.Text.Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:accessibilityHeading="true"
+                android:text="@string/programs" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/programs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="-20dp"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                android:id="@+id/aiPlansTitle"
+                style="@style/NL.Text.Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:accessibilityHeading="true"
+                android:text="@string/your_ai_plans"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/aiPlans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <!-- Library -->
+            <LinearLayout
+                android:id="@+id/library"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_card_pressable"
+                android:gravity="center_vertical"
+                android:minHeight="72dp"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_icon_tile"
+                    android:importantForAccessibility="no"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_dumbbell"
+                    app:tint="@color/nl_lime" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/NL.Text.BodyStrong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exercise_library" />
+
+                    <TextView
+                        android:id="@+id/librarySub"
+                        style="@style/NL.Text.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="876 exercises · 16 camera-tracked" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/nl_text_3" />
+            </LinearLayout>
+
+            <!-- AI workout builder -->
+            <LinearLayout
+                android:id="@+id/aiBuilder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/gap_sm"
+                android:background="@drawable/bg_card_pressable"
+                android:gravity="center_vertical"
+                android:minHeight="72dp"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic3d_muscle" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/NL.Text.BodyStrong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ai_builder_row" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/nl_text_3" />
+            </LinearLayout>
+
+            <!-- Recent -->
+            <TextView
+                style="@style/NL.Text.Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:accessibilityHeading="true"
+                android:text="@string/recent_workouts" />
+
+            <LinearLayout
+                android:id="@+id/recent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/recentEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_card_dashed"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ill_workouts" />
+
+                <TextView
+                    style="@style/NL.Text.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:text="@string/no_workouts_yet" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</FrameLayout>
