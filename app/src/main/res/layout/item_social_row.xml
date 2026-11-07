@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A person (friend, request, search result) or a challenge: avatar/icon, two lines, up to two actions. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bg_card"
+    android:gravity="center_vertical"
+    android:minHeight="72dp"
+    android:orientation="horizontal"
+    android:padding="14dp">
+
+    <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+        android:id="@+id/avatar"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/title" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:ellipsize="end" android:maxLines="1" tools:text="Squat duel" />
+        <TextView android:id="@+id/subtitle" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" tools:text="You vs Sami · waiting for Sami" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/secondary"
+        android:contentDescription="@string/more"
+        style="@style/NL.IconButton"
+        android:layout_marginStart="6dp"
+        android:visibility="gone"
+        app:tint="@color/nl_text_2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/primary"
+        style="@style/NL.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginStart="6dp"
+        android:visibility="gone"
+        tools:text="Accept"
+        tools:visibility="visible" />
+</LinearLayout>

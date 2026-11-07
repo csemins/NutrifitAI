@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One notification: who, what, when; a lime dot while unread. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bg_card_pressable"
+    android:gravity="center_vertical"
+    android:minHeight="72dp"
+    android:orientation="horizontal"
+    android:padding="14dp">
+
+    <FrameLayout android:layout_width="48dp" android:layout_height="48dp">
+        <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+            android:id="@+id/avatar"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:importantForAccessibility="no" />
+        <ImageView
+            android:id="@+id/kind"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/bg_nav_camera"
+            android:importantForAccessibility="no"
+            android:padding="4dp"
+            app:tint="@color/nl_on_lime"
+            tools:src="@drawable/ic_trophy" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/title" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:ellipsize="end" android:maxLines="2" tools:text="Sami challenged you" />
+        <TextView android:id="@+id/body" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:ellipsize="end" android:maxLines="2" tools:text="Squat duel · 3 moves" />
+        <TextView android:id="@+id/time" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" tools:text="5 min ago" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_dot_lime" />
+</LinearLayout>

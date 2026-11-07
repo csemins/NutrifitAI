@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:background="@drawable/bg_choice"
+    android:gravity="center_vertical"
+    android:minHeight="60dp"
+    android:orientation="horizontal"
+    android:paddingStart="14dp"
+    android:paddingEnd="4dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_sparkle"
+        app:tint="@color/nl_text_2" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingVertical="8dp">
+
+        <TextView android:id="@+id/title" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:ellipsize="end" android:maxLines="1" tools:text="What should I eat for dinner?" />
+        <TextView android:id="@+id/time" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="2 h ago · Open now" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:contentDescription="@string/delete"
+        style="@style/NL.IconButton"
+        android:src="@drawable/ic_delete"
+        app:tint="@color/nl_text_3" />
+</LinearLayout>

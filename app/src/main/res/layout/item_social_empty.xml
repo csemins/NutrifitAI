@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/bg_card"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/art"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_photo_round"
+        android:clipToOutline="true"
+        android:importantForAccessibility="no"
+        android:scaleType="fitCenter" />
+
+    <TextView android:id="@+id/title" style="@style/NL.Text.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center" tools:text="Your feed is quiet" />
+    <TextView android:id="@+id/body" style="@style/NL.Text.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center" tools:text="Add friends to see their meals and workouts." />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action"
+        style="@style/NL.Button.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="14dp"
+        tools:text="Find friends" />
+</LinearLayout>

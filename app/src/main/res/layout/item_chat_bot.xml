@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="6dp"
+    android:paddingEnd="40dp"
+    android:paddingBottom="6dp">
+
+    <TextView android:id="@+id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_bubble_bot" android:fontFamily="@font/jakarta_medium" android:lineSpacingExtra="3dp" android:paddingHorizontal="16dp" android:paddingVertical="12dp" android:textColor="@color/nl_text" android:textIsSelectable="true" android:textSize="15sp" />
+    <TextView android:id="@+id/sources" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:layout_marginTop="6dp" android:drawablePadding="6dp" android:gravity="center_vertical" android:visibility="gone" app:drawableStartCompat="@drawable/ic_book" app:drawableTint="@color/nl_lime" />
+    <LinearLayout android:id="@+id/suggestions" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+</LinearLayout>

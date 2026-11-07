@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+            android:id="@+id/avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:importantForAccessibility="no" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/name" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:ellipsize="end" tools:text="Rahman" />
+            <TextView android:id="@+id/meta" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="Workout · 2 h ago" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/more"
+            style="@style/NL.IconButton"
+            android:contentDescription="@string/delete"
+            android:src="@drawable/ic_more"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text"
+        style="@style/NL.Text.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:lineSpacingExtra="3dp"
+        tools:text="Hit my protein target today!" />
+
+    <!-- Numbers card (stats / workout / challenge) -->
+    <LinearLayout
+        android:id="@+id/stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_card_neon"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:visibility="gone">
+
+        <include android:id="@+id/s1" layout="@layout/view_post_stat" />
+        <include android:id="@+id/s2" layout="@layout/view_post_stat" />
+        <include android:id="@+id/s3" layout="@layout/view_post_stat" />
+        <include android:id="@+id/s4" layout="@layout/view_post_stat" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mediaBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/media"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@drawable/bg_photo_round"
+            android:clipToOutline="true"
+            android:contentDescription="@string/cd_post_media"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_round_glass"
+            android:importantForAccessibility="no"
+            android:padding="18dp"
+            android:src="@drawable/ic_play"
+            android:visibility="gone"
+            app:tint="@android:color/white" />
+    </FrameLayout>
+
+    <!-- Reactions and comments so far -->
+    <LinearLayout
+        android:id="@+id/summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView android:id="@+id/reactSummary" style="@style/NL.Text.Caption" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:maxLines="1" tools:text="❤️😂 5" />
+        <TextView android:id="@+id/commentSummary" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="32dp" android:gravity="center_vertical" tools:text="3 comments" />
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="8dp" android:background="@color/nl_stroke" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/react"
+            style="@style/NL.Button.Ghost"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:minWidth="0dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/react_like"
+            app:icon="@drawable/ic_heart_outline"
+            app:iconGravity="textStart"
+            app:iconSize="18dp"
+            app:strokeWidth="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/comment"
+            style="@style/NL.Button.Ghost"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:minWidth="0dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/comment"
+            app:icon="@drawable/ic_comment"
+            app:iconGravity="textStart"
+            app:iconSize="18dp"
+            app:strokeWidth="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/share"
+            style="@style/NL.Button.Ghost"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:minWidth="0dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/share"
+            app:icon="@drawable/ic_share"
+            app:iconGravity="textStart"
+            app:iconSize="18dp"
+            app:strokeWidth="0dp" />
+    </LinearLayout>
+</LinearLayout>

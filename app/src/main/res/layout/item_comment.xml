@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="12dp">
+
+    <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+        android:id="@+id/avatar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bubble_bot"
+            android:orientation="vertical"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="10dp">
+
+            <TextView android:id="@+id/name" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" tools:text="Sami" />
+            <TextView android:id="@+id/text" style="@style/NL.Text.Body" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:textIsSelectable="true" tools:text="Great job, that is a solid streak!" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/time" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginTop="4dp" android:textSize="12sp" tools:text="5 min ago" />
+    </LinearLayout>
+</LinearLayout>
