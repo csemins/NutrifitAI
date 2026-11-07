@@ -9,3 +9,6 @@
 *.task binary
 *.tflite binary
 *.ttf binary
+
+# Build-time helper scripts: not part of the app, kept out of GitHub language stats
+tools/** linguist-vendored
