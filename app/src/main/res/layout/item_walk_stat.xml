@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One detail tile on the walk summary. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/bg_share_tile"
+    android:orientation="vertical"
+    android:paddingHorizontal="14dp"
+    android:paddingVertical="12dp">
+
+    <TextView android:id="@+id/label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/jakarta_semibold" android:textColor="@color/share_text_2" android:textSize="12sp" tools:text="Avg pace" />
+    <TextView android:id="@+id/value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:fontFamily="@font/jakarta_extrabold" android:maxLines="1" android:textColor="@android:color/white" android:textSize="20sp" tools:text="9:42 /km" />
+</LinearLayout>

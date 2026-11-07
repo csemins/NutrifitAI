@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A finished walk: route map, headline numbers, details, km splits, share. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/share_bg"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="360dp">
+
+                <org.osmdroid.views.MapView
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/walk_map" />
+
+                <TextView
+                    android:id="@+id/noRoute"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/jakarta_medium"
+                    android:gravity="center"
+                    android:padding="32dp"
+                    android:text="@string/walk_no_route"
+                    android:textColor="@color/share_text_2"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/bg_walk_scrim"
+                    android:importantForAccessibility="no" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bg_walk_scrim"
+                    android:importantForAccessibility="no"
+                    android:rotation="180" />
+
+                <LinearLayout
+                    android:id="@+id/top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="8dp">
+
+                    <ImageButton android:id="@+id/back" android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_call_button" android:contentDescription="@string/cd_back" android:padding="13dp" android:scaleType="fitCenter" android:src="@drawable/ic_back" app:tint="@android:color/white" />
+                    <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+                    <ImageButton android:id="@+id/delete" android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_call_button" android:contentDescription="@string/delete" android:padding="13dp" android:scaleType="fitCenter" android:src="@drawable/ic_delete" app:tint="@android:color/white" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView android:id="@+id/kicker" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/jakarta_bold" android:letterSpacing="0.14" android:textAllCaps="true" android:textColor="@color/share_lime" android:textSize="12sp" tools:text="Sat, 7 Nov · 6:42 am" />
+                <TextView android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:accessibilityHeading="true" android:fontFamily="@font/jakarta_extrabold" android:textColor="@android:color/white" android:textSize="28sp" tools:text="Morning walk" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="bottom" android:orientation="horizontal">
+                    <TextView android:id="@+id/distance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/jakarta_extrabold" android:includeFontPadding="false" android:textColor="@android:color/white" android:textSize="64sp" tools:text="4.82" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:layout_marginBottom="10dp" android:fontFamily="@font/jakarta_bold" android:text="@string/unit_km" android:textColor="@color/share_lime" android:textSize="20sp" />
+                </LinearLayout>
+
+                <GridLayout
+                    android:id="@+id/grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:columnCount="2"
+                    android:useDefaultMargins="false" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:accessibilityHeading="true" android:fontFamily="@font/jakarta_bold" android:letterSpacing="0.14" android:text="@string/walk_splits" android:textAllCaps="true" android:textColor="@color/share_text_2" android:textSize="12sp" android:id="@+id/splitsTitle" />
+                <LinearLayout android:id="@+id/splits" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="vertical" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:fontFamily="@font/jakarta_medium" android:text="@string/walk_counting_note" android:textColor="@color/share_text_2" android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/share"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/share"
+            app:icon="@drawable/ic_share"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+</LinearLayout>

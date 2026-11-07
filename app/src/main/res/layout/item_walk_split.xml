@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- "Km 2   ████████░░   9:42 /km" -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView android:id="@+id/km" android:layout_width="56dp" android:layout_height="wrap_content" android:fontFamily="@font/jakarta_semibold" android:textColor="@color/share_text_2" android:textSize="13sp" tools:text="Km 2" />
+    <LinearLayout android:id="@+id/barBox" android:layout_width="0dp" android:layout_height="10dp" android:layout_weight="1" android:background="@drawable/bg_split_track" android:orientation="horizontal">
+        <View android:id="@+id/bar" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.7" android:background="@drawable/bg_split_bar" />
+        <View android:id="@+id/rest" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.3" />
+    </LinearLayout>
+    <TextView android:id="@+id/pace" android:layout_width="84dp" android:layout_height="wrap_content" android:fontFamily="@font/jakarta_extrabold" android:gravity="end" android:textColor="@android:color/white" android:textSize="14sp" tools:text="9:42 /km" />
+</LinearLayout>

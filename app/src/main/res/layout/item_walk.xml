@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A recorded walk in the history: route art thumbnail, title, date and the headline numbers. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bg_card_pressable"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <com.transformsai.nutrifitai.ui.widget.RouteArtView
+        android:id="@+id/art"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_route_thumb" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/title" style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" tools:text="Morning walk" />
+        <TextView android:id="@+id/date" style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" tools:text="Sat, 7 Nov · 6:42 am" />
+        <TextView android:id="@+id/stats" style="@style/NL.Text.Secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="@color/nl_lime" tools:text="4.82 km · 52:10 · 10:49 /km" />
+    </LinearLayout>
+</LinearLayout>

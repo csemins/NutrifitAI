@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Live walk: full-screen dark map with the route, floating stats and the start / finish button. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/share_bg">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/walk_map" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="@drawable/bg_walk_scrim"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_call_button"
+                android:contentDescription="@string/cd_back"
+                android:padding="13dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_back"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:accessibilityHeading="true"
+                android:fontFamily="@font/jakarta_extrabold"
+                android:text="@string/walk_title"
+                android:textColor="@android:color/white"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/gps"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:background="@drawable/bg_walk_glass"
+                android:drawablePadding="6dp"
+                android:fontFamily="@font/jakarta_semibold"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:textColor="@color/share_lime"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/bg_dot_lime"
+                tools:text="GPS ±5 m" />
+        </LinearLayout>
+
+        <!-- Live numbers -->
+        <LinearLayout
+            android:id="@+id/stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_walk_glass"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jakarta_extrabold"
+                    android:includeFontPadding="false"
+                    android:text="0.00"
+                    android:textColor="@android:color/white"
+                    android:textSize="58sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/jakarta_bold"
+                    android:text="@string/unit_km"
+                    android:textColor="@color/share_lime"
+                    android:textSize="18sp" />
+
+                <Space android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/jakarta_extrabold"
+                    android:textColor="@android:color/white"
+                    android:textSize="26sp"
+                    tools:text="24:10" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <include android:id="@+id/sPace" layout="@layout/view_walk_stat" />
+                <include android:id="@+id/sSpeed" layout="@layout/view_walk_stat" />
+                <include android:id="@+id/sSteps" layout="@layout/view_walk_stat" />
+                <include android:id="@+id/sElev" layout="@layout/view_walk_stat" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/recentre"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="150dp"
+        android:background="@drawable/bg_call_button"
+        android:contentDescription="@string/walk_recentre"
+        android:padding="14dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_location"
+        app:tint="@android:color/white" />
+
+    <!-- Start / finish -->
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <FrameLayout
+            android:layout_width="96dp"
+            android:layout_height="96dp">
+
+            <View
+                android:id="@+id/pulse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_walk_go"
+                android:alpha="0.35"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:id="@+id/go"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_walk_go"
+                android:elevation="10dp"
+                android:fontFamily="@font/jakarta_extrabold"
+                android:gravity="center"
+                android:text="@string/walk_go"
+                android:textColor="@color/share_bg"
+                android:textSize="18sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_walk_glass"
+            android:fontFamily="@font/jakarta_medium"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="6dp"
+            android:text="@string/walk_hint_start"
+            android:textColor="@color/share_text_2"
+            android:textSize="13sp" />
+    </LinearLayout>
+</FrameLayout>
