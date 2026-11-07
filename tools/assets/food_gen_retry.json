@@ -1,0 +1,29 @@
+[
+ {
+  "out": "app/src/main/assets/food_images/cat_peanuts.webp",
+  "prompt": "A bowl of roasted peanuts in their red skins, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_chicken_curry.webp",
+  "prompt": "Bangladeshi chicken curry (murgir jhol) with potato pieces in a bowl, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_apple.webp",
+  "prompt": "Red apples, one whole and one cut into slices, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_drinks.webp",
+  "prompt": "An assortment of drinks: tea, juice, milk and water in glasses, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ }
+]

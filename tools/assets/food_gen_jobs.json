@@ -1,0 +1,213 @@
+[
+ {
+  "out": "app/src/main/assets/food_images/cat_chicken_breast.webp",
+  "prompt": "Sliced grilled chicken breast on a plate with a few salad leaves, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_cucumber.webp",
+  "prompt": "Fresh cucumber, one whole and several round slices on a small board, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_dal_masoor.webp",
+  "prompt": "Bangladeshi masoor dal, a bowl of yellow-orange red lentil soup tempered with garlic, cumin and a dried red chilli, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_dates.webp",
+  "prompt": "A small bowl of glossy brown dates (khejur), overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_egg_curry.webp",
+  "prompt": "Bangladeshi dim bhuna egg curry, two halved boiled eggs in a rich red-brown gravy in a bowl, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_lentils_boiled.webp",
+  "prompt": "A bowl of plain boiled red lentils, soft and orange, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_papaya.webp",
+  "prompt": "Ripe papaya cut in half showing orange flesh and black seeds, plus a few slices, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_peanuts.webp",
+  "prompt": "A bowl of roasted peanuts in their red skins, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_rice_brown_cooked.webp",
+  "prompt": "A bowl of cooked brown rice (lal chaler bhat), overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_spinach_raw.webp",
+  "prompt": "Fresh raw spinach leaves in a bowl, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_watermelon.webp",
+  "prompt": "Slices of ripe red watermelon with seeds, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_chicken_curry.webp",
+  "prompt": "Bangladeshi chicken curry (murgir jhol) with potato pieces in a bowl, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_fish_curry_rui.webp",
+  "prompt": "Bangladeshi rui fish curry, two pieces of rohu fish in a light turmeric gravy with potato, in a bowl, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_mixed_veg_bhaji.webp",
+  "prompt": "Bangladeshi mixed vegetable bhaji (sabji) with potato, cauliflower, carrot and beans on a plate, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_aloo_bhorta.webp",
+  "prompt": "Bangladeshi aloo bhorta, mashed potato with mustard oil, fried onion and green chilli shaped into a mound, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_begun_bhaja.webp",
+  "prompt": "Bangladeshi begun bhaja, round slices of eggplant shallow fried golden with turmeric, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_apple.webp",
+  "prompt": "Red apples, one whole and one cut into slices, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_mustard_oil.webp",
+  "prompt": "A small glass bottle of golden mustard oil with a few mustard seeds, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/cat_ghee.webp",
+  "prompt": "A small glass jar of golden ghee with a spoon, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp",
+  "force": true
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_grains.webp",
+  "prompt": "An assortment of grain foods: rice, flatbread, oats and bread, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_curries.webp",
+  "prompt": "An assortment of South Asian curries in small bowls, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_lentils.webp",
+  "prompt": "An assortment of lentils, chickpeas and beans in small bowls, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_protein.webp",
+  "prompt": "An assortment of protein foods: eggs, raw chicken, fish fillet and lean meat, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_dairy.webp",
+  "prompt": "An assortment of dairy foods: milk, yogurt, cheese and butter, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_vegetables.webp",
+  "prompt": "An assortment of fresh colourful vegetables, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_fruits.webp",
+  "prompt": "An assortment of fresh tropical fruits, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_snacks.webp",
+  "prompt": "An assortment of snacks: nuts, crackers and savoury bites in small bowls, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_drinks.webp",
+  "prompt": "An assortment of drinks: tea, juice, milk and water in glasses, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_sweets.webp",
+  "prompt": "An assortment of South Asian sweets and desserts, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_fats.webp",
+  "prompt": "An assortment of cooking oils, ghee and butter, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_meals.webp",
+  "prompt": "A complete home-cooked meal plate with rice, curry and vegetables, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ },
+ {
+  "out": "app/src/main/assets/food_images/category_other.webp",
+  "prompt": "An assortment of spices, sauces and condiments in small bowls, overhead food photograph, served on a dark slate surface, soft natural window light, appetizing, realistic, sharp, no text, no hands, square composition",
+  "square": 384,
+  "format": "webp"
+ }
+]
