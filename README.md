@@ -386,7 +386,6 @@ app/src/main/java/com/transformsai/nutrifitai/
 app/schemas/  exported Room schemas
 server/       Java AI proxy, media bucket, call relay
 firebase/     Firestore and RTDB rules, indexes, rules tests
-tools/        scripts that built the food, exercise, pose and image assets
 docs/         presentation guide, licences, images
 ```
 
@@ -425,6 +424,5 @@ A screen-by-screen demo guide is in [`docs/PRESENTATION_CHECKLIST.md`](docs/PRES
 - USDA FoodData Central SR Legacy (public domain); free-exercise-db (public domain); Google ML Kit pose samples
   (Apache-2.0); food photos from Wikimedia Commons with credits in `assets/food_images/credits.json`;
   Plus Jakarta Sans (OFL, `docs/licenses`).
-- The in-app 3D icons and hero art are AI-generated (`tools/assets/generate_images.py`); the diagrams and screenshot
-  strips are drawn by `tools/docs/diagrams.py` and `tools/docs/gallery.py`.
+- The in-app 3D icons and hero art are AI-generated.
 - Nutrition estimates are approximate and not medical advice; the app cannot guarantee a food is allergen-free.

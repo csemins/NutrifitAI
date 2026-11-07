@@ -25,8 +25,8 @@ firebase/node_modules/
 firebase/*.log
 firebase/.firebase/
 
-# Generated pose/image working files (rebuild with the scripts in tools/)
-tools/pose/generated*/
+# Local helper scripts (asset building, README images)
+tools/
 
 # Design references and assistant notes kept outside the repository
 Mockup_Images/
