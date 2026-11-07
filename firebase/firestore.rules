@@ -1,0 +1,284 @@
+rules_version = '2';
+
+// NutriFit AI Cloud Firestore rules.
+// - Every private record lives under users/{uid}/... and is readable/writable ONLY by that user.
+// - The shared food catalog is read-only for signed-in users (writes only via the console/admin).
+// - Everything else is denied.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isOwner(uid) { return signedIn() && request.auth.uid == uid; }
+    function incoming() { return request.resource.data; }
+    // Every synced record carries a numeric updatedAt (ms) used for conflict resolution.
+    function hasUpdatedAt() { return incoming().updatedAt is int && incoming().updatedAt > 0; }
+    function smallDoc() { return incoming().size() <= 60; }
+    function noUidSpoof(uid) { return !('uid' in incoming()) || incoming().uid == uid; }
+
+    // Profile document.
+    match /users/{uid} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid) && hasUpdatedAt() && smallDoc() && noUidSpoof(uid)
+        && (!('name' in incoming()) || incoming().name == null || (incoming().name is string && incoming().name.size() <= 60));
+
+      // Meal entries embed their items (max 25) — totals are never stored.
+      match /mealEntries/{id} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid) && hasUpdatedAt() && noUidSpoof(uid)
+          && incoming().id == id
+          && incoming().date is string && incoming().date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && incoming().status in ['consumed', 'planned']
+          && incoming().mealType in ['breakfast', 'lunch', 'dinner', 'snack']
+          && incoming().items is list && incoming().items.size() <= 25
+          && (!('imageRemotePath' in incoming()) || incoming().imageRemotePath == null
+              || incoming().imageRemotePath == 'users/' + uid + '/meals/' + id + '.jpg');
+      }
+
+      match /water/{id} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid) && hasUpdatedAt() && noUidSpoof(uid) && incoming().id == id
+          && incoming().ml is int && incoming().ml > 0 && incoming().ml <= 5000;
+      }
+
+      match /weights/{id} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid) && hasUpdatedAt() && noUidSpoof(uid) && incoming().id == id
+          && incoming().kg is number && incoming().kg >= 20 && incoming().kg <= 400;
+      }
+
+      match /workouts/{id} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid) && hasUpdatedAt() && noUidSpoof(uid) && incoming().id == id
+          && incoming().date is string && incoming().date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && incoming().activeMs is int && incoming().activeMs >= 0 && incoming().activeMs <= 6 * 3600 * 1000
+          && incoming().kcalEstimate is number && incoming().kcalEstimate >= 0 && incoming().kcalEstimate <= 5000
+          && request.resource.size() < 100 * 1024;
+      }
+
+      match /goals/{id} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid) && hasUpdatedAt() && noUidSpoof(uid) && incoming().id == id
+          && incoming().kcal is int && incoming().kcal >= 800 && incoming().kcal <= 8000;
+      }
+
+      // Friends: created only after the request between the two users was accepted (the receiver writes
+      // its own doc in the same batch as the acceptance). Either side may end the friendship.
+      match /friends/{fid} {
+        allow read: if isOwner(uid);
+        allow delete: if isOwner(uid) || (signedIn() && request.auth.uid == fid);
+        allow create, update: if isOwner(uid) && fid != uid && incoming().uid == fid
+          && incoming().name is string && incoming().name.size() <= 60
+          && (accepted(fid + '_' + uid) || accepted(uid + '_' + fid));
+      }
+
+      // Notification inbox. Others may drop a notification for this user (as themselves); friend requests and
+      // acceptances need no friendship, everything else only from a friend. The owner reads, marks read, deletes.
+      match /inbox/{nid} {
+        allow read, delete: if isOwner(uid);
+        allow update: if isOwner(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read']);
+        allow create: if signedIn() && incoming().from == request.auth.uid && incoming().id == nid
+          && incoming().type in ['friend_request', 'friend_accepted', 'challenge', 'comment', 'reaction', 'message', 'group', 'call']
+          && shortText(incoming().title, 80) && shortText(incoming().body, 200) && shortText(incoming().fromName, 60)
+          && incoming().read == false && incoming().createdAt is int && (incoming().ref == null || shortText(incoming().ref, 80))
+          && (incoming().type in ['friend_request', 'friend_accepted']
+              || exists(/databases/$(database)/documents/users/$(uid)/friends/$(request.auth.uid)));
+      }
+
+      // Custom foods, favourites, recipes, settings, chat, conversations, AI analysis metadata.
+      match /{collection}/{id} {
+        allow read, delete: if isOwner(uid)
+          && collection in ['foods', 'favorites', 'recipes', 'settings', 'chatMessages', 'conversations', 'aiAnalyses', 'workoutPlans', 'steps', 'fasts'];
+        allow create, update: if isOwner(uid) && hasUpdatedAt() && noUidSpoof(uid)
+          && collection in ['foods', 'favorites', 'recipes', 'settings', 'chatMessages', 'conversations', 'aiAnalyses', 'workoutPlans', 'steps', 'fasts']
+          && request.resource.size() < 200 * 1024;   // no embedded images / base64
+      }
+    }
+
+    function accepted(reqId) {
+      return existsAfter(/databases/$(database)/documents/friendRequests/$(reqId))
+        && getAfter(/databases/$(database)/documents/friendRequests/$(reqId)).data.status == 'accepted';
+    }
+    function shortText(v, max) { return v is string && v.size() <= max; }
+
+    // ---------------------------------------------------------------- AI access
+    // AI features are off for new accounts. Admins enable them per user in the app (Settings > AI access), or
+    // pre-allow an email before that person signs up. The NutriFit AI server reads aiAccess/{uid} with the
+    // caller's own token before every AI call. To change who is an admin, edit this list and redeploy.
+    function verifiedEmail() {
+      return signedIn() && request.auth.token.email_verified == true && request.auth.token.email is string;
+    }
+    function isAdmin() {
+      return verifiedEmail() && request.auth.token.email.lower() in ['minhaz.hredoy@gmail.com', 'cse.minhaz87@gmail.com'];
+    }
+    // admins are always allowed; others when their verified email is on the list
+    function preAllowed() {
+      return isAdmin() || (verifiedEmail() && exists(/databases/$(database)/documents/aiAllowList/$(request.auth.token.email.lower())));
+    }
+
+    match /aiAllowList/{email} {
+      allow get: if isAdmin() || (verifiedEmail() && request.auth.token.email.lower() == email);
+      allow list: if isAdmin();
+      allow create, update: if isAdmin() && email.matches('^[^@/ A-Z]+@[^@/ A-Z]+[.][^@/ A-Z]+$')
+        && incoming().email == email && incoming().addedAt is int;
+      allow delete: if isAdmin();
+    }
+
+    match /aiAccess/{uid} {
+      allow get: if isOwner(uid) || isAdmin();
+      allow list: if isAdmin();
+      // the user keeps their own card; they can ask once (requestedAt 0 -> time) but never enable themselves,
+      // unless their verified email is on the pre-allowed list
+      allow create: if isOwner(uid) && incoming().uid == uid
+        && incoming().keys().hasOnly(['uid', 'email', 'name', 'allowed', 'requestedAt', 'createdAt', 'updatedAt'])
+        && (incoming().allowed == false || preAllowed())
+        && incoming().requestedAt is int && incoming().createdAt is int
+        && (incoming().email == null || shortText(incoming().email, 254)) && (incoming().name == null || shortText(incoming().name, 60));
+      allow update: if isAdmin() || (isOwner(uid)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['email', 'name', 'allowed', 'requestedAt', 'updatedAt'])
+        && (incoming().allowed == resource.data.allowed || (incoming().allowed == true && preAllowed()))
+        && (incoming().requestedAt == resource.data.requestedAt || (resource.data.requestedAt == 0 && incoming().requestedAt is int))
+        && (incoming().email == null || shortText(incoming().email, 254)) && (incoming().name == null || shortText(incoming().name, 60)));
+      allow delete: if isOwner(uid) || isAdmin();
+    }
+
+    // ---------------------------------------------------------------- social
+    // Public card used for friend search: name and handle only (never email or health data).
+    // Usernames are unique: usernames/{name} = {uid}. A name is claimed in the same batch that sets it on the
+    // public profile, and released only when the profile moves to another name (or is deleted).
+    function profileAfter(uid) { return /databases/$(database)/documents/publicProfiles/$(uid); }
+    match /usernames/{name} {
+      allow get: if signedIn();
+      allow create: if signedIn() && name.matches('^[a-z0-9_]{3,20}$') && incoming().uid == request.auth.uid
+        && getAfter(profileAfter(request.auth.uid)).data.handle == name;
+      allow delete: if signedIn() && resource.data.uid == request.auth.uid
+        && (!existsAfter(profileAfter(request.auth.uid)) || getAfter(profileAfter(request.auth.uid)).data.handle != name);
+    }
+
+    // Public card for friend search and social screens: name, @username and an optional photo.
+    // The username may change once every 30 days; a new one must be claimed in usernames/.
+    function nowish(t) { return t is int && t <= request.time.toMillis() + 120000 && t >= request.time.toMillis() - 600000; }
+    function validCard(uid) {
+      return incoming().uid == uid && shortText(incoming().name, 60) && incoming().nameLower == incoming().name.lower()
+        && incoming().handle is string && incoming().handle.matches('^[a-z0-9_]{3,24}$') && hasUpdatedAt()
+        && (!('photo' in incoming()) || incoming().photo == null
+            || incoming().photo.matches('^users/' + uid + '/posts/[A-Za-z0-9_-]{16,64}[.]jpg$'))
+        && request.resource.size() < 4 * 1024;
+    }
+    function claimed(uid) {
+      return existsAfter(/databases/$(database)/documents/usernames/$(incoming().handle))
+        && getAfter(/databases/$(database)/documents/usernames/$(incoming().handle)).data.uid == uid;
+    }
+    match /publicProfiles/{uid} {
+      allow read: if signedIn();
+      allow delete: if isOwner(uid);
+      allow create: if isOwner(uid) && validCard(uid) && claimed(uid) && nowish(incoming().handleChangedAt);
+      allow update: if isOwner(uid) && validCard(uid)
+        && (incoming().handle == resource.data.handle
+            ? incoming().get('handleChangedAt', 0) == resource.data.get('handleChangedAt', 0)
+            : claimed(uid) && nowish(incoming().handleChangedAt)
+              && request.time.toMillis() - resource.data.get('handleChangedAt', 0) >= 30 * 24 * 3600 * 1000);
+    }
+
+    // Friend request {from}_{to}. Only the receiver can accept; either side can withdraw or decline.
+    match /friendRequests/{id} {
+      // written as two equalities (not "in [from, to]") so queries filtered on from == me or to == me are allowed
+      allow read: if signedIn() && (resource.data.from == request.auth.uid || resource.data.to == request.auth.uid);
+      allow create: if signedIn() && incoming().from == request.auth.uid && incoming().to != request.auth.uid
+        && id == incoming().from + '_' + incoming().to && incoming().status == 'pending'
+        && shortText(incoming().fromName, 60) && shortText(incoming().toName, 60);
+      allow update: if signedIn() && request.auth.uid == resource.data.to && incoming().status == 'accepted'
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
+      allow delete: if signedIn() && (resource.data.from == request.auth.uid || resource.data.to == request.auth.uid);
+    }
+
+    // Feed posts. "audience" = the author and their friends when the post was made; only they can read it.
+    match /posts/{id} {
+      allow read: if signedIn() && request.auth.uid in resource.data.audience;
+      allow create: if signedIn() && incoming().author == request.auth.uid && incoming().id == id
+        && request.auth.uid in incoming().audience && incoming().audience.size() <= 200
+        && incoming().type in ['stats', 'meal', 'workout', 'clip', 'challenge', 'achievement', 'text']
+        && shortText(incoming().text, 500) && incoming().reactions == {} && incoming().commentCount == 0
+        && incoming().createdAt is int && (!('authorPhoto' in incoming()) || incoming().authorPhoto == null
+            || incoming().authorPhoto.matches('^users/' + request.auth.uid + '/posts/[A-Za-z0-9_-]{16,64}[.]jpg$'))
+        && (incoming().media == null
+            || incoming().media.matches('^users/' + request.auth.uid + '/(posts/[A-Za-z0-9_-]{16,64}[.]jpg|clips/[A-Za-z0-9_-]{16,64}[.]mp4)$'))
+        && request.resource.size() < 24 * 1024;
+      // reactions: an audience member sets or clears only their own reaction; commenting moves the count by one
+      allow update: if signedIn() && request.auth.uid in resource.data.audience
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reactions', 'commentCount'])
+        && incoming().reactions.diff(resource.data.get('reactions', {})).affectedKeys().hasOnly([request.auth.uid])
+        && (!(request.auth.uid in incoming().reactions)
+            || incoming().reactions[request.auth.uid] in ['like', 'love', 'haha', 'wow', 'strong', 'fire'])
+        && (incoming().get('commentCount', 0) - resource.data.get('commentCount', 0)) in [-1, 0, 1];
+      allow delete: if signedIn() && resource.data.author == request.auth.uid;
+
+      function postAudience() { return get(/databases/$(database)/documents/posts/$(id)).data.audience; }
+      match /comments/{cid} {
+        allow read: if signedIn() && request.auth.uid in postAudience();
+        allow create: if signedIn() && request.auth.uid in postAudience() && incoming().author == request.auth.uid
+          && incoming().id == cid && shortText(incoming().text, 500) && incoming().text.size() > 0
+          && shortText(incoming().authorName, 60) && incoming().createdAt is int;
+        allow delete: if signedIn() && (resource.data.author == request.auth.uid
+          || get(/databases/$(database)/documents/posts/$(id)).data.author == request.auth.uid);
+      }
+    }
+
+    // Chats: direct messages (dm_{uidA}_{uidB}, sorted) and friend groups (up to 20 members).
+    function chatDoc(cid) { return get(/databases/$(database)/documents/chats/$(cid)).data; }
+    match /chats/{cid} {
+      // a missing chat may be read (to check before creating it); it reveals nothing
+      allow read: if signedIn() && (resource == null || request.auth.uid in resource.data.members);
+      allow create: if signedIn() && request.auth.uid in incoming().members && incoming().id == cid
+        && incoming().members.size() >= 2 && incoming().members.size() <= 20 && incoming().createdBy == request.auth.uid
+        && incoming().type in ['dm', 'group'] && incoming().createdAt is int
+        && (incoming().type == 'group' ? shortText(incoming().title, 40)
+            : incoming().members.size() == 2 && cid == 'dm_' + incoming().members[0] + '_' + incoming().members[1]
+              && incoming().members[0] < incoming().members[1]);
+      // members update the last-message preview; only the group's creator changes its title or members
+      allow update: if signedIn() && request.auth.uid in resource.data.members
+        && (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['lastText', 'lastFrom', 'lastAt'])
+            // any member may leave a group: the only change is removing themselves
+            || (resource.data.type == 'group' && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members', 'names'])
+                && incoming().members.toSet() == resource.data.members.toSet().difference([request.auth.uid].toSet()))
+            || (resource.data.type == 'group' && resource.data.createdBy == request.auth.uid
+                && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['title', 'members', 'names', 'lastText', 'lastFrom', 'lastAt'])
+                && incoming().members.size() >= 2 && incoming().members.size() <= 20 && request.auth.uid in incoming().members));
+      allow delete: if signedIn() && resource.data.createdBy == request.auth.uid;
+
+      match /messages/{mid} {
+        allow read: if signedIn() && request.auth.uid in chatDoc(cid).members;
+        allow create: if signedIn() && request.auth.uid in chatDoc(cid).members && incoming().from == request.auth.uid
+          && incoming().id == mid && shortText(incoming().text, 1000) && incoming().text.size() > 0
+          && shortText(incoming().fromName, 60) && incoming().createdAt is int
+          && incoming().kind in ['text', 'challenge', 'call'];
+        allow delete: if signedIn() && resource.data.from == request.auth.uid;
+      }
+    }
+
+    // Workout challenges between friends (2-6 people). Live progress is in the Realtime Database (live/{id}).
+    match /challenges/{id} {
+      allow read: if signedIn() && request.auth.uid in resource.data.participants;
+      allow create: if signedIn() && incoming().host == request.auth.uid && incoming().id == id
+        && request.auth.uid in incoming().participants
+        && incoming().participants.size() >= 2 && incoming().participants.size() <= 8
+        && incoming().status == 'open' && shortText(incoming().title, 60)
+        && shortText(incoming().stepsJson, 4000) && incoming().createdAt is int;
+      // the host runs the challenge; others only answer the invite or report their own result
+      allow update: if signedIn() && request.auth.uid in resource.data.participants
+        && incoming().participants == resource.data.participants && incoming().host == resource.data.host
+        && (request.auth.uid == resource.data.host
+            || request.resource.data.diff(resource.data).affectedKeys().hasOnly(['accepted', 'declined', 'results']));
+      allow delete: if signedIn() && resource.data.host == request.auth.uid;
+    }
+
+    // Shared catalog: read-only for signed-in users.
+    match /catalog/{foodId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

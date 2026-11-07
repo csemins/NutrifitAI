@@ -1,0 +1,146 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "status": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        "devices": {
+          "$device": {
+            ".validate": "newData.hasChildren(['online', 'lastSeen']) && newData.child('online').isBoolean() && newData.child('lastSeen').isNumber() && $device.length <= 64",
+            "online": {
+              ".validate": "newData.isBoolean()"
+            },
+            "lastSeen": {
+              ".validate": "newData.isNumber()"
+            },
+            "model": {
+              ".validate": "newData.isString() && newData.val().length <= 64"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "changes": {
+          ".validate": "newData.hasChildren(['by', 'at'])",
+          "by": {
+            ".validate": "newData.isString() && newData.val().length <= 64"
+          },
+          "at": {
+            ".validate": "newData.isNumber()"
+          },
+          "$other": {
+            ".validate": false
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "live": {
+      "$cid": {
+        ".read": "auth != null && $cid.length >= 16",
+        "$uid": {
+          ".write": "auth != null && auth.uid === $uid",
+          ".validate": "newData.hasChildren(['name', 'at']) && $cid.length >= 16",
+          "name": {
+            ".validate": "newData.isString() && newData.val().length <= 60"
+          },
+          "at": {
+            ".validate": "newData.isNumber()"
+          },
+          "ready": {
+            ".validate": "newData.isBoolean()"
+          },
+          "reps": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5000"
+          },
+          "faults": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5000"
+          },
+          "holdSec": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 36000"
+          },
+          "step": {
+            ".validate": "newData.isNumber()"
+          },
+          "steps": {
+            ".validate": "newData.isNumber()"
+          },
+          "score": {
+            ".validate": "newData.isNumber()"
+          },
+          "done": {
+            ".validate": "newData.isBoolean()"
+          },
+          "finishMs": {
+            ".validate": "newData.isNumber()"
+          },
+          "exercise": {
+            ".validate": "newData.isString() && newData.val().length <= 60"
+          },
+          "pose": {
+            ".validate": "newData.isString() && newData.val().length <= 400"
+          },
+          "$other": {
+            ".validate": false
+          },
+          "reaction": {
+            ".validate": "newData.isString() && newData.val().matches(/^(like|love|haha|wow|strong|fire)$/)"
+          },
+          "reactionAt": {
+            ".validate": "newData.isNumber()"
+          }
+        }
+      }
+    },
+    "rtc": {
+      "$room": {
+        "members": {
+          ".read": "auth != null && $room.length >= 16",
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid",
+            ".validate": "newData.hasChildren(['name', 'at']) && $room.length >= 16",
+            "name": {
+              ".validate": "newData.isString() && newData.val().length <= 60"
+            },
+            "video": {
+              ".validate": "newData.isBoolean()"
+            },
+            "audio": {
+              ".validate": "newData.isBoolean()"
+            },
+            "at": {
+              ".validate": "newData.isNumber()"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "sig": {
+          "$to": {
+            ".read": "auth != null && auth.uid === $to",
+            "$from": {
+              ".write": "auth != null && (auth.uid === $from || auth.uid === $to) && $room.length >= 16",
+              "sdp": {
+                ".validate": "newData.hasChildren(['type', 'sdp']) && newData.child('sdp').isString() && newData.child('sdp').val().length <= 20000"
+              },
+              "ice": {
+                "$k": {
+                  ".validate": "newData.hasChildren(['c', 'i']) && newData.child('c').isString() && newData.child('c').val().length <= 1000"
+                }
+              },
+              "$other": {
+                ".validate": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

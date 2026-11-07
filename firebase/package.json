@@ -1,0 +1,15 @@
+{
+  "name": "nutrifit-firebase",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "emulators": "firebase emulators:start --project nutrifit-ai-6c41c",
+    "test:rules": "firebase emulators:exec --project nutrifit-ai-6c41c --only firestore,storage,database \"node rules-tests/rules.test.mjs\"",
+    "deploy:rules": "firebase deploy --only firestore:rules,firestore:indexes,database --project nutrifit-ai-6c41c"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "firebase": "^13.2.0",
+    "firebase-tools": "^14.27.0"
+  }
+}
