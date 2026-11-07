@@ -34,3 +34,6 @@ Mockup_Images/
 # Built APKs for sharing
 dist/
 *.apk
+
+# Local notes
+START_HERE.md
