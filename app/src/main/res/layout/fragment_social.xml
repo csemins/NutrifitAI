@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/screen_padding"
+        android:paddingTop="12dp"
+        android:paddingBottom="@dimen/nav_clearance">
+
+        <include android:id="@+id/header" layout="@layout/view_tab_header" />
+
+        <com.transformsai.nutrifitai.ui.widget.SegmentedView
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:segments="@array/social_tabs" />
+
+        <!-- Feed: quick share actions -->
+        <LinearLayout
+            android:id="@+id/composer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView style="@style/NL.Text.BodyStrong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/social_share_title" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.chip.Chip android:id="@+id/shareStats" style="@style/NL.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checkable="false" app:chipIconVisible="true" android:text="@string/share_stats" app:chipIcon="@drawable/ic_flame" app:chipIconTint="@color/nl_carbs" />
+                <com.google.android.material.chip.Chip android:id="@+id/shareWorkout" style="@style/NL.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checkable="false" app:chipIconVisible="true" android:text="@string/share_kind_workout" app:chipIcon="@drawable/ic_dumbbell" app:chipIconTint="@color/nl_lime" />
+                <com.google.android.material.chip.Chip android:id="@+id/sharePhoto" style="@style/NL.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checkable="false" app:chipIconVisible="true" android:text="@string/share_photo" app:chipIcon="@drawable/ic_gallery" app:chipIconTint="@color/nl_protein" />
+                <com.google.android.material.chip.Chip android:id="@+id/shareClip" style="@style/NL.Chip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checkable="false" app:chipIconVisible="true" android:text="@string/share_clip" app:chipIcon="@drawable/ic_play" app:chipIconTint="@color/nl_water" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+        <!-- Chats: new group / new message -->
+        <LinearLayout
+            android:id="@+id/chatsBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/newMessage"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="@string/chat_new_message"
+                app:icon="@drawable/ic_chat"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/newGroup"
+                style="@style/NL.Button.Tonal"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/group_new"
+                app:icon="@drawable/ic_group"
+                app:iconGravity="textStart" />
+        </LinearLayout>
+
+        <!-- Challenges: start one -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/newChallenge"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/challenge_new"
+            android:visibility="gone"
+            app:icon="@drawable/ic_trophy"
+            app:iconGravity="textStart" />
+
+        <!-- Friends: my handle + search -->
+        <LinearLayout
+            android:id="@+id/findBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView style="@style/NL.Text.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/social_your_handle" />
+                    <TextView android:id="@+id/handle" style="@style/NL.Text.Title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textIsSelectable="true" tools:text="\@rahman_ab12" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/editHandle"
+                    style="@style/NL.Button.Ghost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:minWidth="0dp"
+                    android:text="@string/edit"
+                    android:visibility="gone" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/invite"
+                    style="@style/NL.Button.Tonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/social_invite"
+                    app:icon="@drawable/ic_share"
+                    app:iconGravity="textStart" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/social_search_hint"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_search">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLength="40" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/nl_lime"
+            app:trackCornerRadius="3dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

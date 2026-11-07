@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_auth"
+    android:orientation="vertical">
+
+    <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_padding">
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_photo_round"
+                    android:clipToOutline="true"
+                    android:importantForAccessibility="no"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic3d_trophy" />
+
+                <TextView
+                    android:id="@+id/countdown"
+                    style="@style/NL.Text.Display"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_photo_round"
+                    android:backgroundTint="@color/nl_scrim"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="64sp"
+                    android:visibility="gone"
+                    tools:text="3"
+                    tools:visibility="visible" />
+            </FrameLayout>
+
+            <TextView android:id="@+id/challengeTitle" style="@style/NL.Text.Display" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:gravity="center" tools:text="20 squats" />
+            <TextView android:id="@+id/routine" style="@style/NL.Text.Secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center" tools:text="Squat × 20" />
+            <TextView android:id="@+id/status" style="@style/NL.Text.BodyStrong" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center" android:textColor="@color/nl_lime" tools:text="Waiting for Sami to accept" />
+
+            <TextView style="@style/NL.Text.Overline" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:accessibilityHeading="true" android:text="@string/challenge_players" />
+
+            <LinearLayout
+                android:id="@+id/players"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_bar"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/primary"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:icon="@drawable/ic_play"
+            app:iconGravity="textStart"
+            tools:text="Start challenge" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/secondary"
+            style="@style/NL.Button.Ghost"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            tools:text="Decline"
+            tools:visibility="visible" />
+    </LinearLayout>
+</LinearLayout>

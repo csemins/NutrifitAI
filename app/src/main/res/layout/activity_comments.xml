@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nl_bg"
+    android:orientation="vertical">
+
+    <include android:id="@+id/bar" layout="@layout/view_top_bar" />
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingBottom="12dp" />
+
+        <TextView
+            android:id="@+id/gone"
+            style="@style/NL.Text.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="28dp"
+            android:text="@string/post_gone"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/inputBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp">
+
+        <com.transformsai.nutrifitai.ui.widget.FoodThumbView
+            android:id="@+id/me"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="6dp"
+            android:importantForAccessibility="no" />
+
+        <EditText android:id="@+id/input" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:background="@drawable/bg_input_chat" android:fontFamily="@font/jakarta_medium" android:hint="@string/comment_hint" android:importantForAutofill="no" android:inputType="textMultiLine|textCapSentences" android:maxLength="500" android:maxLines="4" android:minHeight="52dp" android:paddingHorizontal="18dp" android:paddingVertical="12dp" android:textColor="@color/nl_text" android:textColorHint="@color/nl_text_3" android:textSize="15sp" />
+        <ImageButton android:id="@+id/send" android:layout_width="52dp" android:layout_height="52dp" android:layout_marginStart="8dp" android:background="@drawable/bg_nav_camera" android:contentDescription="@string/cd_send" android:padding="14dp" android:scaleType="fitCenter" android:src="@drawable/ic_send" app:tint="@color/nl_on_lime" />
+    </LinearLayout>
+</LinearLayout>
