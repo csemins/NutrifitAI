@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Floating glass panel over the walk map -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#D90B0D0B" />
+    <stroke android:width="1dp" android:color="#2EFFFFFF" />
+    <corners android:radius="28dp" />
+</shape>
